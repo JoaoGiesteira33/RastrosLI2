@@ -3,7 +3,7 @@
 #include "interface.h"
 #include "logica.h"
 #include "camadadados.h"
-#define BUF_SIZE 512
+#define BUF_SIZE 1024
 int interpretador(ESTADO *e)
 {
     char linha[BUF_SIZE];
