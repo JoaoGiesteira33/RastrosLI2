@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-int main() {
-    printf("Hello, World!\n");
+int main()
+{
+    ESTADO *e = inicializar_estado();
+    interpretador(e);
+
     return 0;
 }
