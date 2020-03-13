@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <string.h>
 #include "interface.h"
+#include "logica.h"
 #include "camadadados.h"
+#define BUF_SIZE 512
 int interpretador(ESTADO *e)
 {
     char linha[BUF_SIZE];
@@ -29,7 +32,7 @@ void mostrar_tabuleiro(ESTADO estado)
                 printf("1");
             else
             {
-                switch (estado->tab[j][i])
+                switch (estado.tab[j][i])
                 {
                     case PRETA:
                         printf("#");

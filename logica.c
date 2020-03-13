@@ -16,19 +16,29 @@ int verifica_movimentos(ESTADO *estado, COORDENADA c)
     else
         return 0;
 }
+int verifica_vazio(ESTADO *estado, COORDENADA c) {
+    int c2, l2;
+
+    c2 = c.coluna;
+    l2 = c.linha;
+
+    if (estado->tab[c2][l2] == VAZIO)
+        return 1;
+    else
+        return 0;
+}
 
 int jogar(ESTADO *estado, COORDENADA c)
 {
-    printf("jogar %d %d\n", c.coluna, c.linha);
-    //Primeiro verifica se pode jogar^
-    if (verifica_movimentos(estado, c))
+
+    if (verifica_movimentos(estado, c)&& verifica_vazio(estado,c))
     {
         //Pode jogar
         estado->tab[c.linha][c.coluna] = BRANCA;
         int x = estado->ultima_jogada.linha;
         int y = estado->ultima_jogada.coluna;
-        estado->tab[x][y] = PRETA;
-
+        estado->tab[y][x] = PRETA;
+        printf("jogar %d %d\n", c.coluna, c.linha);
         return 1;
     }
     else
