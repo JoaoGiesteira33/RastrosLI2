@@ -5,13 +5,13 @@
 
 int verifica_movimentos(ESTADO *estado, COORDENADA c)
 {
-    int c1, c2, l1, l2;
+    int c1, c2, linha1, linha2;
     c1 = estado->ultima_jogada.coluna;
-    l1 = estado->ultima_jogada.linha;
+    linha1 = estado->ultima_jogada.linha;
     c2 = c.coluna;
-    l2 = c.linha;
+    linha2 = c.linha;
 
-    if (((sqrt((c1 - c2) ^ 2 + (l1 - l2) ^ 2)) == 1) || ((sqrt((c1 - c2) ^ 2 + (l1 - l2) ^ 2)) == sqrt(2)))
+    if (((sqrt((c1 - c2) ^ 2 + (linha1 - linha2) ^ 2)) == 1) || ((sqrt((c1 - c2) ^ 2 + (linha1 - linha2) ^ 2)) == sqrt(2)))
         return 1;
     else
         return 0;
