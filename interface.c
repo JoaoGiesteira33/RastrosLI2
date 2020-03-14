@@ -4,6 +4,7 @@
 #include "logica.h"
 #include "camadadados.h"
 #define BUF_SIZE 512
+
 int interpretador(ESTADO *e)
 {
     char linha[BUF_SIZE];

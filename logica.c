@@ -5,24 +5,24 @@
 
 int verifica_movimentos(ESTADO *estado, COORDENADA c)
 {
-    int c1, c2, l1, l2;
+    int c1, c2, linha1, linha2;
     c1 = estado->ultima_jogada.coluna;
     l1 = estado->ultima_jogada.linha;
     c2 = c.coluna;
     l2 = c.linha;
 
-    if ((sqrt((c1 - c2) ^ 2 - (l1 - l2) ^ 2)) == 1)
+    if ((sqrt((c1 - c2) ^ 2 - (linha1 - linha2) ^ 2)) == 1)
         return 1;
     else
         return 0;
 }
 int verifica_vazio(ESTADO *estado, COORDENADA c) {
-    int c2, l2;
+    int coluna2, linha2;
 
-    c2 = c.coluna;
-    l2 = c.linha;
+    coluna2 = c.coluna;
+    linha2 = c.linha;
 
-    if (estado->tab[c2][l2] == VAZIO)
+    if (estado->tab[coluna2][linha2] == VAZIO)
         return 1;
     else
         return 0;
