@@ -28,27 +28,36 @@ int verifica_vazio(ESTADO *estado, COORDENADA c) {
         return 0;
 }
 
+
+int funcao_jogada (ESTADO *estado, COORDENADA c) {
+
+    //Pode jogar
+    estado -> tab[c.linha][c.coluna] = BRANCA;
+    //Atualiza a peça de onde sai
+    int x = estado ->ultima_jogada.linha;
+    int y = estado-> ultima_jogada.coluna;
+
+    estado -> tab [y] [x] = PRETA;
+    //Atualiza o jogador
+    if (estado-> jogador_atual == 1)
+        estado-> jogador_atual = 0;
+    else
+        estado-> jogador_atual = 1;
+
+    printf("jogar %d %d\n", c.coluna, c.linha);
+    return 1;
+
+}
+
 int jogar(ESTADO *estado, COORDENADA c)
 {
 
-    if (verifica_movimentos(estado, c) && verifica_vazio(estado,c))
-    {
-        //Pode jogar
-        estado -> tab[c.linha][c.coluna] = BRANCA;
-        //Atualiza a peça de onde sai
-        int x = estado ->ultima_jogada.linha;
-        int y = estado-> ultima_jogada.coluna;
+    if (verifica_movimentos(estado, c) && verifica_vazio(estado,c))  {
 
-        estado -> tab [y] [x] = PRETA;
-        //Atualiza o jogador
-        if (estado-> jogador_atual == 1)
-            estado-> jogador_atual = 0;
-        else
-            estado-> jogador_atual = 1;
+        funcao_jogada (estado,c);
 
-        printf("jogar %d %d\n", c.coluna, c.linha);
-        return 1;
     }
+
     else
     {
         //Nao pode jogar

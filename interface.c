@@ -14,7 +14,7 @@ void mostrar_tabuleiro (ESTADO estado){
     {
         for (i = 0; i <= 7; i++)
         {
-            switch (obter_estado_casa (estado, estado.tab [j][i]))
+            switch (obter_estado_casa (estado, estado.tab[j][i]))
             {
                 case PRETA:
                     printf("#");
@@ -30,7 +30,8 @@ void mostrar_tabuleiro (ESTADO estado){
     }
     printf("\n Efetue uma Jogada");
 }
-}
+
+
 
 
 // Funcao que inicializa e permite jogar
