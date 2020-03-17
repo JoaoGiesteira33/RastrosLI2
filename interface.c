@@ -32,13 +32,7 @@ void mostrar_tabuleiro (ESTADO estado){
     {
         for (i = 0; i <= 7; i++)
         {
-            if (j == 7 && i == 0)
-                printf("2");
-            else if (j == 0 && i == 7)
-                printf("1");
-            else
-            {
-                switch (obter_estado_casa (estado, estado.tab [j][i]))
+            switch (obter_estado_casa (estado, estado.tab [j][i]))
                 {
                     case PRETA:
                         printf("#");

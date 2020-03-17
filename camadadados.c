@@ -13,7 +13,11 @@ ESTADO *inicializar_estado()
     e->ultima_jogada.coluna = 4;
      for (int i =0;i<8;i++){
          for (int j =0;j<8;j++){
-             e->tab[i][j] = VAZIO;
+             if (i == 7 && j == 0)
+                 printf("2");
+             else if (i == 0 && j == 7)
+                 printf("1");
+             else e->tab[i][j] = VAZIO;
          }
 
 
