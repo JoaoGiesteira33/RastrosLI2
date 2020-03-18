@@ -13,8 +13,8 @@ void mostrar_tabuleiro (ESTADO estado){
     for (j = 0; j <= 7; j++)
     {
         for (i = 0; i <= 7; i++)
-        {
-            switch (obter_estado_casa (estado, estado.tab[j][i]))
+        {   COORDENADA c = {j,i};
+            switch (obter_estado_casa (&estado, c))
             {
                 case PRETA:
                     printf("#");

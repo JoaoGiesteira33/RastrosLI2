@@ -5,17 +5,18 @@
 
 int verifica_movimentos (ESTADO *estado, COORDENADA c)
 {   //Funcao que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa
-    int c1, c2, linha1, linha2;
-    c1 = estado->ultima_jogada.coluna;
+   int c1, c2, linha1, linha2;
+    c1 =   estado->ultima_jogada.coluna;
     linha1 = estado->ultima_jogada.linha;
-    c2 = c.coluna;
-    linha2 = c.linha;
-    // Testa na Diagonal, na Horizontal e na Vertical
-    if (((sqrt((c1 - c2) ^ 2 + (linha1 - linha2) ^ 2)) == 1) || ((sqrt((c1 - c2) ^ 2 + (linha1 - linha2) ^ 2)) == sqrt(2)))
+    c2 =  c.coluna;
+    linha2 =  c.linha;
+    if ((abs(c1-c2)== 1) || (abs(linha1-linha2)== 1)){
         return 1;
+    }
     else
         return 0;
 }
+
 int verifica_vazio(ESTADO *estado, COORDENADA c) {
     int c2, l2;
 
