@@ -13,7 +13,7 @@ void mostrar_tabuleiro (ESTADO estado){
     for (j = 0; j <= 7; j++)
     {
         for (i = 0; i <= 7; i++)
-        {   COORDENADA c = {j,i};
+        {   COORDENADA c = {i,j};
             switch (obter_estado_casa (&estado, c))
             {
                 case PRETA:
@@ -27,6 +27,7 @@ void mostrar_tabuleiro (ESTADO estado){
                     break;
             }
         }
+        putchar ('/n');
     }
     printf("\n Efetue uma Jogada");
 }

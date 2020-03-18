@@ -23,7 +23,7 @@ int verifica_vazio(ESTADO *estado, COORDENADA c) {
     c2 = c.coluna;
     l2 = c.linha;
     // Funcao que verifica se a casa para onde o jogador pretende jogar é valida, neste caso Vazia.
-    if (estado->tab[c2][l2] == VAZIO)
+    if (estado->tab[l2][c2] == VAZIO)
         return 1;
     else
         return 0;
@@ -38,14 +38,14 @@ int funcao_jogada (ESTADO *estado, COORDENADA c) {
     int x = estado ->ultima_jogada.linha;
     int y = estado-> ultima_jogada.coluna;
 
-    estado -> tab [y] [x] = PRETA;
+    estado -> tab [x] [y] = PRETA;
     //Atualiza o jogador
     if (estado-> jogador_atual == 1)
         estado-> jogador_atual = 0;
     else
         estado-> jogador_atual = 1;
 
-    printf("jogar %d %d\n", c.coluna, c.linha);
+    printf("jogar %d  %d\n", c.linha, c.coluna);
     return 1;
 
 }
