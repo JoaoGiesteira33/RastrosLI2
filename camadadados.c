@@ -40,7 +40,7 @@ ESTADO *inicializar_estado()
 int obter_jogador_atual(ESTADO *estado)
 {
     int jog;
-    jog = estado->jogador_atual;
+    jog = estado -> jogador_atual;
     return jog;
 }
 
@@ -107,6 +107,6 @@ char *conversorultimajogada (COORDENADA *c) {
 CASA obter_estado_casa(ESTADO *e, COORDENADA c)
 {
     CASA casa;
-    casa = e->tab[c.linha][c.coluna];
+    casa = e->tab[c.coluna][c.linha];
     return casa;
 }

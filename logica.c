@@ -46,6 +46,7 @@ int funcao_jogada (ESTADO *estado, COORDENADA c) {
 
     //Pode jogar
     estado -> tab[c.linha][c.coluna] = BRANCA;
+
     //Atualiza a peça de onde sai
     int x = estado ->ultima_jogada.linha;
     int y = estado-> ultima_jogada.coluna;
@@ -61,6 +62,28 @@ int funcao_jogada (ESTADO *estado, COORDENADA c) {
     return 1;
 
 }
+
+int encurralado (ESTADO *estado) {
+    COORDENADA x = estado -> ultima_jogada;
+    int xc = x.coluna;
+    int xl = x.linha;
+    if (obter_estado_casa(estado,))  // falta dar o imput das coordenadas a esta funcao e testar para todas as casa a volta 
+
+}
+
+
+int jogada_final (ESTADO *estado, COORDENADA c) {
+   int jogador = obter_jogador_atual(estado);
+   if (c.coluna == 0 && c.linha == 7 && jogador == 1) return 0;//definir funcao de vitoria
+        else if (c.coluna == 7 && c.linha == 0 && jogador ==2) return 0; //chamar funcao vitoria
+        else if
+
+
+
+
+
+}
+
 /**
 \brief Função principal que efetua a jogada.
 */
