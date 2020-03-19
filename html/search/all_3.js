@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['jogada',['JOGADA',['../structJOGADA.html',1,'']]],
-  ['jogar',['jogar',['../logica_8c.html#a53472e75f056ceb02b5387193021838a',1,'logica.c']]]
+  ['inicializar_5festado',['inicializar_estado',['../camadadados_8c.html#a7e0c7e26fb685d9ab501e19b05e6954f',1,'camadadados.c']]],
+  ['interface_2ec',['interface.c',['../interface_8c.html',1,'']]],
+  ['interpretador',['interpretador',['../interface_8c.html#a24da95ebeede4a540e37790ce8be359b',1,'interface.c']]]
 ];
