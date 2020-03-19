@@ -35,8 +35,10 @@
             }
         }
         putchar ('/n');
+
     }
-    printf("\n Efetue uma Jogada");
+
+    fprintf(stdout,"\n");
 }
 
 

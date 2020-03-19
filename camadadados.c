@@ -51,9 +51,17 @@ int obter_jogador_atual(ESTADO *estado)
 int obter_numero_de_jogadas(ESTADO *estado)
 {
     int numJogadas;
-    numJogadas = estado->num_jogadas;
+    numJogadas = estado-> num_jogadas;
 
     return numJogadas;
+}
+
+int obter_ultima_jogada (Estado *estado)
+{
+    int ultimajogada;
+    ultimajogada = estado -> ultima_jogada;
+
+    return ultimajogada;
 }
 
 /**
