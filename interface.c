@@ -6,8 +6,15 @@
 #include "camadadados.h"
 #define BUF_SIZE 1024
 
-// Funcao que inicializa o tabuleiro
-void mostrar_tabuleiro (ESTADO estado){
+/**
+ @file interface.c
+ Interpretador e funcões complementares a este.
+ */
+
+/**
+\brief Funcao que inicializa o tabuleiro.
+*/
+ void mostrar_tabuleiro (ESTADO estado){
 
     int j, i;
     for (j = 0; j <= 7; j++)
@@ -34,8 +41,9 @@ void mostrar_tabuleiro (ESTADO estado){
 
 
 
-
-// Funcao que inicializa e permite jogar
+/**
+\brief Funcao que inicializa e permite jogar.
+*/
 int interpretador(ESTADO *e){
 
     char linha[BUF_SIZE];

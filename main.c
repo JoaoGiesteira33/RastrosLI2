@@ -2,7 +2,9 @@
 #include "camadadados.h"
 #include "interface.h"
 
-
+/**
+ * Funcao Principal do Jogo Rastros
+ */
 
 int main()
 {

@@ -2,9 +2,17 @@
 #include "logica.h"
 #include <stdio.h>
 #include <math.h>
+/**
+ @file logica.c
+ Funcão Jogar e funcões complementares a esta.
+ */
 
+
+/**
+\brief Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa.
+ */
 int verifica_movimentos (ESTADO *estado, COORDENADA c)
-{   //Funcao que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa
+{
    int c1, c2, linha1, linha2;
     c1 =   estado->ultima_jogada.coluna;
     linha1 = estado->ultima_jogada.linha;
@@ -17,19 +25,23 @@ int verifica_movimentos (ESTADO *estado, COORDENADA c)
         return 0;
 }
 
+/**
+\brief Funcão que verifica se a casa para onde o jogador pretende jogar é válida, neste caso Vazia.
+*/
 int verifica_vazio(ESTADO *estado, COORDENADA c) {
     int c2, l2;
 
     c2 = c.coluna;
     l2 = c.linha;
-    // Funcao que verifica se a casa para onde o jogador pretende jogar é valida, neste caso Vazia.
     if (estado->tab[l2][c2] == VAZIO)
         return 1;
     else
         return 0;
 }
 
-
+/**
+\brief Função que altera o estado da casa e alterna a vez de jogar.
+*/
 int funcao_jogada (ESTADO *estado, COORDENADA c) {
 
     //Pode jogar
@@ -49,7 +61,9 @@ int funcao_jogada (ESTADO *estado, COORDENADA c) {
     return 1;
 
 }
-
+/**
+\brief Função principal que efetua a jogada.
+*/
 int jogar(ESTADO *estado, COORDENADA c)
 {
 
