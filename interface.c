@@ -34,11 +34,12 @@
                     break;
             }
         }
-        putchar ('/n');
+        putchar ('\n');
 
     }
 
-    fprintf(stdout,"\n");
+    fprintf(stdout,"\n PL%d Jogada%d\n", obter_jogador_atual(&estado), obter_numero_de_jogadas(&estado) /*falta a funcao que devolve a as coordenadas da ultima jogada
+ * do tipo CharINT (D4, F5)*/);
 }
 
 

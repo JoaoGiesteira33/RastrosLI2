@@ -32,5 +32,9 @@ int obter_jogador_atual(ESTADO *estado);
 
 int obter_numero_de_jogadas(ESTADO *estado);
 
+COORDENADA *obter_ultima_jogada (ESTADO *estado);
+
+char *conversorultimajogada (COORDENADA *c);
+
 CASA obter_estado_casa(ESTADO *e, COORDENADA c);
 #endif //RASTROSLI2_CAMADADADOS_H

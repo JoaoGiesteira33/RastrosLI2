@@ -33,7 +33,7 @@ int verifica_vazio(ESTADO *estado, COORDENADA c) {
 
     c2 = c.coluna;
     l2 = c.linha;
-    if (estado->tab[l2][c2] == VAZIO)
+    if (estado->tab[c2][l2] == VAZIO)
         return 1;
     else
         return 0;
@@ -50,7 +50,7 @@ int funcao_jogada (ESTADO *estado, COORDENADA c) {
     int x = estado ->ultima_jogada.linha;
     int y = estado-> ultima_jogada.coluna;
 
-    estado -> tab [x] [y] = PRETA;
+    estado -> tab [y] [x] = PRETA;
     //Atualiza o jogador
     if (estado-> jogador_atual == 1)
         estado-> jogador_atual = 0;

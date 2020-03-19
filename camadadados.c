@@ -56,12 +56,49 @@ int obter_numero_de_jogadas(ESTADO *estado)
     return numJogadas;
 }
 
-int obter_ultima_jogada (Estado *estado)
-{
-    int ultimajogada;
-    ultimajogada = estado -> ultima_jogada;
+/**
+\brief Função que devolve a ultima jogada efetuada.
+*/
+COORDENADA *obter_ultima_jogada (ESTADO *estado) {
 
-    return ultimajogada;
+    COORDENADA *ultimajogadafinal;
+    ultimajogadafinal -> linha = estado -> ultima_jogada.linha;
+    ultimajogadafinal -> coluna = estado -> ultima_jogada.coluna;
+    return ultimajogadafinal;
+
+}
+
+char *conversorultimajogada (COORDENADA *c) {
+
+    char s1[2] = {0,((c -> linha)+1)};
+    switch (c -> coluna) {
+        case 0:
+            s1 [0] = 'A';
+            break;
+        case 1:
+            s1 [0] = 'B';
+            break;
+        case 2:
+            s1 [0] = 'C';
+            break;
+        case 3:
+            s1 [0] = 'D';
+            break;
+        case 4:
+            s1 [0] = 'E';
+            break;
+        case 5:
+            s1 [0] = 'F';
+            break;
+        case 6:
+            s1 [0] = 'G';
+            break;
+        case 7:
+            s1 [0] = 'H';
+            break;
+
+    }
+    return s1;
 }
 
 /**
