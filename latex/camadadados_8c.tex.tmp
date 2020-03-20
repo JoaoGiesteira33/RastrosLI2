@@ -1,0 +1,95 @@
+\hypertarget{camadadados_8c}{}\section{camadadados.\+c File Reference}
+\label{camadadados_8c}\index{camadadados.\+c@{camadadados.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}camadadados.\+h\char`\"{}}\newline
+Include dependency graph for camadadados.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$ \hyperlink{camadadados_8c_a7e0c7e26fb685d9ab501e19b05e6954f}{inicializar\+\_\+estado} ()
+\begin{DoxyCompactList}\small\item\em Função que inicializa o estado inicial. \end{DoxyCompactList}\item 
+int \hyperlink{camadadados_8c_ad6e326e4ffa57ca1ae0c75377ecefc8c}{obter\+\_\+jogador\+\_\+atual} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado)
+\begin{DoxyCompactList}\small\item\em Função que devolve o jogador atual. \end{DoxyCompactList}\item 
+int \hyperlink{camadadados_8c_a6cd0b387bdee9e18003c78852394aa63}{obter\+\_\+numero\+\_\+de\+\_\+jogadas} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado)
+\begin{DoxyCompactList}\small\item\em Função que devolve o numero de Jogadas. \end{DoxyCompactList}\item 
+\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} $\ast$ \hyperlink{camadadados_8c_abb755c6bcdfd6bc4de83aa1294ee1562}{obter\+\_\+ultima\+\_\+jogada} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado)
+\begin{DoxyCompactList}\small\item\em Função que devolve a ultima jogada efetuada. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{camadadados_8c_a4ef8b7cec375b29fbe60db02cc37ef55}{conversorultimajogada} (\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Converte a ultima jogada. \end{DoxyCompactList}\item 
+\hyperlink{camadadados_8h_aba91601f16d4c485b2d9b8c429f27039}{C\+A\+SA} \hyperlink{camadadados_8c_a6faa68373203923729ed38657aa0f768}{obter\+\_\+estado\+\_\+casa} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+\begin{DoxyCompactList}\small\item\em Função que devolve o estado da casa da respetiva coordenada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Função estado e funções auxiliares a esta. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{camadadados_8c_a4ef8b7cec375b29fbe60db02cc37ef55}\label{camadadados_8c_a4ef8b7cec375b29fbe60db02cc37ef55}} 
+\index{camadadados.\+c@{camadadados.\+c}!conversorultimajogada@{conversorultimajogada}}
+\index{conversorultimajogada@{conversorultimajogada}!camadadados.\+c@{camadadados.\+c}}
+\subsubsection{\texorpdfstring{conversorultimajogada()}{conversorultimajogada()}}
+{\footnotesize\ttfamily char$\ast$ conversorultimajogada (\begin{DoxyParamCaption}\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Converte a ultima jogada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Apontador paraa coordenada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8c_a7e0c7e26fb685d9ab501e19b05e6954f}\label{camadadados_8c_a7e0c7e26fb685d9ab501e19b05e6954f}} 
+\index{camadadados.\+c@{camadadados.\+c}!inicializar\+\_\+estado@{inicializar\+\_\+estado}}
+\index{inicializar\+\_\+estado@{inicializar\+\_\+estado}!camadadados.\+c@{camadadados.\+c}}
+\subsubsection{\texorpdfstring{inicializar\+\_\+estado()}{inicializar\_estado()}}
+{\footnotesize\ttfamily \hyperlink{structESTADO}{E\+S\+T\+A\+DO}$\ast$ inicializar\+\_\+estado (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Função que inicializa o estado inicial. 
+
+Inicializa um estado. \mbox{\Hypertarget{camadadados_8c_a6faa68373203923729ed38657aa0f768}\label{camadadados_8c_a6faa68373203923729ed38657aa0f768}} 
+\index{camadadados.\+c@{camadadados.\+c}!obter\+\_\+estado\+\_\+casa@{obter\+\_\+estado\+\_\+casa}}
+\index{obter\+\_\+estado\+\_\+casa@{obter\+\_\+estado\+\_\+casa}!camadadados.\+c@{camadadados.\+c}}
+\subsubsection{\texorpdfstring{obter\+\_\+estado\+\_\+casa()}{obter\_estado\_casa()}}
+{\footnotesize\ttfamily \hyperlink{camadadados_8h_aba91601f16d4c485b2d9b8c429f27039}{C\+A\+SA} obter\+\_\+estado\+\_\+casa (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c }\end{DoxyParamCaption})}
+
+
+
+Função que devolve o estado da casa da respetiva coordenada. 
+
+Obtém o estado da casa. \mbox{\Hypertarget{camadadados_8c_ad6e326e4ffa57ca1ae0c75377ecefc8c}\label{camadadados_8c_ad6e326e4ffa57ca1ae0c75377ecefc8c}} 
+\index{camadadados.\+c@{camadadados.\+c}!obter\+\_\+jogador\+\_\+atual@{obter\+\_\+jogador\+\_\+atual}}
+\index{obter\+\_\+jogador\+\_\+atual@{obter\+\_\+jogador\+\_\+atual}!camadadados.\+c@{camadadados.\+c}}
+\subsubsection{\texorpdfstring{obter\+\_\+jogador\+\_\+atual()}{obter\_jogador\_atual()}}
+{\footnotesize\ttfamily int obter\+\_\+jogador\+\_\+atual (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{estado }\end{DoxyParamCaption})}
+
+
+
+Função que devolve o jogador atual. 
+
+Retorna o jogador atual. \mbox{\Hypertarget{camadadados_8c_a6cd0b387bdee9e18003c78852394aa63}\label{camadadados_8c_a6cd0b387bdee9e18003c78852394aa63}} 
+\index{camadadados.\+c@{camadadados.\+c}!obter\+\_\+numero\+\_\+de\+\_\+jogadas@{obter\+\_\+numero\+\_\+de\+\_\+jogadas}}
+\index{obter\+\_\+numero\+\_\+de\+\_\+jogadas@{obter\+\_\+numero\+\_\+de\+\_\+jogadas}!camadadados.\+c@{camadadados.\+c}}
+\subsubsection{\texorpdfstring{obter\+\_\+numero\+\_\+de\+\_\+jogadas()}{obter\_numero\_de\_jogadas()}}
+{\footnotesize\ttfamily int obter\+\_\+numero\+\_\+de\+\_\+jogadas (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{estado }\end{DoxyParamCaption})}
+
+
+
+Função que devolve o numero de Jogadas. 
+
+Retorna o número de jogadas. \mbox{\Hypertarget{camadadados_8c_abb755c6bcdfd6bc4de83aa1294ee1562}\label{camadadados_8c_abb755c6bcdfd6bc4de83aa1294ee1562}} 
+\index{camadadados.\+c@{camadadados.\+c}!obter\+\_\+ultima\+\_\+jogada@{obter\+\_\+ultima\+\_\+jogada}}
+\index{obter\+\_\+ultima\+\_\+jogada@{obter\+\_\+ultima\+\_\+jogada}!camadadados.\+c@{camadadados.\+c}}
+\subsubsection{\texorpdfstring{obter\+\_\+ultima\+\_\+jogada()}{obter\_ultima\_jogada()}}
+{\footnotesize\ttfamily \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}$\ast$ obter\+\_\+ultima\+\_\+jogada (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{estado }\end{DoxyParamCaption})}
+
+
+
+Função que devolve a ultima jogada efetuada. 
+
+Obtém a ultima jogada efetuada. 

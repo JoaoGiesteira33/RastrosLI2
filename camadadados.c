@@ -21,9 +21,9 @@ ESTADO *inicializar_estado()
      for (int i =0;i<8;i++){
          for (int j =0;j<8;j++){
              if (i == 7 && j == 0)
-                 printf("2");
+                 e->tab[i][j] = DOIS;
              else if (i == 0 && j == 7)
-                 printf("1");
+                 e->tab[i][j] = UM;
              else e->tab[i][j] = VAZIO;
          }
 
