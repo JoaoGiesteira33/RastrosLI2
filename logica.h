@@ -3,5 +3,6 @@
 int verifica_movimentos(ESTADO *estado, COORDENADA c);
 int verifica_vazio(ESTADO *estado, COORDENADA c);
 int jogar(ESTADO *estado, COORDENADA c);
-
+int encurralado (ESTADO *estado);
+int jogada_final (ESTADO *estado, COORDENADA c);
 #endif //RASTROSLI2_LOGICA_H

@@ -68,6 +68,7 @@ COORDENADA *obter_ultima_jogada (ESTADO *estado) {
 
 }
 
+
 char *conversorultimajogada (COORDENADA *c) {
 
     char s1[2] = {0,((c -> linha)+1)};
@@ -107,6 +108,6 @@ char *conversorultimajogada (COORDENADA *c) {
 CASA obter_estado_casa(ESTADO *e, COORDENADA c)
 {
     CASA casa;
-    casa = e->tab[c.coluna][c.linha];
+    casa = e-> tab[c.coluna][c.linha];
     return casa;
 }
