@@ -126,21 +126,27 @@ int jogada_final (ESTADO *estado, COORDENADA c) {
 */
 int jogar(ESTADO *estado, COORDENADA c)
 {
-
+    //Pode jogar
     if (verifica_movimentos(estado, c) && verifica_vazio(estado,c) && jogada_final(estado, c)) {
 
         funcao_jogada (estado,c);
 
     }
 
-    else // Casos para congratular o jogador
-    {   int jogador = obter_jogador_atual(estado);
-        if (c.coluna == 0 && c.linha == 7 && jogador == 1) fprintf (stdout, "Parabens, o vencedor é o Jogador 1"); //no caso de chegar a casa final do Jogador 1
-        else if (c.coluna == 7 && c.linha == 0 && jogador == 2) fprintf(stdout, "Parabens, o vencedor é o Jogador 2"); //no caso de chegar a casa final do Jogador 2
-        else if (jogador == 1) fprintf(stdout, "Parabens, o vencedor é o Jogador 2"); //nos casos de os Jogadores se encontrarem rodeados, ou sejam, sem possiblidades de jogarem
-        else fprintf(stdout, "Parabens, o vencedor é o Jogador 1");
+    else  // Casos para congratular o jogador
+    {
+        int jogador = obter_jogador_atual(estado);
 
+        if (c.coluna == 0 && c.linha == 7 && jogador == 1)
+            printf("Parabens, o vencedor é o Jogador 1"); //no caso de chegar a casa final do Jogador 1
+        else if (c.coluna == 7 && c.linha == 0 && jogador == 2)
+            printf("Parabens, o vencedor é o Jogador 2"); //no caso de chegar a casa final do Jogador 2
+        else if  (encurralado(estado)&&(jogador == 1))
+            printf("Parabens, o vencedor é o Jogador 2"); //nos casos de os Jogadores se encontrarem rodeados, ou sejam, sem possiblidades de jogarem
+        else if  (encurralado(estado)&&(jogador == 2)) printf("Parabens, o vencedor é o Jogador 1");
+        else  printf("A jogada nao é válida, tente novamente");
+    }
 
         return 0;
-    }
+
 }

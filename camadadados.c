@@ -29,7 +29,7 @@ ESTADO *inicializar_estado()
 
 
     }
-     e->tab[3][4] = BRANCA;
+     e->tab[4][3] = BRANCA;
 
     return e;
 }
