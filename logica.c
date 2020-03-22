@@ -3,6 +3,7 @@
 #include "interface.h"
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 int verifica_movimentos (ESTADO *estado, COORDENADA c)
 {
@@ -57,40 +58,40 @@ int encurralado (ESTADO *estado) {
        int ujc = estado -> ultima_jogada.coluna;
        int ujl = estado -> ultima_jogada.linha;
 
-       COORDENADA *cima;
-       cima -> coluna = ujc;
-       cima -> linha = ujl + 1;
+       COORDENADA cima;
+       cima.coluna = ujc;
+       cima.linha = ujl + 1;
 
-       COORDENADA *baixo;
-       baixo -> coluna = ujc;
-       baixo -> linha = ujl - 1;
+       COORDENADA baixo;
+       baixo.coluna = ujc;
+       baixo.linha = ujl - 1;
 
-       COORDENADA *direita;
-       direita -> coluna = ujc + 1;
-       direita -> linha = ujl;
+       COORDENADA direita;
+       direita.coluna = ujc + 1;
+       direita.linha = ujl;
 
-       COORDENADA *esquerda;
-       esquerda -> coluna = ujc - 1;
-       esquerda -> linha = ujl;
+       COORDENADA esquerda;
+       esquerda.coluna = ujc - 1;
+       esquerda.linha = ujl;
 
-       COORDENADA *diagDBaixo;
-       diagDBaixo -> coluna = ujc + 1;
-       diagDBaixo -> linha = ujl - 1;
+       COORDENADA diagDBaixo;
+       diagDBaixo.coluna = ujc + 1;
+       diagDBaixo.linha = ujl - 1;
 
-       COORDENADA *diagEBaixo;
-       diagEBaixo-> coluna = ujc - 1;
-       diagEBaixo -> linha = ujl - 1;
+       COORDENADA diagEBaixo;
+       diagEBaixo.coluna = ujc - 1;
+       diagEBaixo.linha = ujl - 1;
 
-       COORDENADA *diagDCima;
-       diagDCima -> coluna = ujc + 1;
-       diagDCima -> linha = ujl + 1;
+       COORDENADA diagDCima;
+       diagDCima.coluna = ujc + 1;
+       diagDCima.linha = ujl + 1;
 
-       COORDENADA *diagECima;
-       diagECima -> coluna = ujc - 1;
-       diagECima -> linha = ujl + 1;
+       COORDENADA diagECima;
+       diagECima.coluna = ujc - 1;
+       diagECima.linha = ujl + 1;
 
-       if ((obter_estado_casa(estado,*cima)) == PRETA && (obter_estado_casa(estado,*baixo)) == PRETA && (obter_estado_casa(estado,*direita)) == PRETA && (obter_estado_casa(estado,*esquerda)) == PRETA
-       && (obter_estado_casa(estado,*diagDBaixo)) == PRETA && (obter_estado_casa(estado,*diagEBaixo)) == PRETA && (obter_estado_casa(estado,*diagDCima)) == PRETA && (obter_estado_casa(estado,*diagECima)) == PRETA ) return 0;
+       if ((obter_estado_casa(estado,cima)) == PRETA && (obter_estado_casa(estado,baixo)) == PRETA && (obter_estado_casa(estado,direita)) == PRETA && (obter_estado_casa(estado,esquerda)) == PRETA
+       && (obter_estado_casa(estado,diagDBaixo)) == PRETA && (obter_estado_casa(estado,diagEBaixo)) == PRETA && (obter_estado_casa(estado,diagDCima)) == PRETA && (obter_estado_casa(estado,diagECima)) == PRETA ) return 0;
        else return 1;
 }
 
@@ -99,14 +100,21 @@ int encurralado (ESTADO *estado) {
 
 
 int jogada_final (ESTADO *estado, COORDENADA c) {
-   int jogador = obter_jogador_atual(estado);
-   if (c.coluna == 0 && c.linha == 7 && jogador == 1) return 0;//Casa final do Jogador 1
-        else if (c.coluna == 7 && c.linha == 0 && jogador == 2) return 0; //Casa final do Jogador 2
-        else if (encurralado(estado));
-
-        }
+    int jogador = obter_jogador_atual(estado);
+    if (c.coluna == 0 && c.linha == 7 && jogador == 1) {
 
 
+        return 0;
+    }//Casa final do Jogador 1
+    else if (c.coluna == 7 && c.linha == 0 && jogador == 2) return 0; //Casa final do Jogador 2
+    else {
+
+        if (encurralado(estado) == 1) return 1;
+        else return 0;
+
+    }
+
+}
 int jogar(ESTADO *estado, COORDENADA c)
 {
     //Pode jogar

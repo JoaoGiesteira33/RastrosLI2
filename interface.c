@@ -9,8 +9,8 @@
 
 
 
- void mostrar_tabuleiro (ESTADO estado){
-    char c;
+ void mostrar_tabuleiro (ESTADO* estado){
+    char c=0;
     int j, i;
 
 
@@ -19,7 +19,7 @@
     {
         for (i = 0; i <= 7; i++)
         {   COORDENADA cord = {i,j};
-            switch (obter_estado_casa (&estado, cord))
+            switch (obter_estado_casa (estado, cord))
             {
                 case PRETA:
                     c = '#';
@@ -37,60 +37,83 @@
                     c = '1';
                     break;
             }
-           // fprintf(filepointer,"%c ",c);
+
             printf("%c ",c);
 
         }
-        //fprintf(filepointer,"\n");
+
         printf("\n");
 
     }
 
 
-    //fprintf(filepointer ,"\n PL%d Jogada%d\n", obter_jogador_atual(&estado), obter_numero_de_jogadas(&estado));
-    // falta a funcao que devolve a as coordenadas da ultima jogada do tipo CharINT (D4, F5)
-    printf("\n PL%d Jogada%d\n", obter_jogador_atual(&estado), obter_numero_de_jogadas(&estado));
-    //fclose(fich);
+
+    // falta a funcao que devolve a as coordenadas da ultima jogada do tipo CharINT (D4, F5) conversorultimajogada(obter_ultima_jogada(estado))
+    printf("\n PL%d Jogada%d\n Coordenada Anterior %c%d", obter_jogador_atual(estado), obter_numero_de_jogadas(estado),conversorultimajogadacoluna(obter_ultima_jogada(estado)),conversorultimajogadalinha(obter_ultima_jogada(estado)));
+
 }
 
-void gravar(ESTADO *e,FILE *ficheiro){
-    char c;
-    int i,j;
+ERROS gravar(ESTADO *e,char *ficheiro) {
+    FILE *fp;
+    fp = fopen(ficheiro, "w");
+
+    if (fp == NULL) {
+        return ERRO_ABRIR_FICHEIRO;
+    }
+    else{
 
 
-    for (j = 0; j <= 7; j++)
-    {
-        for (i = 0; i <= 7; i++)
-        {   COORDENADA cord = {i,j};
-            switch (obter_estado_casa (&e, cord))
-            {
-                case PRETA:
-                    c = '#';
-                    break;
-                case VAZIO:
-                    c = '.';
-                    break;
-                case BRANCA:
-                    c = '*';
-                    break;
-                case DOIS:
-                    c = '2';
-                    break;
-                case UM:
-                    c = '1';
-                    break;
+        char c ='.';
+        int i, j;
+
+
+        for (j = 0; j <= 7; j++) {
+            for (i = 0; i <= 7; i++) {
+                COORDENADA cord = {i, j};
+                switch (obter_estado_casa(e, cord)) {
+                    case PRETA:
+                        c = '#';
+                        break;
+                    case VAZIO:
+                        c = '.';
+                        break;
+                    case BRANCA:
+                        c = '*';
+                        break;
+                    case DOIS:
+                        c = '2';
+                        break;
+                    case UM:
+                        c = '1';
+                        break;
+                }
+                fprintf(fp, "%c ", c);
+
+
             }
-            fprintf(ficheiro,"%c ",c);
+            fprintf(fp, "\n");
 
 
         }
-        fprintf(ficheiro,"\n");
-
-
-
+        fprintf(fp,"\n PL%d Jogada%d\n Coordenada Anterior %c%d", obter_jogador_atual(e), obter_numero_de_jogadas(e),conversorultimajogadacoluna(obter_ultima_jogada(e)),conversorultimajogadalinha(obter_ultima_jogada(e)));
+        fclose(fp);
     }
-    fprintf(ficheiro ,"\n PL%d Jogada%d\n", obter_jogador_atual(&e), obter_numero_de_jogadas(&e));
-    fclose(ficheiro);
+    return OK;
+}
+
+ERROS ler (ESTADO* e,char*ficheiro ){
+    FILE*fp;
+    fp=fopen(ficheiro,"r");
+
+    if (fp==NULL)
+        return ERRO_ABRIR_FICHEIRO;
+    else {
+        //codigo para ler ficheiro
+    }
+
+
+    fclose(fp);
+    return OK;
 }
 
 int interpretador(ESTADO *e){
@@ -98,9 +121,7 @@ int interpretador(ESTADO *e){
     char linha[BUF_SIZE];
     char col[2], lin[2];
 
-
-    FILE *ficheiro  = fopen("fich.txt", "w");
-    gravar (e,ficheiro);
+    mostrar_tabuleiro (e);
     if ( fgets(linha, BUF_SIZE, stdin) == NULL)
         return 0;
 
@@ -108,8 +129,8 @@ int interpretador(ESTADO *e){
     {
         COORDENADA coord = {*col - 'a', *lin - '1'};
         jogar (e, coord);
-        gravar (e,ficheiro);
-        mostrar_tabuleiro (*e);
+        //gravar (e,ficheiro);
+        mostrar_tabuleiro (e);
     }
     return 1;
 }
