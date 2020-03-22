@@ -1,5 +1,5 @@
 /**
-@file camadadados.h
+@file logica.h
 Definição da lógica do programa
 */
 

@@ -6,14 +6,9 @@
 #include "camadadados.h"
 #define BUF_SIZE 1024
 
-/**
- @file interface.c
- Interpretador e funcões complementares a este.
- */
 
-/**
-\brief Funcao que inicializa o tabuleiro.
-*/
+
+
  void mostrar_tabuleiro (ESTADO estado){
     char c;
     int j, i;
@@ -97,9 +92,7 @@ void gravar(ESTADO *e,FILE *ficheiro){
     fprintf(ficheiro ,"\n PL%d Jogada%d\n", obter_jogador_atual(&e), obter_numero_de_jogadas(&e));
     fclose(ficheiro);
 }
-/**
-\brief Funcao que inicializa e permite jogar.
-*/
+
 int interpretador(ESTADO *e){
 
     char linha[BUF_SIZE];
