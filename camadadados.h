@@ -52,7 +52,6 @@ typedef JOGADA JOGADAS[32];
 /**
 \brief Tipo de dados para o estado
 */
-
 typedef struct {
     /** O tabuleiro */
     CASA tab[8][8];
@@ -75,19 +74,19 @@ ESTADO *inicializar_estado();
 
 /**
 \brief Retorna o jogador atual
-@param e Apontador para o estado
+@param estado Apontador para o estado
 */
 int obter_jogador_atual(ESTADO *estado);
 
 /**
 \brief Retorna o número de jogadas
-@param e Apontador para o estado
+@param estado Apontador para o estado
 */
 int obter_numero_de_jogadas(ESTADO *estado);
 
 /**
 \brief Obtém a ultima jogada efetuada
-@param e Apontador para o estado
+@param estado Apontador para o estado
 */
 COORDENADA obter_ultima_jogada (ESTADO *estado);
 

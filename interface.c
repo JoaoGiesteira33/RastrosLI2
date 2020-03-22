@@ -13,10 +13,9 @@
     char c=0;
     int j, i;
 
-
-
     for (j = 0; j <= 7; j++)
     {
+        printf("%d|",j+1);
         for (i = 0; i <= 7; i++)
         {   COORDENADA cord = {i,j};
             switch (obter_estado_casa (estado, cord))
@@ -41,19 +40,15 @@
             printf("%c ",c);
 
         }
-
         printf("\n");
-
     }
+     printf("  a b c d e f g h");
 
-
-
-    // falta a funcao que devolve a as coordenadas da ultima jogada do tipo CharINT (D4, F5) conversorultimajogada(obter_ultima_jogada(estado))
-    printf("\n PL%d Jogada%d\n Coordenada Anterior %c%d", obter_jogador_atual(estado), obter_numero_de_jogadas(estado),conversorultimajogadacoluna(obter_ultima_jogada(estado)),conversorultimajogadalinha(obter_ultima_jogada(estado)));
+    printf("\n PL%d Jogada %d\n Coordenada Atual %c%d\n", obter_jogador_atual(estado)+1, obter_numero_de_jogadas(estado),conversorultimajogadacoluna(obter_ultima_jogada(estado)),conversorultimajogadalinha(obter_ultima_jogada(estado)));
 
 }
 
-ERROS gravar(ESTADO *e,char *ficheiro) {
+ERROS gravar(ESTADO *e,char *ficheiro){
     FILE *fp;
     fp = fopen(ficheiro, "w");
 
@@ -103,13 +98,15 @@ ERROS gravar(ESTADO *e,char *ficheiro) {
 
 ERROS ler (ESTADO* e,char*ficheiro ){
     FILE*fp;
-    fp=fopen(ficheiro,"r");
+    fp=fopen(strcat(ficheiro,".txt"),"r");
+
+    char cha;
 
     if (fp==NULL)
         return ERRO_ABRIR_FICHEIRO;
-    else {
-        //codigo para ler ficheiro
-    }
+
+    while((cha = fgetc(fp)) != EOF)
+        putchar(cha);
 
 
     fclose(fp);
@@ -120,17 +117,34 @@ int interpretador(ESTADO *e){
 
     char linha[BUF_SIZE];
     char col[2], lin[2];
+    char file[BUF_SIZE];
 
-    mostrar_tabuleiro (e);
-    if ( fgets(linha, BUF_SIZE, stdin) == NULL)
-        return 0;
+    while(1){
+        if (fgets(linha, BUF_SIZE, stdin) == NULL)
+            return 0;
 
-    if ( strlen (linha) == 3 && sscanf (linha, "%[a-h]%[1-8]", col, lin) == 2)
-    {
-        COORDENADA coord = {*col - 'a', *lin - '1'};
-        jogar (e, coord);
-        //gravar (e,ficheiro);
-        mostrar_tabuleiro (e);
+        if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
+            COORDENADA coord = {*col - 'a', *lin - '1'};
+            jogar(e, coord);
+            mostrar_tabuleiro(e);
+        }
+
+        if (sscanf(linha, "ler %s", file) == 1) {
+            ler(e, file);
+            printf("\nFicheiro lido com sucesso!\n");
+        }
+
+        if (sscanf(linha, "gr %s", file) == 1) {
+            gravar(e, strcat(file, ".txt"));
+            printf("Ficheiro gravado com sucesso!\n");
+        }
+
+        if(strcmp(linha,"Q\n") == 0)
+        {
+            printf("Até à próxima!");
+            exit(0);
+        }
+
     }
     return 1;
 }

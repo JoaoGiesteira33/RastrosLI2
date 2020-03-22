@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mostrar_5ftabuleiro',['mostrar_tabuleiro',['../interface_8h.html#a85f7f36b715982954cde07c637d038ee',1,'interface.c']]]
+  ['jogada_5ffinal',['jogada_final',['../logica_8h.html#a165432d213e6e5b7a384c0b366604364',1,'logica.c']]],
+  ['jogar',['jogar',['../logica_8h.html#a53472e75f056ceb02b5387193021838a',1,'logica.c']]]
 ];
