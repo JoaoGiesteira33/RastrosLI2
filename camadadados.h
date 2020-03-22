@@ -17,6 +17,18 @@ typedef enum {
 } CASA;
 
 /**
+\brief Tipo de dados para os erros
+*/
+typedef enum {
+    OK,
+    COORDENADA_INVALIDA,
+    JOGADA_INVALIDA,
+    ERRO_LER_TAB,
+    ERRO_ABRIR_FICHEIRO,
+} ERROS;
+
+
+/**
 \brief Tipo de dados para as coordenadas
 */
 typedef struct {
@@ -77,13 +89,18 @@ int obter_numero_de_jogadas(ESTADO *estado);
 \brief Obtém a ultima jogada efetuada
 @param e Apontador para o estado
 */
-COORDENADA *obter_ultima_jogada (ESTADO *estado);
+COORDENADA obter_ultima_jogada (ESTADO *estado);
 
 /**
-\brief Converte a ultima jogada
-@param c Apontador paraa coordenada
+\brief Função auxiliar do prompt
+@param c A Coordenada
 */
-char *conversorultimajogada (COORDENADA *c);
+int conversorultimajogadalinha (COORDENADA c);
+/**
+\brief Converte a ultima jogada coluna
+@param c A coordenada
+*/
+char conversorultimajogadacoluna (COORDENADA c);
 
 
 /**

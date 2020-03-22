@@ -46,43 +46,52 @@ int obter_numero_de_jogadas(ESTADO *estado)
 }
 
 
-COORDENADA *obter_ultima_jogada (ESTADO *estado) {
+COORDENADA obter_ultima_jogada (ESTADO *estado) {
 
-    COORDENADA *ultimajogadafinal;
-    ultimajogadafinal -> linha = estado -> ultima_jogada.linha;
-    ultimajogadafinal -> coluna = estado -> ultima_jogada.coluna;
+    COORDENADA ultimajogadafinal;
+    ultimajogadafinal.linha = estado -> ultima_jogada.linha;
+    ultimajogadafinal.coluna = estado -> ultima_jogada.coluna;
     return ultimajogadafinal;
 
 }
+int conversorultimajogadalinha (COORDENADA c){
+    int linha;
+    linha = c.linha +1;
+    return linha;
+}
 
+char conversorultimajogadacoluna (COORDENADA c) {
+    //char *s1 = (char*) malloc(2*sizeof(char));
 
-char *conversorultimajogada (COORDENADA *c) {
+    char s1 = '0';
+   // s1[1]=(char)((c -> linha)+1);
+    //char *coord;
+   // coord = (char) malloc(2sizeof(char));
 
-    char s1[2] = {0,((c -> linha)+1)};
-    switch (c -> coluna) {
+    switch (c.coluna) {
         case 0:
-            s1 [0] = 'A';
+            s1 = 'A';
             break;
         case 1:
-            s1 [0] = 'B';
+            s1 = 'B';
             break;
         case 2:
-            s1 [0] = 'C';
+            s1  = 'C';
             break;
         case 3:
-            s1 [0] = 'D';
+            s1  = 'D';
             break;
         case 4:
-            s1 [0] = 'E';
+            s1 = 'E';
             break;
         case 5:
-            s1 [0] = 'F';
+            s1 = 'F';
             break;
         case 6:
-            s1 [0] = 'G';
+            s1 = 'G';
             break;
         case 7:
-            s1 [0] = 'H';
+            s1 = 'H';
             break;
 
     }

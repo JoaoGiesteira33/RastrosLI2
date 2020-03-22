@@ -18,5 +18,5 @@ int interpretador(ESTADO *e);
 \brief Função que mostra o tabuleiro
 @param estado O estado
 */
-void mostrar_tabuleiro(ESTADO estado);
+void mostrar_tabuleiro(ESTADO *estado);
 #endif //RASTROSLI2_INTERFACE_H
