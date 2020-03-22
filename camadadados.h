@@ -85,6 +85,13 @@ COORDENADA *obter_ultima_jogada (ESTADO *estado);
 */
 char *conversorultimajogada (COORDENADA *c);
 
+/**
+\brief Muda o valor de uma casa
+@param e Apontador para o estado
+@param c A coordenada
+@param V O novo valor para a casa
+*/
+void set_casa(ESTADO *e, COORDENADA c, CASA V);
 
 /**
 \brief Obtém o estado da casa

@@ -111,3 +111,8 @@ CASA obter_estado_casa(ESTADO *e, COORDENADA c)
     casa = e-> tab[c.coluna][c.linha];
     return casa;
 }
+
+void set_casa(ESTADO *e, COORDENADA c, CASA V)
+{
+    e->tab[c.linha][c.coluna] = V;
+}

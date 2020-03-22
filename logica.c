@@ -1,5 +1,6 @@
 #include "camadadados.h"
 #include "logica.h"
+#include "interface.h"
 #include <stdio.h>
 #include <math.h>
 /**
@@ -146,7 +147,7 @@ int jogar(ESTADO *estado, COORDENADA c)
         else if  (encurralado(estado)&&(jogador == 2)) printf("Parabens, o vencedor é o Jogador 1");
         else  printf("A jogada nao é válida, tente novamente");
     }
-
+    gravar (estado);
         return 0;
 
 }
