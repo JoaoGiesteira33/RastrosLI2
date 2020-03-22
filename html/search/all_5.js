@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logica_2ec',['logica.c',['../logica_8c.html',1,'']]]
+  ['mostrar_5ftabuleiro',['mostrar_tabuleiro',['../interface_8h.html#a85f7f36b715982954cde07c637d038ee',1,'interface.c']]]
 ];

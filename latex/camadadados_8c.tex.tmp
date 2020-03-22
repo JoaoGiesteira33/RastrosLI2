@@ -1,12 +1,12 @@
-\hypertarget{camadadados_8c}{}\section{camadadados.\+c File Reference}
+\hypertarget{camadadados_8c}{}\section{Referência ao ficheiro camadadados.\+c}
 \label{camadadados_8c}\index{camadadados.\+c@{camadadados.\+c}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}camadadados.\+h\char`\"{}}\newline
-Include dependency graph for camadadados.\+c\+:
+Diagrama de dependências de inclusão para camadadados.\+c\+:
 % FIG 0
-\subsection*{Functions}
+\subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$ \hyperlink{camadadados_8c_a7e0c7e26fb685d9ab501e19b05e6954f}{inicializar\+\_\+estado} ()
@@ -23,10 +23,10 @@ char $\ast$ \hyperlink{camadadados_8c_a4ef8b7cec375b29fbe60db02cc37ef55}{convers
 \begin{DoxyCompactList}\small\item\em Função que devolve o estado da casa da respetiva coordenada. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsection{Descrição detalhada}
 Função estado e funções auxiliares a esta. 
 
-\subsection{Function Documentation}
+\subsection{Documentação das funções}
 \mbox{\Hypertarget{camadadados_8c_a4ef8b7cec375b29fbe60db02cc37ef55}\label{camadadados_8c_a4ef8b7cec375b29fbe60db02cc37ef55}} 
 \index{camadadados.\+c@{camadadados.\+c}!conversorultimajogada@{conversorultimajogada}}
 \index{conversorultimajogada@{conversorultimajogada}!camadadados.\+c@{camadadados.\+c}}
@@ -38,7 +38,7 @@ Função estado e funções auxiliares a esta.
 Converte a ultima jogada. 
 
 
-\begin{DoxyParams}{Parameters}
+\begin{DoxyParams}{Parâmetros}
 {\em c} & Apontador paraa coordenada \\
 \hline
 \end{DoxyParams}

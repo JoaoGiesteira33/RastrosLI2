@@ -3,15 +3,7 @@
 #include "interface.h"
 #include <stdio.h>
 #include <math.h>
-/**
- @file logica.c
- Funcão Jogar e funcões complementares a esta.
- */
 
-
-/**
-\brief Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa.
- */
 int verifica_movimentos (ESTADO *estado, COORDENADA c)
 {
    int c1, c2, linha1, linha2;
@@ -26,9 +18,7 @@ int verifica_movimentos (ESTADO *estado, COORDENADA c)
         return 0;
 }
 
-/**
-\brief Funcão que verifica se a casa para onde o jogador pretende jogar é válida, neste caso Vazia.
-*/
+
 int verifica_vazio(ESTADO *estado, COORDENADA c) {
     int c2, l2;
 
@@ -40,9 +30,7 @@ int verifica_vazio(ESTADO *estado, COORDENADA c) {
         return 0;
 }
 
-/**
-\brief Função que altera o estado da casa e alterna a vez de jogar.
-*/
+
 int funcao_jogada (ESTADO *estado, COORDENADA c) {
 
     //Pode jogar
@@ -63,9 +51,7 @@ int funcao_jogada (ESTADO *estado, COORDENADA c) {
     return 1;
 
 }
-/**
-\brief Função para determinar se as casas em volta da casa atual se encontram todas no estado Preta.
-*/
+
 int encurralado (ESTADO *estado) {
        //coordenada da peça branca atual
        int ujc = estado -> ultima_jogada.coluna;
@@ -111,9 +97,7 @@ int encurralado (ESTADO *estado) {
 
 
 
-/**
-\brief Função para determinar o final do Jogo e consequente mensagem de congratulação.
-*/
+
 int jogada_final (ESTADO *estado, COORDENADA c) {
    int jogador = obter_jogador_atual(estado);
    if (c.coluna == 0 && c.linha == 7 && jogador == 1) return 0;//Casa final do Jogador 1
@@ -122,9 +106,7 @@ int jogada_final (ESTADO *estado, COORDENADA c) {
 
         }
 
-/**
-\brief Função principal que efetua a jogada.
-*/
+
 int jogar(ESTADO *estado, COORDENADA c)
 {
     //Pode jogar

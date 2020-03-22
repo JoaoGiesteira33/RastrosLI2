@@ -1,6 +1,6 @@
 /**
 @file interface.h
-Definição da interface do jogo
+Interpretador e funcões complementares a este.
 */
 
 

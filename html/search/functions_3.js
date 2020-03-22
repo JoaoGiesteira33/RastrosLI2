@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['inicializar_5festado',['inicializar_estado',['../camadadados_8c.html#a7e0c7e26fb685d9ab501e19b05e6954f',1,'inicializar_estado():&#160;camadadados.c'],['../camadadados_8h.html#a7e0c7e26fb685d9ab501e19b05e6954f',1,'inicializar_estado():&#160;camadadados.c']]],
-  ['interpretador',['interpretador',['../interface_8c.html#a24da95ebeede4a540e37790ce8be359b',1,'interpretador(ESTADO *e):&#160;interface.c'],['../interface_8h.html#a24da95ebeede4a540e37790ce8be359b',1,'interpretador(ESTADO *e):&#160;interface.c']]]
+  ['jogada_5ffinal',['jogada_final',['../logica_8h.html#a165432d213e6e5b7a384c0b366604364',1,'logica.c']]],
+  ['jogar',['jogar',['../logica_8h.html#a53472e75f056ceb02b5387193021838a',1,'logica.c']]]
 ];

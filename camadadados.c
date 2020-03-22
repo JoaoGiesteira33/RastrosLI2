@@ -3,14 +3,7 @@
 #include <string.h>
 #include "camadadados.h"
 
-/**
- @file camadadados.c
- Função estado e funções auxiliares a esta.
- */
 
-/**
-\brief Função que inicializa o estado inicial.
- */
 ESTADO *inicializar_estado()
 {
     ESTADO *e = (ESTADO *)malloc(sizeof(ESTADO));
@@ -34,9 +27,7 @@ ESTADO *inicializar_estado()
     return e;
 }
 
-/**
-\brief Função que devolve o jogador atual.
- */
+
 int obter_jogador_atual(ESTADO *estado)
 {
     int jog;
@@ -45,9 +36,7 @@ int obter_jogador_atual(ESTADO *estado)
 }
 
 
-/**
-\brief Função que devolve o numero de Jogadas.
- */
+
 int obter_numero_de_jogadas(ESTADO *estado)
 {
     int numJogadas;
@@ -56,9 +45,7 @@ int obter_numero_de_jogadas(ESTADO *estado)
     return numJogadas;
 }
 
-/**
-\brief Função que devolve a ultima jogada efetuada.
-*/
+
 COORDENADA *obter_ultima_jogada (ESTADO *estado) {
 
     COORDENADA *ultimajogadafinal;
@@ -102,9 +89,7 @@ char *conversorultimajogada (COORDENADA *c) {
     return s1;
 }
 
-/**
-\brief Função que devolve o estado da casa da respetiva coordenada.
- */
+
 CASA obter_estado_casa(ESTADO *e, COORDENADA c)
 {
     CASA casa;

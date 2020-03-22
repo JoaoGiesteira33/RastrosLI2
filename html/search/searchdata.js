@@ -1,9 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "cefijlmnortuv",
+  0: "ceijlmnortuv",
   1: "cej",
   2: "cil",
-  3: "cefijmov",
+  3: "ceijmov",
   4: "jntu",
   5: "j",
   6: "c",
@@ -24,13 +24,13 @@ var indexSectionNames =
 
 var indexSectionLabels =
 {
-  0: "All",
+  0: "Tudo",
   1: "Classes",
-  2: "Files",
-  3: "Functions",
-  4: "Variables",
-  5: "Typedefs",
-  6: "Enumerations",
-  7: "Pages"
+  2: "Ficheiros",
+  3: "Funções",
+  4: "Variáveis",
+  5: "Definições de tipos",
+  6: "Enumerações",
+  7: "Páginas"
 };
 
