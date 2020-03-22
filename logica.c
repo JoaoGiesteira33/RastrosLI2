@@ -94,43 +94,43 @@ int encurralado (ESTADO *estado) {
        diagECima.linha = ujl + 1;
 
        if ((obter_estado_casa(estado,cima)) == PRETA && (obter_estado_casa(estado,baixo)) == PRETA && (obter_estado_casa(estado,direita)) == PRETA && (obter_estado_casa(estado,esquerda)) == PRETA
-       && (obter_estado_casa(estado,diagDBaixo)) == PRETA && (obter_estado_casa(estado,diagEBaixo)) == PRETA && (obter_estado_casa(estado,diagDCima)) == PRETA && (obter_estado_casa(estado,diagECima)) == PRETA ) return 0;
-       else return 1;
+       && (obter_estado_casa(estado,diagDBaixo)) == PRETA && (obter_estado_casa(estado,diagEBaixo)) == PRETA && (obter_estado_casa(estado,diagDCima)) == PRETA && (obter_estado_casa(estado,diagECima)) == PRETA ) return 1;
+       else return 0;
 }
 
 int jogada_final (ESTADO *estado, COORDENADA c) {
     int jogador = obter_jogador_atual(estado);
-    if (c.coluna == 0 && c.linha == 7 && jogador == 1) {
-
-
-        return 0;
+    if (c.coluna == 0 && c.linha == 7) {
+        return 1;
     }//Casa final do Jogador 1
-    else if (c.coluna == 7 && c.linha == 0 && jogador == 2) return 0; //Casa final do Jogador 2
-    else {
-
-        if (encurralado(estado) == 1) return 1;
-        else return 0;
-
+    else if (c.coluna == 7 && c.linha == 0)
+        return 1; //Casa final do Jogador 2
+    else{
+        if (encurralado(estado) == 1)
+            return 1;
+        else
+            return 0;
     }
 
 }
 int jogar(ESTADO *estado, COORDENADA c)
 {
     //Pode jogar
-    if (verifica_movimentos(estado, c) && verifica_vazio(estado,c) && jogada_final(estado, c)) {
+    if (verifica_movimentos(estado, c) && verifica_vazio(estado,c) && !(jogada_final(estado, c))) {
         funcao_jogada (estado,c);
     }
     else  // Casos para congratular o jogador
     {
         int jogador = obter_jogador_atual(estado);
 
-        if (c.coluna == 0 && c.linha == 7 && jogador == 1)
+        if (c.coluna == 0 && c.linha == 7)
             printf("Parabens, o vencedor é o Jogador 1\n"); //no caso de chegar a casa final do Jogador 1
-        else if (c.coluna == 7 && c.linha == 0 && jogador == 2)
+        else if (c.coluna == 7 && c.linha == 0)
             printf("Parabens, o vencedor é o Jogador 2\n"); //no caso de chegar a casa final do Jogador 2
-        else if  (encurralado(estado)&&(jogador == 1))
+        else if  (encurralado(estado)&&(jogador == 0))
             printf("Parabens, o vencedor é o Jogador 2\n"); //nos casos de os Jogadores se encontrarem rodeados, ou sejam, sem possiblidades de jogarem
-        else if  (encurralado(estado)&&(jogador == 2)) printf("Parabens, o vencedor é o Jogador 1\n");
+        else if  (encurralado(estado)&&(jogador == 1))
+            printf("Parabens, o vencedor é o Jogador 1\n");
         else  printf("A jogada nao é válida, tente novamente\n");
     }
         return 0;
