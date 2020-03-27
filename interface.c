@@ -15,7 +15,7 @@
 
     for (j = 0; j <= 7; j++)
     {
-        printf("%d|",j+1);
+        printf("%d|",8-j);
         for (i = 0; i <= 7; i++)
         {   COORDENADA cord = {i,j};
             switch (obter_estado_casa (estado, cord))
@@ -119,14 +119,15 @@ int interpretador(ESTADO *e){
     char col[2], lin[2];
     char file[BUF_SIZE];
 
-    while(1){
+    while(e->vencedor==0 ){
         if (fgets(linha, BUF_SIZE, stdin) == NULL)
             return 0;
 
         if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
-            COORDENADA coord = {*col - 'a', *lin - '1'};
+            COORDENADA coord = {*col - 'a', '8'-*lin };
             jogar(e, coord);
             mostrar_tabuleiro(e);
+            movimentos(e);
         }
 
         if (sscanf(linha, "ler %s", file) == 1) {
@@ -142,10 +143,15 @@ int interpretador(ESTADO *e){
         if(strcmp(linha,"Q\n") == 0)
         {
             printf("Até à próxima!");
-            exit(0);
-        }
+            exit(0);}
+
+        //if (sscanf(linha, "movs\n", file) == 0){
+           // movimentos(e,e->num_jogadas);
+           // printf("");
+
 
     }
+    printf("O jogo acabou e o vencedor é o Jogador %d",e->vencedor);
     return 1;
 }
 

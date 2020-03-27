@@ -23,6 +23,7 @@ int verifica_vazio(ESTADO *estado, COORDENADA c);
 @param estado Apontador para o estado
 @param c A coordenada
 */
+int movimentos(ESTADO*e);
 int jogar(ESTADO *estado, COORDENADA c);
 /**
 \brief Função que verifica se o jogador não tem mais nenhuma jogada válida

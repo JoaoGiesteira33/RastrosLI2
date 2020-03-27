@@ -11,6 +11,9 @@ ESTADO *inicializar_estado()
     e->num_jogadas = 0;
     e->ultima_jogada.linha = 3;
     e->ultima_jogada.coluna = 4;
+    //int *a;
+    //a = (int*)calloc(32, sizeof(JOGADA));
+    e-> vencedor = 0;
      for (int i =0;i<8;i++){
          for (int j =0;j<8;j++){
              if (i == 7 && j == 0)
@@ -56,7 +59,7 @@ COORDENADA obter_ultima_jogada (ESTADO *estado) {
 }
 int conversorultimajogadalinha (COORDENADA c){
     int linha;
-    linha = c.linha +1;
+    linha =  8 -c.linha ;
     return linha;
 }
 
@@ -108,5 +111,5 @@ CASA obter_estado_casa(ESTADO *e, COORDENADA c)
 
 void set_casa(ESTADO *e, COORDENADA c, CASA V)
 {
-    e->tab[c.linha][c.coluna] = V;
+    e->tab[c.coluna][c.linha] = V;
 }
