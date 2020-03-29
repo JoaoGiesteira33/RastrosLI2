@@ -13,6 +13,12 @@ COORDENADA str_to_coord(char *coord)
     coordenada.linha = coord[1] - 1;
 }
 
+void armazenar_jogada(ESTADO *e,JOGADA jog, int n)
+{
+    e->jogadas[n] = jog;
+    e->num_jogadas = e->num_jogadas + 1;
+}
+
 int movimentos(ESTADO*e) {
     for(int g = 0; e->jogadas[g].jogador1.coluna != -1; g++)
     {
@@ -20,9 +26,9 @@ int movimentos(ESTADO*e) {
         COORDENADA coord2 = e->jogadas[g].jogador2;
 
         if(e->jogadas[g].jogador2.coluna != -1)
-            printf("%d: %c%d %c%d\n", g ,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
+            printf("0%d: %c%d %c%d\n", g+1 ,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
         else
-            printf("%d: %c%d\n",g,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
+            printf("0%d: %c%d\n",g+1,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
     }
 }
 
@@ -114,44 +120,43 @@ ERROS gravar(ESTADO *e,char *ficheiro){
             coord2 = e->jogadas[g].jogador2;
 
             if(e->jogadas[g].jogador2.coluna != -1)
-                fprintf(fp,"%d: %c%d %c%d\n", g ,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
+                fprintf(fp,"0%d: %c%d %c%d\n", g ,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
             else
-                fprintf(fp,"%d: %c%d\n",g,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
+                fprintf(fp,"0%d: %c%d\n",g,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
         }
         fclose(fp);
     }
     return OK;
 }
 
-ERROS ler (ESTADO* e,char*ficheiro){
-    FILE*fp;
-    fp=fopen(strcat(ficheiro,".txt"),"r");
+ERROS ler (ESTADO* e,char*ficheiro) {
+    FILE *fp;
+    fp = fopen(strcat(ficheiro, ".txt"), "r");
 
     char cha;
 
-    if (fp==NULL)
+    if (fp == NULL)
         return ERRO_ABRIR_FICHEIRO;
 
     COORDENADA coord;
 
-    for(int c = 0 ; c < 8 ;c++){
-        for(int l = 0 ; l < 8 ; l++) {
+    for (int c = 0; c < 8; c++) {
+        for (int l = 0; l < 8; l++) {
             coord.linha = c;
             coord.coluna = l;
-            fscanf(fp,"%c", &cha);
+            fscanf(fp, "%c", &cha);
             set_casa(e, coord, cha);
-            fscanf(fp,"%c",&cha);
+            fscanf(fp, "%c", &cha);
         }
-        fscanf(fp,"%c",&cha);
+        fscanf(fp, "%c", &cha);
     }
 
-    fclose(fp);
-    mostrar_tabuleiro(e);
+    fseek(fp, 0, SEEK_CUR);
 
-    return OK;
-
-    /*char linha[BUF_SIZE];
-    while (fgets(buffer, BUF_SIZE, f) != NULL) {
+    char linha[BUF_SIZE];
+    int indice = 0;
+    e->num_jogadas = 0;
+    while (fgets(linha, BUF_SIZE, fp) != NULL) {
         int num_jog;
         char jog1[BUF_SIZE];
         char jog2[BUF_SIZE];
@@ -159,13 +164,27 @@ ERROS ler (ESTADO* e,char*ficheiro){
         if (num_tokens == 3) {
             COORDENADA c1 = str_to_coord(jog1);
             COORDENADA c2 = str_to_coord(jog2);
-            armazenar_jogada(e, (JOGADA) {c1, c2});
-        } else {
+            armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
+            e->ultima_jogada.coluna = c2.coluna;
+            e->ultima_jogada.linha = c2.linha;
+            e->jogador_atual = 0;
+        }else{
             COORDENADA c1 = str_to_coord(jog1);
             COORDENADA c2 = {-1, -1};
-            armazenar_jogada(e, (JOGADA) {c1, c2});
-        }*/
+            armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
+            e->ultima_jogada.coluna = c1.coluna;
+            e->ultima_jogada.linha = c1.linha;
+            e->jogador_atual = 1;
+        }
+        indice++;
+    }
+
+        fclose(fp);
+        mostrar_tabuleiro(e);
+
+        return OK;
 }
+
 
 int interpretador(ESTADO *e){
 

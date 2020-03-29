@@ -14,6 +14,13 @@ Interpretador e funcões complementares a este.
 */
 COORDENADA str_to_coord(char *coord);
 /**
+\brief Funcao que armaneza jogadas
+@param e Apontador para o estado
+@param jog Jogada a ser guardada
+@param n Número da jogada
+*/
+void armazenar_jogada(ESTADO *e,JOGADA jog, int n);
+/**
 \brief Funcao que imprime as jogadas no ecrã.
 @param e Apontador para oo ficheiro
 */
