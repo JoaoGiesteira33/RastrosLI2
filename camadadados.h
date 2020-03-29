@@ -64,8 +64,9 @@ typedef struct {
     /** O nº de comando, usado no prompt */
     int num_comando;
     /** A coordenada da última jogada */
-    int vencedor;
     COORDENADA ultima_jogada;
+    /** Vencedor atual(0 enquanto nenhum é) */
+    int vencedor;
 } ESTADO;
 
 /**

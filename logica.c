@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#define BUF_SIZE 1024
 
 int verifica_movimentos (ESTADO *estado, COORDENADA c)
 {
@@ -33,21 +34,24 @@ int verifica_vazio(ESTADO *estado, COORDENADA c) {
 
 
 int funcao_jogada (ESTADO *estado, COORDENADA c) {
-JOGADA jogada;
+    COORDENADA jogada;
+
     //Pode jogar
     estado -> tab[c.coluna][c.linha] = BRANCA;
-    if(obter_jogador_atual(estado) == 1)
+    if(obter_jogador_atual(estado) == 0)
         estado -> num_jogadas += 1;
     //Atualiza o array de jogadas
-    int n = obter_numero_de_jogadas(estado);
+    int n = obter_numero_de_jogadas(estado)-1;
 
-    if(obter_jogador_atual(estado) == 1)
-
-        jogada.jogador1 = c;
-    else {
-        jogada.jogador2= c;
+    if(obter_jogador_atual(estado) == 0) {
+        jogada = c;
+        estado->jogadas[n].jogador1 = jogada;
     }
-    estado->jogadas[n] = jogada;
+    else{
+        jogada = c;
+        estado->jogadas[n].jogador2 = jogada;
+    }
+
     //Atualiza a peça de onde sai
     int x = estado ->ultima_jogada.linha;
     int y = estado-> ultima_jogada.coluna;
@@ -120,33 +124,8 @@ int jogada_final (ESTADO *estado, COORDENADA c) {
         else
             return 0;
     }
-
 }
 
-int movimentos(ESTADO*e){
-    int j=1;
-    int nJogadas = obter_numero_de_jogadas(e);
-    while(j<=nJogadas){
-        printf("0%d: \n",j);
-        JOGADA jog= e->jogadas[j-1];
-        COORDENADA cordjog1 = jog.jogador1;
-        COORDENADA cordjog2 = jog.jogador2;
-        char c1= conversorultimajogadacoluna (cordjog1);
-        int l1=conversorultimajogadalinha (cordjog1);
-
-        printf("%c%d",c1,l1);
-            char c2= conversorultimajogadacoluna (cordjog2);
-            int l2=conversorultimajogadalinha (cordjog2);
-            printf("%c%d",c2,l2);
-
-
-        printf("\n");
-        nJogadas--;
-        j++;
-
-
-    }
-}
 int jogar(ESTADO *estado, COORDENADA c)
 {
     //Pode jogar

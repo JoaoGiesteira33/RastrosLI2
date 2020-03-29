@@ -9,6 +9,16 @@ Interpretador e funcões complementares a este.
 
 #include "camadadados.h"
 /**
+\brief Funcao que traduz de string para COORDENADA
+@param coord Apontador para uma coordenada
+*/
+COORDENADA str_to_coord(char *coord);
+/**
+\brief Funcao que imprime as jogadas no ecrã.
+@param e Apontador para oo ficheiro
+*/
+int movimentos(ESTADO*e);
+/**
 \brief Funcao que inicializa o tabuleiro.
 @param file Apontador para um ficheiro
 */
