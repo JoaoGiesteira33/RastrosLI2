@@ -114,15 +114,21 @@ ERROS gravar(ESTADO *e,char *ficheiro){
         }
         //fprintf(fp,"\n PL%d Jogada%d\n Coordenada Anterior %c%d\n", obter_jogador_atual(e), obter_numero_de_jogadas(e),conversorultimajogadacoluna(obter_ultima_jogada(e)),conversorultimajogadalinha(obter_ultima_jogada(e)));
         fprintf(fp,"\n");
-        for(int g = 0; e->jogadas[g].jogador1.coluna != -1; g++)
-        {
+        int l = 1;
+        for (int g = 0; e->jogadas[g].jogador1.coluna != -1; g++) {
             coord1 = e->jogadas[g].jogador1;
             coord2 = e->jogadas[g].jogador2;
 
-            if(e->jogadas[g].jogador2.coluna != -1)
-                fprintf(fp,"0%d: %c%d %c%d\n", g ,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
-            else
-                fprintf(fp,"0%d: %c%d\n",g,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
+            if (e->jogadas[g].jogador2.coluna != -1) {
+                fprintf(fp, "0%d: %c%d %c%d\n", l, conversorultimajogadacoluna(coord1),
+                        conversorultimajogadalinha(coord1), conversorultimajogadacoluna(coord2),
+                        conversorultimajogadalinha(coord2));
+                l++;
+        }
+            else {
+                fprintf(fp, "0%d: %c%d\n", l, conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
+                l++;
+            }
         }
         fclose(fp);
     }
@@ -155,7 +161,7 @@ ERROS ler (ESTADO* e,char*ficheiro) {
 
     char linha[BUF_SIZE];
     int indice = 0;
-    e->num_jogadas = 0;
+    e-> num_jogadas = 0;
     while (fgets(linha, BUF_SIZE, fp) != NULL) {
         int num_jog;
         char jog1[BUF_SIZE];
@@ -181,12 +187,11 @@ ERROS ler (ESTADO* e,char*ficheiro) {
 
         fclose(fp);
         mostrar_tabuleiro(e);
-
         return OK;
 }
 
 
-int interpretador(ESTADO *e){
+int interpretador (ESTADO *e){
 
     char linha[BUF_SIZE];
     char col[2], lin[2];
@@ -203,13 +208,17 @@ int interpretador(ESTADO *e){
         }
 
         if (sscanf(linha, "ler %s", file) == 1) {
-            ler(e, file);
-            printf("\nFicheiro lido com sucesso!\n");
+            if (ler(e, file) == OK) {
+                printf("\nFicheiro lido com sucesso!\n");
+            }
+            else (printf("\nErro ao ler o ficheiro!\n"));
         }
 
         if (sscanf(linha, "gr %s", file) == 1) {
-            gravar(e, strcat(file, ".txt"));
-            printf("Ficheiro gravado com sucesso!\n");
+            if ((gravar (e, strcat(file, ".txt"))) == OK) {
+                printf("Ficheiro gravado com sucesso!\n");
+            }
+            else (printf("\nErro ao gravar o ficheiro!\n"));
         }
 
         if (strcmp(linha, "Q\n") == 0) {
@@ -219,7 +228,6 @@ int interpretador(ESTADO *e){
 
         if (strcmp(linha, "movs\n") == 0) {
             movimentos(e);
-            // printf("");
         }
     }
     printf("O jogo acabou e o vencedor é o Jogador %d",e->vencedor);

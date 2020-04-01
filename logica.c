@@ -13,11 +13,10 @@ int verifica_movimentos (ESTADO *estado, COORDENADA c)
     linha1 = estado->ultima_jogada.linha;
     c2 =  c.coluna;
     linha2 = c.linha;
-    if ((abs(c1-c2)== 1) || (abs(linha1-linha2)== 1)){
+    if (((abs(c1-c2)== 1) && (abs(linha1-linha2))== 0) || ((abs(c1-c2)== 0) && (abs(linha1-linha2))== 1) || ((abs(c1-c2)== 1) && (abs(linha1-linha2))== 1)) {
         return 1;
     }
-    else
-        return 0;
+    else return 0;
 }
 
 
