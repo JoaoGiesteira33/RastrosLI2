@@ -69,7 +69,7 @@ int movimentos(ESTADO*e) {
 
     printf("\n PL%d Jogada %d\n Coordenada Atual %c%d\n", obter_jogador_atual(estado)+1, obter_numero_de_jogadas(estado),conversorultimajogadacoluna(obter_ultima_jogada(estado)),conversorultimajogadalinha(obter_ultima_jogada(estado)));
 }
-
+// funcao a dar erro linha 4 nao aparece ao ler 
 ERROS gravar(ESTADO *e,char *ficheiro){
     FILE *fp;
     fp = fopen(ficheiro, "w");
@@ -139,23 +139,22 @@ ERROS ler (ESTADO* e,char*ficheiro) {
     FILE *fp;
     fp = fopen(strcat(ficheiro, ".txt"), "r");
 
-    char cha;
 
-    if (fp == NULL)
+    if (fp == NULL) {
+        printf("Erro ao abrir o ficheiro");
         return ERRO_ABRIR_FICHEIRO;
+    }
 
     COORDENADA coord;
-
-    for (int c = 0; c < 8; c++) {
-        for (int l = 0; l < 8; l++) {
-            coord.linha = c;
-            coord.coluna = l;
-            fscanf(fp, "%c", &cha);
-            set_casa(e, coord, cha);
-            fscanf(fp, "%c", &cha);
+    char buffer[BUF_SIZE];
+    int l = 0;
+    while ( fgets (buffer, BUF_SIZE, fp) != NULL ) {
+        for (int c = 0; c < 8; c++) {
+            set_casa (e, (COORDENADA) {l, c}, buffer[c]);
+            l++;
         }
-        fscanf(fp, "%c", &cha);
     }
+
 
     fseek(fp, 0, SEEK_CUR);
 
