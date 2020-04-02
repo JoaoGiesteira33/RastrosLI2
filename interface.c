@@ -9,31 +9,30 @@
 COORDENADA str_to_coord(char *coord)
 {
     COORDENADA coordenada;
-    coordenada.coluna = coord[0] - 'a';
-    coordenada.linha = coord[1] - 1;
+    coordenada.coluna = coord[0] - 'A';
+    coordenada.linha = '8' - coord[1];
 }
 
 void armazenar_jogada(ESTADO *e,JOGADA jog, int n)
 {
     e->jogadas[n] = jog;
-    e->num_jogadas = e->num_jogadas + 1;
 }
 
 int movimentos(ESTADO*e) {
-    for(int g = 0; e->jogadas[g].jogador1.coluna != -1; g++)
+    for (int g = 0; e->jogadas[g].jogador1.coluna != -1; g++)
     {
         COORDENADA coord1 = e->jogadas[g].jogador1;
         COORDENADA coord2 = e->jogadas[g].jogador2;
 
-        if(e->jogadas[g].jogador2.coluna != -1)
-            printf("0%d: %c%d %c%d\n", g+1 ,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
+        if (e->jogadas[g].jogador2.coluna != -1)
+            printf("%02d: %c%d %c%d\n", g+1 ,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
         else
-            printf("0%d: %c%d\n",g+1,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
+            printf("%02d: %c%d\n",g+1,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
     }
 }
 
  void mostrar_tabuleiro (ESTADO* estado){
-    char c=0;
+    char c = 0;
     int j, i;
 
     for (j = 0; j <= 7; j++)
@@ -69,7 +68,7 @@ int movimentos(ESTADO*e) {
 
     printf("\n PL%d Jogada %d\n Coordenada Atual %c%d\n", obter_jogador_atual(estado)+1, obter_numero_de_jogadas(estado),conversorultimajogadacoluna(obter_ultima_jogada(estado)),conversorultimajogadalinha(obter_ultima_jogada(estado)));
 }
-// funcao a dar erro linha 4 nao aparece ao ler 
+// funcao a dar erro linha 4 nao aparece ao ler
 ERROS gravar(ESTADO *e,char *ficheiro){
     FILE *fp;
     fp = fopen(ficheiro, "w");
@@ -104,7 +103,7 @@ ERROS gravar(ESTADO *e,char *ficheiro){
                         c = '1';
                         break;
                 }
-                fprintf(fp, "%c ", c);
+                fprintf(fp, "%c", c);
 
 
             }
@@ -144,20 +143,23 @@ ERROS ler (ESTADO* e,char*ficheiro) {
         printf("Erro ao abrir o ficheiro");
         return ERRO_ABRIR_FICHEIRO;
     }
-
+    char cha;
     COORDENADA coord;
-    char buffer[BUF_SIZE];
-    int l = 0;
-    while ( fgets (buffer, BUF_SIZE, fp) != NULL ) {
-        for (int c = 0; c < 8; c++) {
-            set_casa (e, (COORDENADA) {l, c}, buffer[c]);
-            l++;
+    for (int c = 0; c < 8; c++) {
+        for (int l = 0; l < 8; l++) {
+            coord.linha = c;
+            coord.coluna = l;
+            fscanf(fp, "%c", &cha);
+            set_casa(e, coord, cha);
+            if (cha == BRANCA) {
+                e->ultima_jogada.linha = c;
+                e->ultima_jogada.coluna = l;
+            }
         }
+        fscanf(fp, "%c", &cha);
     }
 
-
-    fseek(fp, 0, SEEK_CUR);
-
+    fseek (fp, 72, SEEK_SET);
     char linha[BUF_SIZE];
     int indice = 0;
     e-> num_jogadas = 0;
@@ -165,25 +167,22 @@ ERROS ler (ESTADO* e,char*ficheiro) {
         int num_jog;
         char jog1[BUF_SIZE];
         char jog2[BUF_SIZE];
-        int num_tokens = sscanf(linha, "%d: %s %s", &num_jog, jog1, jog2);
+        int num_tokens = sscanf (linha, "%d: %s %s", &num_jog, jog1, jog2);
         if (num_tokens == 3) {
             COORDENADA c1 = str_to_coord(jog1);
             COORDENADA c2 = str_to_coord(jog2);
             armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            e->ultima_jogada.coluna = c2.coluna;
-            e->ultima_jogada.linha = c2.linha;
-            e->jogador_atual = 0;
-        }else{
+            e -> jogador_atual = 0;
+        }else
+            {
             COORDENADA c1 = str_to_coord(jog1);
             COORDENADA c2 = {-1, -1};
             armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            e->ultima_jogada.coluna = c1.coluna;
-            e->ultima_jogada.linha = c1.linha;
-            e->jogador_atual = 1;
+            e -> jogador_atual = 1;
         }
         indice++;
     }
-
+        e->num_jogadas = indice;
         fclose(fp);
         mostrar_tabuleiro(e);
         return OK;
