@@ -116,4 +116,79 @@ CASA obter_estado_casa(ESTADO *e, COORDENADA c)
     return casa;
 }
 
+void armazenar_jogada(ESTADO *e,JOGADA jog, int n)
+{
+    e->jogadas[n] = jog;
+}
 
+COORDENADA str_to_coord(char *coord)
+{
+    COORDENADA coordenadasw;
+    coordenadasw.coluna = ((coord[0])  - 'A');
+    coordenadasw.linha = (coord[1]) + 8;
+}
+
+COORDENADA get_coord_jogador1 (ESTADO *e, int c) {
+    COORDENADA coord  = e->jogadas[c].jogador1;
+
+    return coord;
+}
+
+int get_coord_coluna (COORDENADA c) {
+    int x = c.coluna;
+    return  x;
+}
+
+COORDENADA get_coord_jogador2 (ESTADO *e, int c) {
+    COORDENADA coord  = e->jogadas[c].jogador2;
+
+    return coord;
+}
+
+void altera_ultimajogada (ESTADO *e, COORDENADA c) {
+    e->ultima_jogada = c;
+}
+
+void set_casa (ESTADO *e, COORDENADA c, CASA valor) {
+    e-> tab[c.coluna][c.linha] = valor;
+}
+
+COORDENADA get_ultima_jogada (ESTADO *e) {
+    COORDENADA c = e -> ultima_jogada;
+
+    return c;
+}
+
+void altera_estado_casa_branca (ESTADO *e, COORDENADA c) {
+    e -> tab[c.coluna][c.linha] = BRANCA;
+}
+
+void incrementa_numero_jogadas (ESTADO *e) {
+    e -> num_jogadas += 1;
+}
+
+void set_jogadas_jogador1 (ESTADO *e, COORDENADA c, int n) {
+    e->jogadas[n].jogador1 = c;
+}
+
+void set_jogadas_jogador2 (ESTADO *e, COORDENADA c, int n) {
+    e->jogadas[n].jogador2 = c;
+}
+
+void altera_estado_casa_preta (ESTADO *e, COORDENADA c) {
+    e -> tab[c.coluna][c.linha] = PRETA;
+}
+
+int get_jogador_atual (ESTADO *e) {
+    int x = e -> jogador_atual;
+
+    return x;
+}
+
+void set_jogador_atual (ESTADO *e, int x) {
+    e -> jogador_atual = x;
+}
+
+void set_jogador_vencedor (ESTADO *e, int x) {
+    e -> vencedor = x;
+}

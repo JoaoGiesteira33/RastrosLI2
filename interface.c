@@ -6,25 +6,13 @@
 #include "camadadados.h"
 #define BUF_SIZE 1024
 
-COORDENADA str_to_coord(char *coord)
-{
-    COORDENADA coordenadasw;
-    coordenadasw.coluna = (coord[0]) - 'a';
-    coordenadasw.linha = (coord[1]) + 8;
-}
-
-void armazenar_jogada(ESTADO *e,JOGADA jog, int n)
-{
-    e->jogadas[n] = jog;
-}
-
 int movimentos(ESTADO*e) {
     for (int g = 0; e->jogadas[g].jogador1.coluna != -1; g++)
     {
-        COORDENADA coord1 = e->jogadas[g].jogador1;
-        COORDENADA coord2 = e->jogadas[g].jogador2;
+        COORDENADA coord1 = get_coord_jogador1(e, g);
+        COORDENADA coord2 = get_coord_jogador2 (e, g);
 
-        if (e->jogadas[g].jogador2.coluna != -1)
+        if (coord2.coluna != -1)
             printf("%02d: %c%d %c%d\n", g+1 ,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
         else
             printf("%02d: %c%d\n",g+1,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
@@ -114,11 +102,11 @@ ERROS gravar(ESTADO *e,char *ficheiro){
         //fprintf(fp,"\n PL%d Jogada%d\n Coordenada Anterior %c%d\n", obter_jogador_atual(e), obter_numero_de_jogadas(e),conversorultimajogadacoluna(obter_ultima_jogada(e)),conversorultimajogadalinha(obter_ultima_jogada(e)));
         fprintf(fp,"\n");
         int l = 1;
-        for (int g = 0; e->jogadas[g].jogador1.coluna != -1; g++) {
-            coord1 = e->jogadas[g].jogador1;
-            coord2 = e->jogadas[g].jogador2;
+        for (int g = 0; get_coord_coluna(get_coord_jogador1(e,g)) != -1; g++) {
+            coord1 = get_coord_jogador1(e,g);
+            coord2 = get_coord_jogador2(e,g);
 
-            if (e->jogadas[g].jogador2.coluna != -1) {
+            if (coord2.coluna != -1) {
                 fprintf(fp, "0%d: %c%d %c%d\n", l, conversorultimajogadacoluna(coord1),
                         conversorultimajogadalinha(coord1), conversorultimajogadacoluna(coord2),
                         conversorultimajogadalinha(coord2));
@@ -138,7 +126,6 @@ ERROS ler (ESTADO* e,char*ficheiro) {
     FILE *fp;
     fp = fopen(strcat(ficheiro, ".txt"), "r");
 
-
     if (fp == NULL) {
         printf("Erro ao abrir o ficheiro");
         return ERRO_ABRIR_FICHEIRO;
@@ -147,17 +134,16 @@ ERROS ler (ESTADO* e,char*ficheiro) {
     COORDENADA coord;
     for (int c = 0; c < 8; c++) {
         for (int l = 0; l < 8; l++) {
-            coord.linha = c;
-            coord.coluna = l;
+            coord = (COORDENADA) {.coluna = l, .linha = c};
             fscanf(fp, "%c", &cha);
             set_casa(e, coord, cha);
             if (cha == BRANCA) {
-                e->ultima_jogada.linha = c;
-                e->ultima_jogada.coluna = l;
+                altera_ultimajogada(e, coord);
             }
         }
         fscanf(fp, "%c", &cha);
     }
+
     int num_jog;
     fseek (fp, 8, SEEK_SET);
     char linha[BUF_SIZE];
@@ -175,7 +161,6 @@ ERROS ler (ESTADO* e,char*ficheiro) {
             armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
             e -> jogador_atual = 0;
             indice++;
-
         }else
             {
             COORDENADA c1 = str_to_coord(jog1);

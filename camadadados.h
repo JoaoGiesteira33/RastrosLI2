@@ -107,4 +107,105 @@ char conversorultimajogadacoluna (COORDENADA c);
 @param c A coordenada
 */
 CASA obter_estado_casa(ESTADO *e, COORDENADA c);
-#endif //RASTROSLI2_CAMADADADOS_H
+//RASTROSLI2_CAMADADADOS_H
+/**
+\brief Funcao que traduz de string para COORDENADA
+@param coord Apontador para uma coordenada
+*/
+COORDENADA str_to_coord(char *coord);
+/**
+\brief Funcao que armaneza jogadas
+@param e Apontador para o estado
+@param jog Jogada a ser guardada
+@param n Número da jogada
+*/
+void armazenar_jogada(ESTADO *e,JOGADA jog, int n);
+/**
+\brief Funcao para devolver a coordenada do Jogador 1 numa Jogada c
+ * @param e Apontador para o estado
+ * @param c Numero da Jogada
+ * @return A Coordenada
+ */
+COORDENADA get_coord_jogador1 (ESTADO *e, int c);
+/**
+\brief Funcao para devolver a coordenada do Jogador 2 numa Jogada c
+ * @param e Apontador para o estado
+ * @param c Numero da Jogada
+ * @return A Coordenada
+ */
+COORDENADA get_coord_jogador2 (ESTADO *e, int c);
+/**
+\brief Funcao para devolver a coluna de uma jogada
+ * @param c A coordenada
+ * @return A coluna
+ */
+int get_coord_coluna (COORDENADA c);
+/**
+\brief Funcao para alterar a ultima jogada no estado
+ * @param e Apontador para o estado
+ * @param c Coordenada a Alterar
+ */
+void altera_ultimajogada (ESTADO *e, COORDENADA c);
+/**
+\brief Muda o valor de uma casa
+@param e Apontador para o estado
+@param c A coordenada
+@param V O novo valor para a casa
+*/
+void set_casa (ESTADO *e, COORDENADA c, CASA valor);
+/**
+\brief Funcao para devolver a coordenada da ultima jogada
+ * @param e Apontador para o estado
+ * @return A Coordenada
+ */
+COORDENADA get_ultima_jogada (ESTADO *e);
+/**
+\brief Funcao para alterar o estado da casa para Branca
+ * @param e Apontador para o estado
+ * @param c A coordenada a alterar
+ */
+void altera_estado_casa_branca (ESTADO *e, COORDENADA c);
+/**
+\brief Funcao para incrementar o numero de jogadas
+ * @param e Apontador para o estado
+ */
+void incrementa_numero_jogadas (ESTADO *e);
+/**
+\brief Funcao para inserir uma Jogada do Jogador 1 no estado
+ * @param e Apontador para o estado
+ * @param c A coordenada a inserir
+ * @param n Numero da Jogada
+ */
+void set_jogadas_jogador1 (ESTADO *e, COORDENADA c, int n);
+/**
+\brief Funcao para inserir uma Jogada do Jogador 2 no estado
+ * @param e Apontador para o estado
+ * @param c A coordenada a inserir
+ * @param n Numero da Jogada
+ */
+void set_jogadas_jogador2 (ESTADO *e, COORDENADA c, int n);
+/**
+\brief Funcao para alterar o estado da casa para Preta
+ * @param e Apontador para o estado
+ * @param c A coordenada a alterar
+ */
+void altera_estado_casa_preta (ESTADO *e, COORDENADA c);
+/**
+\brief Funcao para devolver o Jogador Atual
+ * @param e Apontador para o estado
+ */
+int get_jogador_atual (ESTADO *e);
+/**
+\brief Funcao para alterar o Jogador Atual
+ * @param e Apontador para o estado
+ * @param x Jogador a Alterar
+ */
+void set_jogador_atual (ESTADO *e, int x);
+/**
+\brief Funcao para alterar o Vencedor do Jogo
+ * @param e Apontador para o estado
+ * @param c O Vencedor
+ */
+void set_jogador_vencedor(ESTADO *e, int x);
+
+#endif

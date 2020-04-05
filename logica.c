@@ -6,16 +6,12 @@
 #include <stdlib.h>
 #define BUF_SIZE 1024
 
-void set_casa (ESTADO *e, COORDENADA c, CASA valor) {
-    e-> tab[c.coluna][c.linha] = valor;
-
-}
 
 int verifica_movimentos (ESTADO *estado, COORDENADA c)
 {
    int c1, c2, linha1, linha2;
-    c1 =  estado->ultima_jogada.coluna;
-    linha1 = estado->ultima_jogada.linha;
+    c1 =  (get_ultima_jogada(estado)).coluna;
+    linha1 = (get_ultima_jogada(estado)).linha;
     c2 =  c.coluna;
     linha2 = c.linha;
     if (((abs(c1-c2)== 1) && (abs(linha1-linha2))== 0) || ((abs(c1-c2)== 0) && (abs(linha1-linha2))== 1) || ((abs(c1-c2)== 1) && (abs(linha1-linha2))== 1)) {
@@ -26,11 +22,8 @@ int verifica_movimentos (ESTADO *estado, COORDENADA c)
 
 
 int verifica_vazio(ESTADO *estado, COORDENADA c) {
-    int c2, l2;
 
-    c2 = c.coluna;
-    l2 = c.linha;
-    if (estado -> tab[c2][l2] == VAZIO || estado -> tab[c2][l2] == UM || estado -> tab[c2][l2] == DOIS)
+    if (obter_estado_casa(estado, c) == VAZIO ||obter_estado_casa(estado, c)  == UM || obter_estado_casa(estado, c) == DOIS)
         return 1;
     else
         return 0;
@@ -41,32 +34,32 @@ int funcao_jogada (ESTADO *estado, COORDENADA c) {
     COORDENADA jogada;
 
     //Pode jogar
-    estado -> tab[c.coluna][c.linha] = BRANCA;
+    altera_estado_casa_branca(estado,c);
+
     if (obter_jogador_atual(estado) == 0)
-        estado -> num_jogadas += 1;
+        incrementa_numero_jogadas(estado);
     //Atualiza o array de jogadas
+
     int n = obter_numero_de_jogadas(estado)-1;
 
-    if(obter_jogador_atual(estado) == 0) {
-        jogada = c;
-        estado->jogadas[n].jogador1 = jogada;
+    if (obter_jogador_atual(estado) == 0){
+        set_jogadas_jogador1(estado, c, n);
     }
-    else{
-        jogada = c;
-        estado->jogadas[n].jogador2 = jogada;
+
+    else {
+        set_jogadas_jogador2(estado, c, n);
     }
 
     //Atualiza a peça de onde sai
-    int x = estado ->ultima_jogada.linha;
-    int y = estado-> ultima_jogada.coluna;
-    estado -> tab [y] [x] = PRETA;
-    estado -> ultima_jogada.coluna = c.coluna;
-    estado -> ultima_jogada.linha = c.linha;
+    COORDENADA preta = get_ultima_jogada(estado);
+
+    altera_estado_casa_preta(estado, preta);
+    altera_ultimajogada(estado, c);
     //Atualiza o jogador
-    if (estado-> jogador_atual == 1)
-        estado-> jogador_atual = 0;
+    if (get_jogador_atual(estado) == 1)
+        set_jogador_atual(estado, 0);
     else
-        estado-> jogador_atual = 1;
+        set_jogador_atual(estado, 1);
 
     //printf("jogar %d  %d\n", c.linha, c.coluna);
     return 1;
@@ -75,43 +68,35 @@ int funcao_jogada (ESTADO *estado, COORDENADA c) {
 
 int encurralado (ESTADO *estado) {
        //coordenada da peça branca atual
-       int ujc = estado -> ultima_jogada.coluna;
-       int ujl =estado -> ultima_jogada.linha;
 
-       COORDENADA cima;
-       cima.coluna = ujc;
-       cima.linha =ujl + 1;
+       COORDENADA centro = get_ultima_jogada(estado);
 
-       COORDENADA baixo;
-       baixo.coluna = ujc;
-       baixo.linha = ujl - 1;
+       COORDENADA cima = (COORDENADA) {.coluna = centro.coluna, .linha = centro.linha + 1};
 
-       COORDENADA direita;
-       direita.coluna = ujc + 1;
-       direita.linha = ujl;
 
-       COORDENADA esquerda;
-       esquerda.coluna = ujc - 1;
-       esquerda.linha = ujl;
+       COORDENADA baixo = (COORDENADA) {.coluna = centro.coluna, .linha = centro.linha - 1};
 
-       COORDENADA diagDBaixo;
-       diagDBaixo.coluna = ujc + 1;
-       diagDBaixo.linha = ujl - 1;
+       COORDENADA direita = (COORDENADA) {.coluna = centro.coluna + 1, .linha = centro.linha};
 
-       COORDENADA diagEBaixo;
-       diagEBaixo.coluna = ujc - 1;
-       diagEBaixo.linha = ujl - 1;
+       COORDENADA esquerda = (COORDENADA) {.coluna = centro.coluna - 1, .linha = centro.linha};
 
-       COORDENADA diagDCima;
-       diagDCima.coluna = ujc + 1;
-       diagDCima.linha = ujl + 1;
+       COORDENADA diagDBaixo = (COORDENADA) {.coluna = centro.coluna + 1, .linha = centro.linha - 1};
 
-       COORDENADA diagECima;
-       diagECima.coluna = ujc - 1;
-       diagECima.linha = ujl + 1;
+       COORDENADA diagEBaixo = (COORDENADA) {.coluna = centro.coluna - 1, .linha = centro.linha - 1};
 
-       if ((obter_estado_casa(estado,cima)) == PRETA && (obter_estado_casa(estado,baixo)) == PRETA && (obter_estado_casa(estado,direita)) == PRETA && (obter_estado_casa(estado,esquerda)) == PRETA
-       && (obter_estado_casa(estado,diagDBaixo)) == PRETA && (obter_estado_casa(estado,diagEBaixo)) == PRETA && (obter_estado_casa(estado,diagDCima)) == PRETA && (obter_estado_casa(estado,diagECima)) == PRETA ) return 1;
+       COORDENADA diagDCima = (COORDENADA) {.coluna = centro.coluna + 1, .linha = centro.linha + 1};
+
+       COORDENADA diagECima = (COORDENADA) {.coluna = centro.coluna - 1, .linha = centro.linha + 1};
+
+
+       if ((obter_estado_casa(estado,cima)) == PRETA &&
+          (obter_estado_casa(estado,baixo)) == PRETA &&
+          (obter_estado_casa(estado,direita)) == PRETA &&
+          (obter_estado_casa(estado,esquerda)) == PRETA &&
+          (obter_estado_casa(estado,diagDBaixo)) == PRETA &&
+          (obter_estado_casa(estado,diagEBaixo)) == PRETA &&
+          (obter_estado_casa(estado,diagDCima)) == PRETA &&
+          (obter_estado_casa(estado,diagECima)) == PRETA ) return 1;
        else return 0;
 }
 
@@ -121,7 +106,7 @@ int jogada_final (ESTADO *estado, COORDENADA c) {
     }//Casa final do Jogador 1
     else if (c.coluna == 7 && c.linha == 0)
         return 1; //Casa final do Jogador 2
-    else{
+    else {
         if (encurralado(estado) == 1)
             return 1;
         else
@@ -140,16 +125,16 @@ int jogar(ESTADO *estado, COORDENADA c)
         int jogador = obter_jogador_atual(estado);
 
         if (c.coluna == 0 && c.linha == 7)
-            estado->vencedor=1;
+            set_jogador_vencedor(estado, 1);
             // printf("Parabens, o vencedor é o Jogador 1\n"); //no caso de chegar a casa final do Jogador 1
         else if (c.coluna == 7 && c.linha == 0)
-            estado->vencedor=2;
+            set_jogador_vencedor(estado, 2);
             //printf("Parabens, o vencedor é o Jogador 2\n"); //no caso de chegar a casa final do Jogador 2
         else if  (encurralado(estado)&&(jogador == 0))
-            estado->vencedor=2;
+            set_jogador_vencedor(estado, 2);
             //printf("Parabens, o vencedor é o Jogador 2\n"); //nos casos de os Jogadores se encontrarem rodeados, ou sejam, sem possiblidades de jogarem
         else if  (encurralado(estado)&&(jogador == 1))
-            estado->vencedor=1;
+            set_jogador_vencedor(estado, 2);
             //printf("Parabens, o vencedor é o Jogador 1\n");
         else
             printf("A jogada nao é válida, tente novamente\n");
