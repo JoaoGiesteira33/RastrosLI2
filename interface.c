@@ -6,6 +6,50 @@
 #include "camadadados.h"
 #define BUF_SIZE 1024
 
+void copiaEstado(ESTADO *e)
+{
+    ESTADO *novo = (ESTADO *)malloc(sizeof(ESTADO));
+
+   *novo = *e;
+}
+
+void posJog(ESTADO *e,int jogada)
+{
+     int n = 31;
+     if(jogada >= obter_numero_de_jogadas(e) || jogada < 0)
+     {
+         printf("Número de jogada inválida\n");
+     } else{
+         //copiaEstado(e);
+         printf("Copiou\n");
+         e-> jogador_atual = 0;
+         e->num_jogadas = jogada;
+         e->tab[e->ultima_jogada.coluna][e->ultima_jogada.linha] = VAZIO;
+         e->ultima_jogada.coluna = e->jogadas[jogada].jogador2.coluna;
+         e->ultima_jogada.linha = e->jogadas[jogada].jogador2.linha;
+
+         while(n > jogada)
+         {
+             e->tab[e->jogadas[n].jogador1.coluna][e->jogadas[n].jogador1.linha] = VAZIO;
+             e->tab[e->jogadas[n].jogador2.coluna][e->jogadas[n].jogador2.linha] = VAZIO;
+             e->jogadas[n].jogador1 = (COORDENADA){.coluna = -1, .linha = -1};
+             e->jogadas[n].jogador2 = (COORDENADA){.coluna = -1, .linha = -1};
+             n--;
+         }
+
+         n = 0;
+
+             while(n<jogada)
+             {
+                 e->tab[e->jogadas[n].jogador1.coluna][e->jogadas[n].jogador1.linha] = PRETA;
+                 e->tab[e->jogadas[n].jogador2.coluna][e->jogadas[n].jogador2.linha] = PRETA;
+                 n++;
+             }
+             e->tab[e->ultima_jogada.coluna][e->ultima_jogada.linha] = BRANCA;
+         }
+     mostrar_tabuleiro(e);
+}
+
 int movimentos(ESTADO*e) {
     for (int g = 0; e->jogadas[g].jogador1.coluna != -1; g++)
     {
@@ -184,6 +228,8 @@ int interpretador (ESTADO *e){
     char linha[BUF_SIZE];
     char col[2], lin[2];
     char file[BUF_SIZE];
+    int jogada;
+
 
     while(e->vencedor==0 ) {
         if (fgets(linha, BUF_SIZE, stdin) == NULL)
@@ -216,6 +262,10 @@ int interpretador (ESTADO *e){
 
         if (strcmp(linha, "movs\n") == 0) {
             movimentos(e);
+        }
+
+        if (sscanf(linha, "pos %d", &jogada) == 1) {
+            posJog(e,jogada);
         }
     }
     printf("O jogo acabou e o vencedor é o Jogador %d",e->vencedor);

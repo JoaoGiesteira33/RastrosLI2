@@ -75,8 +75,11 @@ Funções</h2></td></tr>
 <tr class="memitem:a1c088554e2d968e91d1b9f3a651d8d82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8h.html#a1c088554e2d968e91d1b9f3a651d8d82">verifica_vazio</a> (<a class="el" href="structESTADO.html">ESTADO</a> *estado, <a class="el" href="structCOORDENADA.html">COORDENADA</a> c)</td></tr>
 <tr class="memdesc:a1c088554e2d968e91d1b9f3a651d8d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcão que verifica se a casa para onde o jogador pretende jogar é válida, neste caso Vazia.  <a href="#a1c088554e2d968e91d1b9f3a651d8d82">Mais...</a><br /></td></tr>
 <tr class="separator:a1c088554e2d968e91d1b9f3a651d8d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53472e75f056ceb02b5387193021838a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8h.html#a53472e75f056ceb02b5387193021838a">jogar</a> (<a class="el" href="structESTADO.html">ESTADO</a> *estado, <a class="el" href="structCOORDENADA.html">COORDENADA</a> c)</td></tr>
-<tr class="memdesc:a53472e75f056ceb02b5387193021838a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal que efetua a jogada.  <a href="#a53472e75f056ceb02b5387193021838a">Mais...</a><br /></td></tr>
+<tr class="memitem:a2560a59cb06ad96aa2cd437a2f034f18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8h.html#a2560a59cb06ad96aa2cd437a2f034f18">movimentos</a> (<a class="el" href="structESTADO.html">ESTADO</a> *e)</td></tr>
+<tr class="memdesc:a2560a59cb06ad96aa2cd437a2f034f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal que efetua a jogada.  <a href="#a2560a59cb06ad96aa2cd437a2f034f18">Mais...</a><br /></td></tr>
+<tr class="separator:a2560a59cb06ad96aa2cd437a2f034f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53472e75f056ceb02b5387193021838a"><td class="memItemLeft" align="right" valign="top"><a id="a53472e75f056ceb02b5387193021838a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>jogar</b> (<a class="el" href="structESTADO.html">ESTADO</a> *estado, <a class="el" href="structCOORDENADA.html">COORDENADA</a> c)</td></tr>
 <tr class="separator:a53472e75f056ceb02b5387193021838a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eec13ff564158fa4077e44263639e95"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8h.html#a4eec13ff564158fa4077e44263639e95">encurralado</a> (<a class="el" href="structESTADO.html">ESTADO</a> *estado)</td></tr>
 <tr class="memdesc:a4eec13ff564158fa4077e44263639e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que verifica se o jogador não tem mais nenhuma jogada válida.  <a href="#a4eec13ff564158fa4077e44263639e95">Mais...</a><br /></td></tr>
@@ -151,28 +154,18 @@ Funções</h2></td></tr>
 
 </div>
 </div>
-<a id="a53472e75f056ceb02b5387193021838a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53472e75f056ceb02b5387193021838a">&#9670;&nbsp;</a></span>jogar()</h2>
+<a id="a2560a59cb06ad96aa2cd437a2f034f18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2560a59cb06ad96aa2cd437a2f034f18">&#9670;&nbsp;</a></span>movimentos()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int jogar </td>
+          <td class="memname">int movimentos </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
-          <td class="paramname"><em>estado</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>e</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structCOORDENADA.html">COORDENADA</a>&#160;</td>
-          <td class="paramname"><em>c</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -181,7 +174,14 @@ Funções</h2></td></tr>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">estado</td><td>Apontador para o estado </td></tr>
-    <tr><td class="paramname">c</td><td>A coordenada </td></tr>
+    <tr><td class="paramname">c</td><td>A coordenada</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Função principal que efetua a jogada.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Apontador para o ficheiro </td></tr>
   </table>
   </dd>
 </dl>

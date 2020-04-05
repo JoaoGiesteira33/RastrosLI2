@@ -76,6 +76,15 @@ Diagrama de dependências de inclusão para interface.h:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
+<tr class="memitem:ad64ec9b4fbdf6d0e47e63dffb446d1e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8h.html#ad64ec9b4fbdf6d0e47e63dffb446d1e3">copiaEstado</a> (<a class="el" href="structESTADO.html">ESTADO</a> *e)</td></tr>
+<tr class="memdesc:ad64ec9b4fbdf6d0e47e63dffb446d1e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que cria um novo estado com o valor do estado dado.  <a href="#ad64ec9b4fbdf6d0e47e63dffb446d1e3">Mais...</a><br /></td></tr>
+<tr class="separator:ad64ec9b4fbdf6d0e47e63dffb446d1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f2da8a5f49ab4d6087d8f550de2a18e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8h.html#a7f2da8a5f49ab4d6087d8f550de2a18e">posJog</a> (<a class="el" href="structESTADO.html">ESTADO</a> *e, int jogada)</td></tr>
+<tr class="memdesc:a7f2da8a5f49ab4d6087d8f550de2a18e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que possiblita retornar a uma jogada anterior.  <a href="#a7f2da8a5f49ab4d6087d8f550de2a18e">Mais...</a><br /></td></tr>
+<tr class="separator:a7f2da8a5f49ab4d6087d8f550de2a18e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2560a59cb06ad96aa2cd437a2f034f18"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8h.html#a2560a59cb06ad96aa2cd437a2f034f18">movimentos</a> (<a class="el" href="structESTADO.html">ESTADO</a> *e)</td></tr>
+<tr class="memdesc:a2560a59cb06ad96aa2cd437a2f034f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que imprime as jogadas no ecrã.  <a href="#a2560a59cb06ad96aa2cd437a2f034f18">Mais...</a><br /></td></tr>
+<tr class="separator:a2560a59cb06ad96aa2cd437a2f034f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb2a30501ce9e336b409cfbf0aa69187"><td class="memItemLeft" align="right" valign="top"><a class="el" href="camadadados_8h.html#ab8d2e03f1be6ed043ab77a0ea6d0c3fd">ERROS</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8h.html#abb2a30501ce9e336b409cfbf0aa69187">lerFicheiro</a> (char *fich)</td></tr>
 <tr class="memdesc:abb2a30501ce9e336b409cfbf0aa69187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que inicializa o tabuleiro.  <a href="#abb2a30501ce9e336b409cfbf0aa69187">Mais...</a><br /></td></tr>
 <tr class="separator:abb2a30501ce9e336b409cfbf0aa69187"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -92,6 +101,32 @@ Funções</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Interpretador e funcões complementares a este. </p>
 </div><h2 class="groupheader">Documentação das funções</h2>
+<a id="ad64ec9b4fbdf6d0e47e63dffb446d1e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad64ec9b4fbdf6d0e47e63dffb446d1e3">&#9670;&nbsp;</a></span>copiaEstado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void copiaEstado </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcao que cria um novo estado com o valor do estado dado. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Apontador para o estado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8fc889059d5c36644fbc1665d750984f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fc889059d5c36644fbc1665d750984f">&#9670;&nbsp;</a></span>gravar()</h2>
 
@@ -201,6 +236,69 @@ Funções</h2></td></tr>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">estado</td><td>O estado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2560a59cb06ad96aa2cd437a2f034f18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2560a59cb06ad96aa2cd437a2f034f18">&#9670;&nbsp;</a></span>movimentos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int movimentos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcao que imprime as jogadas no ecrã. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Apontador para o ficheiro </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7f2da8a5f49ab4d6087d8f550de2a18e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f2da8a5f49ab4d6087d8f550de2a18e">&#9670;&nbsp;</a></span>posJog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void posJog </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>jogada</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcao que possiblita retornar a uma jogada anterior. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Apontador para o estado </td></tr>
+    <tr><td class="paramname">jogada</td><td>Indicador da jogada para que queremos retornar </td></tr>
   </table>
   </dd>
 </dl>

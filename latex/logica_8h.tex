@@ -7,8 +7,11 @@ int \hyperlink{logica_8h_a7a715ebbf78a2a761bf9a75972cc0375}{verifica\+\_\+movime
 \begin{DoxyCompactList}\small\item\em Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-\/se na distancia de uma casa. \end{DoxyCompactList}\item 
 int \hyperlink{logica_8h_a1c088554e2d968e91d1b9f3a651d8d82}{verifica\+\_\+vazio} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
 \begin{DoxyCompactList}\small\item\em Funcão que verifica se a casa para onde o jogador pretende jogar é válida, neste caso Vazia. \end{DoxyCompactList}\item 
-int \hyperlink{logica_8h_a53472e75f056ceb02b5387193021838a}{jogar} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+int \hyperlink{logica_8h_a2560a59cb06ad96aa2cd437a2f034f18}{movimentos} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
 \begin{DoxyCompactList}\small\item\em Função principal que efetua a jogada. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{logica_8h_a53472e75f056ceb02b5387193021838a}\label{logica_8h_a53472e75f056ceb02b5387193021838a}} 
+int {\bfseries jogar} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+\item 
 int \hyperlink{logica_8h_a4eec13ff564158fa4077e44263639e95}{encurralado} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado)
 \begin{DoxyCompactList}\small\item\em Função que verifica se o jogador não tem mais nenhuma jogada válida. \end{DoxyCompactList}\item 
 int \hyperlink{logica_8h_a165432d213e6e5b7a384c0b366604364}{jogada\+\_\+final} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
@@ -51,11 +54,11 @@ Função para determinar o final do Jogo e consequente mensagem de congratulaç�
 {\em c} & A coordenada \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{logica_8h_a53472e75f056ceb02b5387193021838a}\label{logica_8h_a53472e75f056ceb02b5387193021838a}} 
-\index{logica.\+h@{logica.\+h}!jogar@{jogar}}
-\index{jogar@{jogar}!logica.\+h@{logica.\+h}}
-\subsubsection{\texorpdfstring{jogar()}{jogar()}}
-{\footnotesize\ttfamily int jogar (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{estado,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{logica_8h_a2560a59cb06ad96aa2cd437a2f034f18}\label{logica_8h_a2560a59cb06ad96aa2cd437a2f034f18}} 
+\index{logica.\+h@{logica.\+h}!movimentos@{movimentos}}
+\index{movimentos@{movimentos}!logica.\+h@{logica.\+h}}
+\subsubsection{\texorpdfstring{movimentos()}{movimentos()}}
+{\footnotesize\ttfamily int movimentos (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e }\end{DoxyParamCaption})}
 
 
 
@@ -65,7 +68,14 @@ Função principal que efetua a jogada.
 \begin{DoxyParams}{Parâmetros}
 {\em estado} & Apontador para o estado \\
 \hline
-{\em c} & A coordenada \\
+{\em c} & A coordenada\\
+\hline
+\end{DoxyParams}
+Função principal que efetua a jogada.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o ficheiro \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{logica_8h_a7a715ebbf78a2a761bf9a75972cc0375}\label{logica_8h_a7a715ebbf78a2a761bf9a75972cc0375}} 

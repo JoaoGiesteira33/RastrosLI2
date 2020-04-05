@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lerficheiro',['lerFicheiro',['../interface_8h.html#abb2a30501ce9e336b409cfbf0aa69187',1,'interface.h']]]
+  ['jogada_5ffinal',['jogada_final',['../logica_8h.html#a165432d213e6e5b7a384c0b366604364',1,'logica.c']]]
 ];

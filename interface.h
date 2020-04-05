@@ -8,10 +8,20 @@ Interpretador e funcões complementares a este.
 #define RASTROSLI2_INTERFACE_H
 
 #include "camadadados.h"
-
+/**
+\brief Funcao que cria um novo estado com o valor do estado dado
+@param e Apontador para o estado
+*/
+void copiaEstado(ESTADO *e);
+/**
+\brief Funcao que possiblita retornar a uma jogada anterior
+@param e Apontador para o estado
+@param jogada Indicador da jogada para que queremos retornar
+*/
+void posJog(ESTADO *e, int jogada);
 /**
 \brief Funcao que imprime as jogadas no ecrã.
-@param e Apontador para oo ficheiro
+@param e Apontador para o ficheiro
 */
 int movimentos(ESTADO*e);
 /**

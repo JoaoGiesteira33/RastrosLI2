@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['camadadados_2eh',['camadadados.h',['../camadadados_8h.html',1,'']]],
-  ['casa',['CASA',['../camadadados_8h.html#aba91601f16d4c485b2d9b8c429f27039',1,'camadadados.h']]],
-  ['conversorultimajogadacoluna',['conversorultimajogadacoluna',['../camadadados_8h.html#a3c6b8a183e1177d63b9646ff4e9322ac',1,'camadadados.c']]],
-  ['conversorultimajogadalinha',['conversorultimajogadalinha',['../camadadados_8h.html#af4cf201e91b420cd174888d897512e2d',1,'camadadados.c']]],
-  ['coordenada',['COORDENADA',['../structCOORDENADA.html',1,'']]]
+  ['altera_5festado_5fcasa_5fbranca',['altera_estado_casa_branca',['../camadadados_8h.html#a3abdb3d91974ec908ad15dac49fa8ed4',1,'camadadados.c']]],
+  ['altera_5festado_5fcasa_5fpreta',['altera_estado_casa_preta',['../camadadados_8h.html#a2787d03a0237b39a69235b2a1717a34d',1,'camadadados.c']]],
+  ['altera_5fultimajogada',['altera_ultimajogada',['../camadadados_8h.html#a8828526e2c272cd90636cc20be682929',1,'camadadados.c']]],
+  ['armazenar_5fjogada',['armazenar_jogada',['../camadadados_8h.html#a1fc7443b24fac5ea61afbb41f9a00feb',1,'camadadados.c']]]
 ];

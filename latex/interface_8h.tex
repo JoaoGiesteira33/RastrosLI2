@@ -6,6 +6,12 @@ Diagrama de dependências de inclusão para interface.\+h\+:
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{interface_8h_ad64ec9b4fbdf6d0e47e63dffb446d1e3}{copia\+Estado} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Funcao que cria um novo estado com o valor do estado dado. \end{DoxyCompactList}\item 
+void \hyperlink{interface_8h_a7f2da8a5f49ab4d6087d8f550de2a18e}{pos\+Jog} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, int jogada)
+\begin{DoxyCompactList}\small\item\em Funcao que possiblita retornar a uma jogada anterior. \end{DoxyCompactList}\item 
+int \hyperlink{interface_8h_a2560a59cb06ad96aa2cd437a2f034f18}{movimentos} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Funcao que imprime as jogadas no ecrã. \end{DoxyCompactList}\item 
 \hyperlink{camadadados_8h_ab8d2e03f1be6ed043ab77a0ea6d0c3fd}{E\+R\+R\+OS} \hyperlink{interface_8h_abb2a30501ce9e336b409cfbf0aa69187}{ler\+Ficheiro} (char $\ast$fich)
 \begin{DoxyCompactList}\small\item\em Funcao que inicializa o tabuleiro. \end{DoxyCompactList}\item 
 int \hyperlink{interface_8h_a24da95ebeede4a540e37790ce8be359b}{interpretador} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
@@ -20,6 +26,21 @@ void \hyperlink{interface_8h_a4525a57d0cd9ed3c9150e19b67e1dad6}{mostrar\+\_\+tab
 Interpretador e funcões complementares a este. 
 
 \subsection{Documentação das funções}
+\mbox{\Hypertarget{interface_8h_ad64ec9b4fbdf6d0e47e63dffb446d1e3}\label{interface_8h_ad64ec9b4fbdf6d0e47e63dffb446d1e3}} 
+\index{interface.\+h@{interface.\+h}!copia\+Estado@{copia\+Estado}}
+\index{copia\+Estado@{copia\+Estado}!interface.\+h@{interface.\+h}}
+\subsubsection{\texorpdfstring{copia\+Estado()}{copiaEstado()}}
+{\footnotesize\ttfamily void copia\+Estado (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Funcao que cria um novo estado com o valor do estado dado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{interface_8h_a8fc889059d5c36644fbc1665d750984f}\label{interface_8h_a8fc889059d5c36644fbc1665d750984f}} 
 \index{interface.\+h@{interface.\+h}!gravar@{gravar}}
 \index{gravar@{gravar}!interface.\+h@{interface.\+h}}
@@ -80,5 +101,37 @@ Função que mostra o tabuleiro.
 
 \begin{DoxyParams}{Parâmetros}
 {\em estado} & O estado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_8h_a2560a59cb06ad96aa2cd437a2f034f18}\label{interface_8h_a2560a59cb06ad96aa2cd437a2f034f18}} 
+\index{interface.\+h@{interface.\+h}!movimentos@{movimentos}}
+\index{movimentos@{movimentos}!interface.\+h@{interface.\+h}}
+\subsubsection{\texorpdfstring{movimentos()}{movimentos()}}
+{\footnotesize\ttfamily int movimentos (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Funcao que imprime as jogadas no ecrã. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o ficheiro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{interface_8h_a7f2da8a5f49ab4d6087d8f550de2a18e}\label{interface_8h_a7f2da8a5f49ab4d6087d8f550de2a18e}} 
+\index{interface.\+h@{interface.\+h}!pos\+Jog@{pos\+Jog}}
+\index{pos\+Jog@{pos\+Jog}!interface.\+h@{interface.\+h}}
+\subsubsection{\texorpdfstring{pos\+Jog()}{posJog()}}
+{\footnotesize\ttfamily void pos\+Jog (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{int}]{jogada }\end{DoxyParamCaption})}
+
+
+
+Funcao que possiblita retornar a uma jogada anterior. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em jogada} & Indicador da jogada para que queremos retornar \\
 \hline
 \end{DoxyParams}
