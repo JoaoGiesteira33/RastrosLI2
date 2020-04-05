@@ -68,7 +68,6 @@ typedef struct {
     /** Vencedor atual(0 enquanto nenhum é) */
     int vencedor;
 } ESTADO;
-
 /**
 \brief Inicializa um estado
  */
@@ -102,15 +101,6 @@ int conversorultimajogadalinha (COORDENADA c);
 @param c A coordenada
 */
 char conversorultimajogadacoluna (COORDENADA c);
-
-/**
-\brief Muda o valor de uma casa
-@param e Apontador para o estado
-@param c A coordenada
-@param V O novo valor para a casa
-*/
-void set_casa(ESTADO *e, COORDENADA c, CASA V);
-
 /**
 \brief Obtém o estado da casa
 @param e Apontador para o estado

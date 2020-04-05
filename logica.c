@@ -6,6 +6,11 @@
 #include <stdlib.h>
 #define BUF_SIZE 1024
 
+void set_casa (ESTADO *e, COORDENADA c, CASA valor) {
+    e-> tab[c.coluna][c.linha] = valor;
+
+}
+
 int verifica_movimentos (ESTADO *estado, COORDENADA c)
 {
    int c1, c2, linha1, linha2;
@@ -25,7 +30,7 @@ int verifica_vazio(ESTADO *estado, COORDENADA c) {
 
     c2 = c.coluna;
     l2 = c.linha;
-    if (estado->tab[c2][l2] == VAZIO || estado->tab[c2][l2] == UM || estado->tab[c2][l2] == DOIS)
+    if (estado -> tab[c2][l2] == VAZIO || estado -> tab[c2][l2] == UM || estado -> tab[c2][l2] == DOIS)
         return 1;
     else
         return 0;
@@ -37,7 +42,7 @@ int funcao_jogada (ESTADO *estado, COORDENADA c) {
 
     //Pode jogar
     estado -> tab[c.coluna][c.linha] = BRANCA;
-    if(obter_jogador_atual(estado) == 0)
+    if (obter_jogador_atual(estado) == 0)
         estado -> num_jogadas += 1;
     //Atualiza o array de jogadas
     int n = obter_numero_de_jogadas(estado)-1;
@@ -111,8 +116,7 @@ int encurralado (ESTADO *estado) {
 }
 
 int jogada_final (ESTADO *estado, COORDENADA c) {
-    int jogador = obter_jogador_atual(estado);
-    if (c.coluna == 0 && c.linha == 7) {
+     if (c.coluna == 0 && c.linha == 7) {
         return 1;
     }//Casa final do Jogador 1
     else if (c.coluna == 7 && c.linha == 0)

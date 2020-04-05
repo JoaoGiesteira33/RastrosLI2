@@ -5,7 +5,13 @@ Definição da lógica do programa
 
 #ifndef RASTROSLI2_LOGICA_H
 #define RASTROSLI2_LOGICA_H
-
+/**
+\brief Muda o valor de uma casa
+@param e Apontador para o estado
+@param c A coordenada
+@param V O novo valor para a casa
+*/
+void set_casa (ESTADO *e, COORDENADA c, CASA valor);
 /**
 \brief Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa.
 @param estado Apontador para o estado

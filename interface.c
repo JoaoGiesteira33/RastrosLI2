@@ -8,9 +8,9 @@
 
 COORDENADA str_to_coord(char *coord)
 {
-    COORDENADA coordenada;
-    coordenada.coluna = coord[0] - 'A';
-    coordenada.linha = '8' - coord[1];
+    COORDENADA coordenadasw;
+    coordenadasw.coluna = (coord[0]) - 'a';
+    coordenadasw.linha = (coord[1]) + 8;
 }
 
 void armazenar_jogada(ESTADO *e,JOGADA jog, int n)
@@ -158,21 +158,24 @@ ERROS ler (ESTADO* e,char*ficheiro) {
         }
         fscanf(fp, "%c", &cha);
     }
-
-    fseek (fp, 72, SEEK_SET);
+    int num_jog;
+    fseek (fp, 8, SEEK_SET);
     char linha[BUF_SIZE];
     int indice = 0;
     e-> num_jogadas = 0;
     while (fgets(linha, BUF_SIZE, fp) != NULL) {
-        int num_jog;
+        int nada;
+        int num_jogad;
         char jog1[BUF_SIZE];
         char jog2[BUF_SIZE];
-        int num_tokens = sscanf (linha, "%d: %s %s", &num_jog, jog1, jog2);
-        if (num_tokens == 3) {
+        int num_tokens = sscanf (linha, "%d%d: %s %s", &nada ,&num_jogad, jog1, jog2);
+        if (num_tokens == 4) {
             COORDENADA c1 = str_to_coord(jog1);
             COORDENADA c2 = str_to_coord(jog2);
             armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
             e -> jogador_atual = 0;
+            indice++;
+
         }else
             {
             COORDENADA c1 = str_to_coord(jog1);
@@ -180,9 +183,11 @@ ERROS ler (ESTADO* e,char*ficheiro) {
             armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
             e -> jogador_atual = 1;
         }
-        indice++;
+        e -> num_jogadas = num_jogad;
+
     }
-        e->num_jogadas = indice;
+    e -> num_jogadas = num_jog;
+
         fclose(fp);
         mostrar_tabuleiro(e);
         return OK;

@@ -66,7 +66,7 @@ COORDENADA obter_ultima_jogada (ESTADO *estado) {
 }
 int conversorultimajogadalinha (COORDENADA c){
     int linha;
-    linha =  8 -c.linha ;
+    linha =  8 - c.linha ;
     return linha;
 }
 
@@ -116,7 +116,4 @@ CASA obter_estado_casa(ESTADO *e, COORDENADA c)
     return casa;
 }
 
-void set_casa(ESTADO *e, COORDENADA c, CASA V)
-{
-    e->tab[c.coluna][c.linha] = V;
-}
+
