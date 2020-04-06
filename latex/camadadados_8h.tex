@@ -1,3 +1,592 @@
 \hypertarget{camadadados_8h}{}\section{Referência ao ficheiro camadadados.\+h}
 \label{camadadados_8h}\index{camadadados.\+h@{camadadados.\+h}}
 Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{camadadados_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}
+\begin{DoxyCompactList}\small\item\em Tipo de dados para as coordenadas. \end{DoxyCompactList}\item 
+struct \hyperlink{structJOGADA}{J\+O\+G\+A\+DA}
+\begin{DoxyCompactList}\small\item\em Tipo de dados para a jogada. \end{DoxyCompactList}\item 
+struct \hyperlink{structESTADO}{E\+S\+T\+A\+DO}
+\begin{DoxyCompactList}\small\item\em Tipo de dados para o estado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Definições de tipos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{camadadados_8h_a94c221d29a1760f008b7834093259b7d}\label{camadadados_8h_a94c221d29a1760f008b7834093259b7d}} 
+typedef \hyperlink{structJOGADA}{J\+O\+G\+A\+DA} \hyperlink{camadadados_8h_a94c221d29a1760f008b7834093259b7d}{J\+O\+G\+A\+D\+AS}\mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Tipo de dados para as jogadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerações}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{camadadados_8h_aba91601f16d4c485b2d9b8c429f27039}\label{camadadados_8h_aba91601f16d4c485b2d9b8c429f27039}} 
+enum \hyperlink{camadadados_8h_aba91601f16d4c485b2d9b8c429f27039}{C\+A\+SA} \{ \newline
+{\bfseries UM} = \textquotesingle{}1\textquotesingle{}, 
+{\bfseries D\+O\+IS} = \textquotesingle{}2\textquotesingle{}, 
+{\bfseries V\+A\+Z\+IO} = \textquotesingle{}.\textquotesingle{}, 
+{\bfseries B\+R\+A\+N\+CA} = \textquotesingle{}$\ast$\textquotesingle{}, 
+\newline
+{\bfseries P\+R\+E\+TA} = \textquotesingle{}\#\textquotesingle{}
+ \}\begin{DoxyCompactList}\small\item\em Tipo de dados para a casa. \end{DoxyCompactList}
+\item 
+\mbox{\Hypertarget{camadadados_8h_ab8d2e03f1be6ed043ab77a0ea6d0c3fd}\label{camadadados_8h_ab8d2e03f1be6ed043ab77a0ea6d0c3fd}} 
+enum \hyperlink{camadadados_8h_ab8d2e03f1be6ed043ab77a0ea6d0c3fd}{E\+R\+R\+OS} \{ \newline
+{\bfseries OK}, 
+{\bfseries C\+O\+O\+R\+D\+E\+N\+A\+D\+A\+\_\+\+I\+N\+V\+A\+L\+I\+DA}, 
+{\bfseries J\+O\+G\+A\+D\+A\+\_\+\+I\+N\+V\+A\+L\+I\+DA}, 
+{\bfseries E\+R\+R\+O\+\_\+\+L\+E\+R\+\_\+\+T\+AB}, 
+\newline
+{\bfseries E\+R\+R\+O\+\_\+\+A\+B\+R\+I\+R\+\_\+\+F\+I\+C\+H\+E\+I\+RO}
+ \}\begin{DoxyCompactList}\small\item\em Tipo de dados para os erros. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{camadadados_8h_a7e0c7e26fb685d9ab501e19b05e6954f}\label{camadadados_8h_a7e0c7e26fb685d9ab501e19b05e6954f}} 
+\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$ \hyperlink{camadadados_8h_a7e0c7e26fb685d9ab501e19b05e6954f}{inicializar\+\_\+estado} ()
+\begin{DoxyCompactList}\small\item\em Inicializa um estado. \end{DoxyCompactList}\item 
+int \hyperlink{camadadados_8h_ad6e326e4ffa57ca1ae0c75377ecefc8c}{obter\+\_\+jogador\+\_\+atual} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado)
+\begin{DoxyCompactList}\small\item\em Retorna o jogador atual. \end{DoxyCompactList}\item 
+int \hyperlink{camadadados_8h_a6cd0b387bdee9e18003c78852394aa63}{obter\+\_\+numero\+\_\+de\+\_\+jogadas} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado)
+\begin{DoxyCompactList}\small\item\em Retorna o número de jogadas. \end{DoxyCompactList}\item 
+\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} \hyperlink{camadadados_8h_a002d7b97f6e1f8bfa2b50efbe03d62bf}{obter\+\_\+ultima\+\_\+jogada} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado)
+\begin{DoxyCompactList}\small\item\em Obtém a ultima jogada efetuada. \end{DoxyCompactList}\item 
+int \hyperlink{camadadados_8h_af4cf201e91b420cd174888d897512e2d}{conversorultimajogadalinha} (\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+\begin{DoxyCompactList}\small\item\em Função auxiliar do prompt. \end{DoxyCompactList}\item 
+char \hyperlink{camadadados_8h_a3c6b8a183e1177d63b9646ff4e9322ac}{conversorultimajogadacoluna} (\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+\begin{DoxyCompactList}\small\item\em Converte a ultima jogada coluna. \end{DoxyCompactList}\item 
+\hyperlink{camadadados_8h_aba91601f16d4c485b2d9b8c429f27039}{C\+A\+SA} \hyperlink{camadadados_8h_a6faa68373203923729ed38657aa0f768}{obter\+\_\+estado\+\_\+casa} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+\begin{DoxyCompactList}\small\item\em Obtém o estado da casa. \end{DoxyCompactList}\item 
+\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} \hyperlink{camadadados_8h_a29af49e89d83da20e8127ef019c05f00}{str\+\_\+to\+\_\+coord} (char $\ast$coord)
+\begin{DoxyCompactList}\small\item\em Funcao que traduz de string para \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_a1fc7443b24fac5ea61afbb41f9a00feb}{armazenar\+\_\+jogada} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structJOGADA}{J\+O\+G\+A\+DA} jog, int n)
+\begin{DoxyCompactList}\small\item\em Funcao que armaneza jogadas. \end{DoxyCompactList}\item 
+\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} \hyperlink{camadadados_8h_a30d458e0db175363ef23d01614148db5}{get\+\_\+coord\+\_\+jogador1} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, int c)
+\begin{DoxyCompactList}\small\item\em Funcao para devolver a coordenada do Jogador 1 numa Jogada c. \end{DoxyCompactList}\item 
+\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} \hyperlink{camadadados_8h_a9f88ef4d79f7afb4ba23c18bcf969b99}{get\+\_\+coord\+\_\+jogador2} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, int c)
+\begin{DoxyCompactList}\small\item\em Funcao para devolver a coordenada do Jogador 2 numa Jogada c. \end{DoxyCompactList}\item 
+int \hyperlink{camadadados_8h_a5bedf93c8d1ff9b665c40b18e6729379}{get\+\_\+coord\+\_\+coluna} (\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+\begin{DoxyCompactList}\small\item\em Funcao para devolver a coluna de uma jogada. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_a8828526e2c272cd90636cc20be682929}{altera\+\_\+ultimajogada} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+\begin{DoxyCompactList}\small\item\em Funcao para alterar a ultima jogada no estado. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_a34423ba176740a47fe988269870dbc42}{set\+\_\+casa} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c, \hyperlink{camadadados_8h_aba91601f16d4c485b2d9b8c429f27039}{C\+A\+SA} valor)
+\begin{DoxyCompactList}\small\item\em Muda o valor de uma casa. \end{DoxyCompactList}\item 
+\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} \hyperlink{camadadados_8h_ae89c72e4fa31dcc1eb9ba0fb8ea707e1}{get\+\_\+ultima\+\_\+jogada} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Funcao para devolver a coordenada da ultima jogada. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_a3abdb3d91974ec908ad15dac49fa8ed4}{altera\+\_\+estado\+\_\+casa\+\_\+branca} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+\begin{DoxyCompactList}\small\item\em Funcao para alterar o estado da casa para Branca. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_af2df0559684091c80715656208c7419f}{incrementa\+\_\+numero\+\_\+jogadas} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Funcao para incrementar o numero de jogadas. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_a41d8488efb98b187eadb229188da788d}{set\+\_\+jogadas\+\_\+jogador1} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c, int n)
+\begin{DoxyCompactList}\small\item\em Funcao para inserir uma Jogada do Jogador 1 no estado. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_af90315c6e34540b827b4fdbb10552775}{set\+\_\+jogadas\+\_\+jogador2} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c, int n)
+\begin{DoxyCompactList}\small\item\em Funcao para inserir uma Jogada do Jogador 2 no estado. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_a2787d03a0237b39a69235b2a1717a34d}{altera\+\_\+estado\+\_\+casa\+\_\+preta} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+\begin{DoxyCompactList}\small\item\em Funcao para alterar o estado da casa para Preta. \end{DoxyCompactList}\item 
+int \hyperlink{camadadados_8h_ab9c95b014d2e217eae7d081088501963}{get\+\_\+jogador\+\_\+atual} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Funcao para devolver o Jogador Atual. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_a35c87726f07cb6e89e088c9f2ada6ec2}{set\+\_\+jogador\+\_\+atual} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, int x)
+\begin{DoxyCompactList}\small\item\em Funcao para alterar o Jogador Atual. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_a2bb319e05de00ed8feb0936e16b7c263}{set\+\_\+jogador\+\_\+vencedor} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, int x)
+\begin{DoxyCompactList}\small\item\em Funcao para alterar o Vencedor do Jogo. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_a5877b3945165d173d3bdb45d3e5ce333}{set\+\_\+numero\+\_\+jogadas} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, int x)
+\begin{DoxyCompactList}\small\item\em Funcao para alterar o numero de jogadas. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_a11c86c7543dddcc597997649342ab51e}{altera\+\_\+estado\+\_\+casa\+\_\+vazio} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
+\begin{DoxyCompactList}\small\item\em Funcao para alterar o estada de uma casa para Vazio. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_aa0a6b66d365831c3e507efef17564b86}{altera\+\_\+ultimajogada\+\_\+pos} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, int jogada)
+\begin{DoxyCompactList}\small\item\em Funcao para alterar as coordenadas da ultima jogada na funcao pos. \end{DoxyCompactList}\item 
+\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} \hyperlink{camadadados_8h_a65e38a66349ed29267b579412c5cbc53}{get\+\_\+jogadas\+\_\+jogador1} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, int n)
+\begin{DoxyCompactList}\small\item\em Funcao para obter a Coordenada do Jogador 1 numa certa Jogada. \end{DoxyCompactList}\item 
+\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} \hyperlink{camadadados_8h_a877bb4d00d7f602710314b2fe8fdb2c8}{get\+\_\+jogadas\+\_\+jogador2} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, int n)
+\begin{DoxyCompactList}\small\item\em Funcao para obter a Coordenada do Jogador 2 numa certa Jogada. \end{DoxyCompactList}\item 
+void \hyperlink{camadadados_8h_a236d410338f232f8434859c40a165205}{set\+\_\+casas\+\_\+invalidas} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e, int n)
+\begin{DoxyCompactList}\small\item\em Funcao para alterar as coordenadas de casas nao utilizadas para -\/1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Definição do estado e das funções que o manipulam 
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{camadadados_8h_a3abdb3d91974ec908ad15dac49fa8ed4}\label{camadadados_8h_a3abdb3d91974ec908ad15dac49fa8ed4}} 
+\index{camadadados.\+h@{camadadados.\+h}!altera\+\_\+estado\+\_\+casa\+\_\+branca@{altera\+\_\+estado\+\_\+casa\+\_\+branca}}
+\index{altera\+\_\+estado\+\_\+casa\+\_\+branca@{altera\+\_\+estado\+\_\+casa\+\_\+branca}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{altera\+\_\+estado\+\_\+casa\+\_\+branca()}{altera\_estado\_casa\_branca()}}
+{\footnotesize\ttfamily void altera\+\_\+estado\+\_\+casa\+\_\+branca (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c }\end{DoxyParamCaption})}
+
+
+
+Funcao para alterar o estado da casa para Branca. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & A coordenada a alterar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a2787d03a0237b39a69235b2a1717a34d}\label{camadadados_8h_a2787d03a0237b39a69235b2a1717a34d}} 
+\index{camadadados.\+h@{camadadados.\+h}!altera\+\_\+estado\+\_\+casa\+\_\+preta@{altera\+\_\+estado\+\_\+casa\+\_\+preta}}
+\index{altera\+\_\+estado\+\_\+casa\+\_\+preta@{altera\+\_\+estado\+\_\+casa\+\_\+preta}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{altera\+\_\+estado\+\_\+casa\+\_\+preta()}{altera\_estado\_casa\_preta()}}
+{\footnotesize\ttfamily void altera\+\_\+estado\+\_\+casa\+\_\+preta (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c }\end{DoxyParamCaption})}
+
+
+
+Funcao para alterar o estado da casa para Preta. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & A coordenada a alterar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a11c86c7543dddcc597997649342ab51e}\label{camadadados_8h_a11c86c7543dddcc597997649342ab51e}} 
+\index{camadadados.\+h@{camadadados.\+h}!altera\+\_\+estado\+\_\+casa\+\_\+vazio@{altera\+\_\+estado\+\_\+casa\+\_\+vazio}}
+\index{altera\+\_\+estado\+\_\+casa\+\_\+vazio@{altera\+\_\+estado\+\_\+casa\+\_\+vazio}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{altera\+\_\+estado\+\_\+casa\+\_\+vazio()}{altera\_estado\_casa\_vazio()}}
+{\footnotesize\ttfamily void altera\+\_\+estado\+\_\+casa\+\_\+vazio (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c }\end{DoxyParamCaption})}
+
+
+
+Funcao para alterar o estada de uma casa para Vazio. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & A coordenada da casa a alterar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a8828526e2c272cd90636cc20be682929}\label{camadadados_8h_a8828526e2c272cd90636cc20be682929}} 
+\index{camadadados.\+h@{camadadados.\+h}!altera\+\_\+ultimajogada@{altera\+\_\+ultimajogada}}
+\index{altera\+\_\+ultimajogada@{altera\+\_\+ultimajogada}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{altera\+\_\+ultimajogada()}{altera\_ultimajogada()}}
+{\footnotesize\ttfamily void altera\+\_\+ultimajogada (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c }\end{DoxyParamCaption})}
+
+
+
+Funcao para alterar a ultima jogada no estado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & Coordenada a Alterar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_aa0a6b66d365831c3e507efef17564b86}\label{camadadados_8h_aa0a6b66d365831c3e507efef17564b86}} 
+\index{camadadados.\+h@{camadadados.\+h}!altera\+\_\+ultimajogada\+\_\+pos@{altera\+\_\+ultimajogada\+\_\+pos}}
+\index{altera\+\_\+ultimajogada\+\_\+pos@{altera\+\_\+ultimajogada\+\_\+pos}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{altera\+\_\+ultimajogada\+\_\+pos()}{altera\_ultimajogada\_pos()}}
+{\footnotesize\ttfamily void altera\+\_\+ultimajogada\+\_\+pos (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{int}]{jogada }\end{DoxyParamCaption})}
+
+
+
+Funcao para alterar as coordenadas da ultima jogada na funcao pos. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & Inteiro para indicar a Jogada a utilizar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a1fc7443b24fac5ea61afbb41f9a00feb}\label{camadadados_8h_a1fc7443b24fac5ea61afbb41f9a00feb}} 
+\index{camadadados.\+h@{camadadados.\+h}!armazenar\+\_\+jogada@{armazenar\+\_\+jogada}}
+\index{armazenar\+\_\+jogada@{armazenar\+\_\+jogada}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{armazenar\+\_\+jogada()}{armazenar\_jogada()}}
+{\footnotesize\ttfamily void armazenar\+\_\+jogada (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structJOGADA}{J\+O\+G\+A\+DA}}]{jog,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Funcao que armaneza jogadas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em jog} & Jogada a ser guardada \\
+\hline
+{\em n} & Número da jogada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a3c6b8a183e1177d63b9646ff4e9322ac}\label{camadadados_8h_a3c6b8a183e1177d63b9646ff4e9322ac}} 
+\index{camadadados.\+h@{camadadados.\+h}!conversorultimajogadacoluna@{conversorultimajogadacoluna}}
+\index{conversorultimajogadacoluna@{conversorultimajogadacoluna}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{conversorultimajogadacoluna()}{conversorultimajogadacoluna()}}
+{\footnotesize\ttfamily char conversorultimajogadacoluna (\begin{DoxyParamCaption}\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c }\end{DoxyParamCaption})}
+
+
+
+Converte a ultima jogada coluna. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em c} & A coordenada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_af4cf201e91b420cd174888d897512e2d}\label{camadadados_8h_af4cf201e91b420cd174888d897512e2d}} 
+\index{camadadados.\+h@{camadadados.\+h}!conversorultimajogadalinha@{conversorultimajogadalinha}}
+\index{conversorultimajogadalinha@{conversorultimajogadalinha}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{conversorultimajogadalinha()}{conversorultimajogadalinha()}}
+{\footnotesize\ttfamily int conversorultimajogadalinha (\begin{DoxyParamCaption}\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c }\end{DoxyParamCaption})}
+
+
+
+Função auxiliar do prompt. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em c} & A Coordenada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a5bedf93c8d1ff9b665c40b18e6729379}\label{camadadados_8h_a5bedf93c8d1ff9b665c40b18e6729379}} 
+\index{camadadados.\+h@{camadadados.\+h}!get\+\_\+coord\+\_\+coluna@{get\+\_\+coord\+\_\+coluna}}
+\index{get\+\_\+coord\+\_\+coluna@{get\+\_\+coord\+\_\+coluna}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+coord\+\_\+coluna()}{get\_coord\_coluna()}}
+{\footnotesize\ttfamily int get\+\_\+coord\+\_\+coluna (\begin{DoxyParamCaption}\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c }\end{DoxyParamCaption})}
+
+
+
+Funcao para devolver a coluna de uma jogada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em c} & A coordenada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A coluna 
+\end{DoxyReturn}
+\mbox{\Hypertarget{camadadados_8h_a30d458e0db175363ef23d01614148db5}\label{camadadados_8h_a30d458e0db175363ef23d01614148db5}} 
+\index{camadadados.\+h@{camadadados.\+h}!get\+\_\+coord\+\_\+jogador1@{get\+\_\+coord\+\_\+jogador1}}
+\index{get\+\_\+coord\+\_\+jogador1@{get\+\_\+coord\+\_\+jogador1}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+coord\+\_\+jogador1()}{get\_coord\_jogador1()}}
+{\footnotesize\ttfamily \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} get\+\_\+coord\+\_\+jogador1 (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Funcao para devolver a coordenada do Jogador 1 numa Jogada c. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & Numero da Jogada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A Coordenada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{camadadados_8h_a9f88ef4d79f7afb4ba23c18bcf969b99}\label{camadadados_8h_a9f88ef4d79f7afb4ba23c18bcf969b99}} 
+\index{camadadados.\+h@{camadadados.\+h}!get\+\_\+coord\+\_\+jogador2@{get\+\_\+coord\+\_\+jogador2}}
+\index{get\+\_\+coord\+\_\+jogador2@{get\+\_\+coord\+\_\+jogador2}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+coord\+\_\+jogador2()}{get\_coord\_jogador2()}}
+{\footnotesize\ttfamily \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} get\+\_\+coord\+\_\+jogador2 (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Funcao para devolver a coordenada do Jogador 2 numa Jogada c. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & Numero da Jogada \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A Coordenada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{camadadados_8h_a65e38a66349ed29267b579412c5cbc53}\label{camadadados_8h_a65e38a66349ed29267b579412c5cbc53}} 
+\index{camadadados.\+h@{camadadados.\+h}!get\+\_\+jogadas\+\_\+jogador1@{get\+\_\+jogadas\+\_\+jogador1}}
+\index{get\+\_\+jogadas\+\_\+jogador1@{get\+\_\+jogadas\+\_\+jogador1}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+jogadas\+\_\+jogador1()}{get\_jogadas\_jogador1()}}
+{\footnotesize\ttfamily \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} get\+\_\+jogadas\+\_\+jogador1 (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Funcao para obter a Coordenada do Jogador 1 numa certa Jogada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & Inteiro que indica a Jogada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a877bb4d00d7f602710314b2fe8fdb2c8}\label{camadadados_8h_a877bb4d00d7f602710314b2fe8fdb2c8}} 
+\index{camadadados.\+h@{camadadados.\+h}!get\+\_\+jogadas\+\_\+jogador2@{get\+\_\+jogadas\+\_\+jogador2}}
+\index{get\+\_\+jogadas\+\_\+jogador2@{get\+\_\+jogadas\+\_\+jogador2}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+jogadas\+\_\+jogador2()}{get\_jogadas\_jogador2()}}
+{\footnotesize\ttfamily \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} get\+\_\+jogadas\+\_\+jogador2 (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Funcao para obter a Coordenada do Jogador 2 numa certa Jogada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & Inteiro que indica a Jogada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_ab9c95b014d2e217eae7d081088501963}\label{camadadados_8h_ab9c95b014d2e217eae7d081088501963}} 
+\index{camadadados.\+h@{camadadados.\+h}!get\+\_\+jogador\+\_\+atual@{get\+\_\+jogador\+\_\+atual}}
+\index{get\+\_\+jogador\+\_\+atual@{get\+\_\+jogador\+\_\+atual}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+jogador\+\_\+atual()}{get\_jogador\_atual()}}
+{\footnotesize\ttfamily int get\+\_\+jogador\+\_\+atual (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Funcao para devolver o Jogador Atual. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_ae89c72e4fa31dcc1eb9ba0fb8ea707e1}\label{camadadados_8h_ae89c72e4fa31dcc1eb9ba0fb8ea707e1}} 
+\index{camadadados.\+h@{camadadados.\+h}!get\+\_\+ultima\+\_\+jogada@{get\+\_\+ultima\+\_\+jogada}}
+\index{get\+\_\+ultima\+\_\+jogada@{get\+\_\+ultima\+\_\+jogada}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+ultima\+\_\+jogada()}{get\_ultima\_jogada()}}
+{\footnotesize\ttfamily \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} get\+\_\+ultima\+\_\+jogada (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Funcao para devolver a coordenada da ultima jogada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+A Coordenada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{camadadados_8h_af2df0559684091c80715656208c7419f}\label{camadadados_8h_af2df0559684091c80715656208c7419f}} 
+\index{camadadados.\+h@{camadadados.\+h}!incrementa\+\_\+numero\+\_\+jogadas@{incrementa\+\_\+numero\+\_\+jogadas}}
+\index{incrementa\+\_\+numero\+\_\+jogadas@{incrementa\+\_\+numero\+\_\+jogadas}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{incrementa\+\_\+numero\+\_\+jogadas()}{incrementa\_numero\_jogadas()}}
+{\footnotesize\ttfamily void incrementa\+\_\+numero\+\_\+jogadas (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Funcao para incrementar o numero de jogadas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a6faa68373203923729ed38657aa0f768}\label{camadadados_8h_a6faa68373203923729ed38657aa0f768}} 
+\index{camadadados.\+h@{camadadados.\+h}!obter\+\_\+estado\+\_\+casa@{obter\+\_\+estado\+\_\+casa}}
+\index{obter\+\_\+estado\+\_\+casa@{obter\+\_\+estado\+\_\+casa}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{obter\+\_\+estado\+\_\+casa()}{obter\_estado\_casa()}}
+{\footnotesize\ttfamily \hyperlink{camadadados_8h_aba91601f16d4c485b2d9b8c429f27039}{C\+A\+SA} obter\+\_\+estado\+\_\+casa (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c }\end{DoxyParamCaption})}
+
+
+
+Obtém o estado da casa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & A coordenada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_ad6e326e4ffa57ca1ae0c75377ecefc8c}\label{camadadados_8h_ad6e326e4ffa57ca1ae0c75377ecefc8c}} 
+\index{camadadados.\+h@{camadadados.\+h}!obter\+\_\+jogador\+\_\+atual@{obter\+\_\+jogador\+\_\+atual}}
+\index{obter\+\_\+jogador\+\_\+atual@{obter\+\_\+jogador\+\_\+atual}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{obter\+\_\+jogador\+\_\+atual()}{obter\_jogador\_atual()}}
+{\footnotesize\ttfamily int obter\+\_\+jogador\+\_\+atual (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{estado }\end{DoxyParamCaption})}
+
+
+
+Retorna o jogador atual. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em estado} & Apontador para o estado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a6cd0b387bdee9e18003c78852394aa63}\label{camadadados_8h_a6cd0b387bdee9e18003c78852394aa63}} 
+\index{camadadados.\+h@{camadadados.\+h}!obter\+\_\+numero\+\_\+de\+\_\+jogadas@{obter\+\_\+numero\+\_\+de\+\_\+jogadas}}
+\index{obter\+\_\+numero\+\_\+de\+\_\+jogadas@{obter\+\_\+numero\+\_\+de\+\_\+jogadas}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{obter\+\_\+numero\+\_\+de\+\_\+jogadas()}{obter\_numero\_de\_jogadas()}}
+{\footnotesize\ttfamily int obter\+\_\+numero\+\_\+de\+\_\+jogadas (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{estado }\end{DoxyParamCaption})}
+
+
+
+Retorna o número de jogadas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em estado} & Apontador para o estado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a002d7b97f6e1f8bfa2b50efbe03d62bf}\label{camadadados_8h_a002d7b97f6e1f8bfa2b50efbe03d62bf}} 
+\index{camadadados.\+h@{camadadados.\+h}!obter\+\_\+ultima\+\_\+jogada@{obter\+\_\+ultima\+\_\+jogada}}
+\index{obter\+\_\+ultima\+\_\+jogada@{obter\+\_\+ultima\+\_\+jogada}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{obter\+\_\+ultima\+\_\+jogada()}{obter\_ultima\_jogada()}}
+{\footnotesize\ttfamily \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} obter\+\_\+ultima\+\_\+jogada (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{estado }\end{DoxyParamCaption})}
+
+
+
+Obtém a ultima jogada efetuada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em estado} & Apontador para o estado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a34423ba176740a47fe988269870dbc42}\label{camadadados_8h_a34423ba176740a47fe988269870dbc42}} 
+\index{camadadados.\+h@{camadadados.\+h}!set\+\_\+casa@{set\+\_\+casa}}
+\index{set\+\_\+casa@{set\+\_\+casa}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+casa()}{set\_casa()}}
+{\footnotesize\ttfamily void set\+\_\+casa (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c,  }\item[{\hyperlink{camadadados_8h_aba91601f16d4c485b2d9b8c429f27039}{C\+A\+SA}}]{valor }\end{DoxyParamCaption})}
+
+
+
+Muda o valor de uma casa. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & A coordenada \\
+\hline
+{\em V} & O novo valor para a casa \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a236d410338f232f8434859c40a165205}\label{camadadados_8h_a236d410338f232f8434859c40a165205}} 
+\index{camadadados.\+h@{camadadados.\+h}!set\+\_\+casas\+\_\+invalidas@{set\+\_\+casas\+\_\+invalidas}}
+\index{set\+\_\+casas\+\_\+invalidas@{set\+\_\+casas\+\_\+invalidas}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+casas\+\_\+invalidas()}{set\_casas\_invalidas()}}
+{\footnotesize\ttfamily void set\+\_\+casas\+\_\+invalidas (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Funcao para alterar as coordenadas de casas nao utilizadas para -\/1. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & Inteiro que indica a Jogada a alterar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a41d8488efb98b187eadb229188da788d}\label{camadadados_8h_a41d8488efb98b187eadb229188da788d}} 
+\index{camadadados.\+h@{camadadados.\+h}!set\+\_\+jogadas\+\_\+jogador1@{set\+\_\+jogadas\+\_\+jogador1}}
+\index{set\+\_\+jogadas\+\_\+jogador1@{set\+\_\+jogadas\+\_\+jogador1}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+jogadas\+\_\+jogador1()}{set\_jogadas\_jogador1()}}
+{\footnotesize\ttfamily void set\+\_\+jogadas\+\_\+jogador1 (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Funcao para inserir uma Jogada do Jogador 1 no estado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & A coordenada a inserir \\
+\hline
+{\em n} & Numero da Jogada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_af90315c6e34540b827b4fdbb10552775}\label{camadadados_8h_af90315c6e34540b827b4fdbb10552775}} 
+\index{camadadados.\+h@{camadadados.\+h}!set\+\_\+jogadas\+\_\+jogador2@{set\+\_\+jogadas\+\_\+jogador2}}
+\index{set\+\_\+jogadas\+\_\+jogador2@{set\+\_\+jogadas\+\_\+jogador2}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+jogadas\+\_\+jogador2()}{set\_jogadas\_jogador2()}}
+{\footnotesize\ttfamily void set\+\_\+jogadas\+\_\+jogador2 (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Funcao para inserir uma Jogada do Jogador 2 no estado. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & A coordenada a inserir \\
+\hline
+{\em n} & Numero da Jogada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a35c87726f07cb6e89e088c9f2ada6ec2}\label{camadadados_8h_a35c87726f07cb6e89e088c9f2ada6ec2}} 
+\index{camadadados.\+h@{camadadados.\+h}!set\+\_\+jogador\+\_\+atual@{set\+\_\+jogador\+\_\+atual}}
+\index{set\+\_\+jogador\+\_\+atual@{set\+\_\+jogador\+\_\+atual}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+jogador\+\_\+atual()}{set\_jogador\_atual()}}
+{\footnotesize\ttfamily void set\+\_\+jogador\+\_\+atual (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Funcao para alterar o Jogador Atual. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em x} & Jogador a Alterar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a2bb319e05de00ed8feb0936e16b7c263}\label{camadadados_8h_a2bb319e05de00ed8feb0936e16b7c263}} 
+\index{camadadados.\+h@{camadadados.\+h}!set\+\_\+jogador\+\_\+vencedor@{set\+\_\+jogador\+\_\+vencedor}}
+\index{set\+\_\+jogador\+\_\+vencedor@{set\+\_\+jogador\+\_\+vencedor}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+jogador\+\_\+vencedor()}{set\_jogador\_vencedor()}}
+{\footnotesize\ttfamily void set\+\_\+jogador\+\_\+vencedor (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Funcao para alterar o Vencedor do Jogo. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & O Vencedor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a5877b3945165d173d3bdb45d3e5ce333}\label{camadadados_8h_a5877b3945165d173d3bdb45d3e5ce333}} 
+\index{camadadados.\+h@{camadadados.\+h}!set\+\_\+numero\+\_\+jogadas@{set\+\_\+numero\+\_\+jogadas}}
+\index{set\+\_\+numero\+\_\+jogadas@{set\+\_\+numero\+\_\+jogadas}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{set\+\_\+numero\+\_\+jogadas()}{set\_numero\_jogadas()}}
+{\footnotesize\ttfamily void set\+\_\+numero\+\_\+jogadas (\begin{DoxyParamCaption}\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e,  }\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Funcao para alterar o numero de jogadas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em e} & Apontador para o estado \\
+\hline
+{\em c} & Numero de Jogadas a alterar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{camadadados_8h_a29af49e89d83da20e8127ef019c05f00}\label{camadadados_8h_a29af49e89d83da20e8127ef019c05f00}} 
+\index{camadadados.\+h@{camadadados.\+h}!str\+\_\+to\+\_\+coord@{str\+\_\+to\+\_\+coord}}
+\index{str\+\_\+to\+\_\+coord@{str\+\_\+to\+\_\+coord}!camadadados.\+h@{camadadados.\+h}}
+\subsubsection{\texorpdfstring{str\+\_\+to\+\_\+coord()}{str\_to\_coord()}}
+{\footnotesize\ttfamily \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} str\+\_\+to\+\_\+coord (\begin{DoxyParamCaption}\item[{char $\ast$}]{coord }\end{DoxyParamCaption})}
+
+
+
+Funcao que traduz de string para \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em coord} & Apontador para uma coordenada \\
+\hline
+\end{DoxyParams}

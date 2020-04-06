@@ -3,7 +3,6 @@
 #include <string.h>
 #include "camadadados.h"
 
-
 ESTADO *inicializar_estado()
 {
     ESTADO *e = (ESTADO *)malloc(sizeof(ESTADO));
@@ -171,8 +170,20 @@ void set_jogadas_jogador1 (ESTADO *e, COORDENADA c, int n) {
     e->jogadas[n].jogador1 = c;
 }
 
+COORDENADA get_jogadas_jogador1 (ESTADO *e, int n) {
+    COORDENADA x = e -> jogadas[n].jogador1;
+
+    return x;
+}
+
 void set_jogadas_jogador2 (ESTADO *e, COORDENADA c, int n) {
     e->jogadas[n].jogador2 = c;
+}
+
+COORDENADA get_jogadas_jogador2 (ESTADO *e, int n) {
+    COORDENADA x = e -> jogadas[n].jogador2;
+
+    return x;
 }
 
 void altera_estado_casa_preta (ESTADO *e, COORDENADA c) {
@@ -191,4 +202,22 @@ void set_jogador_atual (ESTADO *e, int x) {
 
 void set_jogador_vencedor (ESTADO *e, int x) {
     e -> vencedor = x;
+}
+
+void set_numero_jogadas (ESTADO *e, int x) {
+    e -> num_jogadas = x;
+}
+
+void altera_estado_casa_vazio (ESTADO *e, COORDENADA c) {
+    e -> tab[c.coluna][c.linha] = VAZIO;
+}
+
+void altera_ultimajogada_pos (ESTADO *e, int jogada) {
+    e -> ultima_jogada.coluna = e -> jogadas[jogada-1].jogador2.coluna;
+    e -> ultima_jogada.linha = e -> jogadas[jogada-1].jogador2.linha;
+}
+
+void set_casas_invalidas (ESTADO *e, int n) {
+    e->jogadas[n].jogador1 = (COORDENADA){.coluna = -1, .linha = -1};
+    e->jogadas[n].jogador2 = (COORDENADA){.coluna = -1, .linha = -1};
 }

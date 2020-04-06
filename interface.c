@@ -6,7 +6,7 @@
 #include "camadadados.h"
 #define BUF_SIZE 1024
 
-void copiaEstado(ESTADO *e)
+void copiaEstado (ESTADO *e)
 {
     ESTADO *novo = (ESTADO *)malloc(sizeof(ESTADO));
 
@@ -22,18 +22,22 @@ void posJog(ESTADO *e,int jogada)
      } else{
          //copiaEstado(e);
          printf("Copiou\n");
-         e-> jogador_atual = 0;
-         e->num_jogadas = jogada;
-         e->tab[e->ultima_jogada.coluna][e->ultima_jogada.linha] = VAZIO;
-         e->ultima_jogada.coluna = e->jogadas[jogada-1].jogador2.coluna;
-         e->ultima_jogada.linha = e->jogadas[jogada-1].jogador2.linha;
+         set_jogador_atual(e,0);
+         set_numero_jogadas(e, jogada);
+         altera_estado_casa_vazio(e,get_ultima_jogada(e));
+         altera_ultimajogada_pos(e, jogada);
 
          while(n >= jogada)
          {
-             e->tab[e->jogadas[n].jogador1.coluna][e->jogadas[n].jogador1.linha] = VAZIO;
-             e->tab[e->jogadas[n].jogador2.coluna][e->jogadas[n].jogador2.linha] = VAZIO;
-             e->jogadas[n].jogador1 = (COORDENADA){.coluna = -1, .linha = -1};
-             e->jogadas[n].jogador2 = (COORDENADA){.coluna = -1, .linha = -1};
+             COORDENADA x = get_jogadas_jogador1(e, n);
+
+             COORDENADA y = get_jogadas_jogador2(e, n);
+
+             altera_estado_casa_vazio(e,x);
+             altera_estado_casa_vazio(e,y);
+
+
+             set_casas_invalidas(e, n);
              n--;
          }
 
@@ -41,11 +45,17 @@ void posJog(ESTADO *e,int jogada)
 
              while(n <jogada)
              {
-                 e->tab[e->jogadas[n].jogador1.coluna][e->jogadas[n].jogador1.linha] = PRETA;
-                 e->tab[e->jogadas[n].jogador2.coluna][e->jogadas[n].jogador2.linha] = PRETA;
+                 COORDENADA x = get_jogadas_jogador1(e, n);
+                 COORDENADA y = get_jogadas_jogador2(e, n);
+
+                 altera_estado_casa_preta(e , x);
+                 altera_estado_casa_preta(e, y);
+
                  n++;
              }
-             e->tab[e->ultima_jogada.coluna][e->ultima_jogada.linha] = BRANCA;
+
+             COORDENADA ult = get_ultima_jogada(e);
+             altera_estado_casa_branca(e, ult);
          }
      mostrar_tabuleiro(e);
 }

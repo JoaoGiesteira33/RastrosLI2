@@ -207,5 +207,40 @@ void set_jogador_atual (ESTADO *e, int x);
  * @param c O Vencedor
  */
 void set_jogador_vencedor(ESTADO *e, int x);
-
+/**
+\brief Funcao para alterar o numero de jogadas
+ * @param e Apontador para o estado
+ * @param c Numero de Jogadas a alterar
+ */
+void set_numero_jogadas (ESTADO *e, int x);
+/**
+\brief Funcao para alterar o estada de uma casa para Vazio
+ * @param e Apontador para o estado
+ * @param c A coordenada da casa a alterar
+ */
+void altera_estado_casa_vazio (ESTADO *e, COORDENADA c);
+/**
+\brief Funcao para alterar as coordenadas da ultima jogada na funcao pos
+ * @param e Apontador para o estado
+ * @param c Inteiro para indicar a Jogada a utilizar
+ */
+void altera_ultimajogada_pos (ESTADO *e, int jogada);
+/**
+\brief Funcao para obter a Coordenada do Jogador 1 numa certa Jogada
+ * @param e Apontador para o estado
+ * @param c Inteiro que indica a Jogada
+ */
+COORDENADA get_jogadas_jogador1 (ESTADO *e, int n);
+/**
+\brief Funcao para obter a Coordenada do Jogador 2 numa certa Jogada
+ * @param e Apontador para o estado
+ * @param c Inteiro que indica a Jogada
+ */
+COORDENADA get_jogadas_jogador2 (ESTADO *e, int n);
+/**
+\brief Funcao para alterar as coordenadas de casas nao utilizadas para -1
+ * @param e Apontador para o estado
+ * @param c Inteiro que indica a Jogada a alterar
+ */
+void set_casas_invalidas (ESTADO *e, int n);
 #endif
