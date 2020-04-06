@@ -25,10 +25,10 @@ void posJog(ESTADO *e,int jogada)
          e-> jogador_atual = 0;
          e->num_jogadas = jogada;
          e->tab[e->ultima_jogada.coluna][e->ultima_jogada.linha] = VAZIO;
-         e->ultima_jogada.coluna = e->jogadas[jogada].jogador2.coluna;
-         e->ultima_jogada.linha = e->jogadas[jogada].jogador2.linha;
+         e->ultima_jogada.coluna = e->jogadas[jogada-1].jogador2.coluna;
+         e->ultima_jogada.linha = e->jogadas[jogada-1].jogador2.linha;
 
-         while(n > jogada)
+         while(n >= jogada)
          {
              e->tab[e->jogadas[n].jogador1.coluna][e->jogadas[n].jogador1.linha] = VAZIO;
              e->tab[e->jogadas[n].jogador2.coluna][e->jogadas[n].jogador2.linha] = VAZIO;
@@ -39,7 +39,7 @@ void posJog(ESTADO *e,int jogada)
 
          n = 0;
 
-             while(n<jogada)
+             while(n <jogada)
              {
                  e->tab[e->jogadas[n].jogador1.coluna][e->jogadas[n].jogador1.linha] = PRETA;
                  e->tab[e->jogadas[n].jogador2.coluna][e->jogadas[n].jogador2.linha] = PRETA;
