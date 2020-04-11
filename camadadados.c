@@ -108,7 +108,7 @@ char conversorultimajogadacoluna (COORDENADA c) {
 }
 
 
-CASA obter_estado_casa(ESTADO *e, COORDENADA c)
+CASA obter_estado_casa (ESTADO *e, COORDENADA c)
 {
     CASA casa;
     casa = e-> tab[c.coluna][c.linha];
@@ -220,4 +220,9 @@ void altera_ultimajogada_pos (ESTADO *e, int jogada) {
 void set_casas_invalidas (ESTADO *e, int n) {
     e->jogadas[n].jogador1 = (COORDENADA){.coluna = -1, .linha = -1};
     e->jogadas[n].jogador2 = (COORDENADA){.coluna = -1, .linha = -1};
+}
+
+int get_num_jogadas (ESTADO *e) {
+    int a = e -> num_jogadas;
+    return a;
 }

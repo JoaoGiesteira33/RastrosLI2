@@ -46,4 +46,6 @@ ERROS gravar(ESTADO *e,char *ficheiro);
 @param estado O estado
 */
 void mostrar_tabuleiro(ESTADO *estado);
+
+int converteDecimal (char v[]);
 #endif //RASTROSLI2_INTERFACE_H

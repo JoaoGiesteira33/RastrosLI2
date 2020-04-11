@@ -13,6 +13,13 @@ void copiaEstado (ESTADO *e)
    *novo = *e;
 }
 
+int converteDecimal (char v[]) {
+    int a = (v[0] * 10) + v[1];
+
+    return a;
+
+}
+
 void posJog(ESTADO *e,int jogada)
 {
      int n = 31;
@@ -61,15 +68,23 @@ void posJog(ESTADO *e,int jogada)
 }
 
 int movimentos(ESTADO*e) {
-    for (int g = 0; e->jogadas[g].jogador1.coluna != -1; g++)
-    {
+    int g;
+    for (g = 0;  g < (get_num_jogadas(e) - 1); g++) {
         COORDENADA coord1 = get_coord_jogador1(e, g);
         COORDENADA coord2 = get_coord_jogador2 (e, g);
 
-        if (coord2.coluna != -1)
-            printf("%02d: %c%d %c%d\n", g+1 ,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
-        else
-            printf("%02d: %c%d\n",g+1,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
+        printf("%02d: %c%d %c%d\n", g+1 ,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
+    }
+
+
+    COORDENADA coord1 = get_coord_jogador1(e, g);
+    COORDENADA coord2 = get_coord_jogador2 (e, g);
+
+    if (get_jogador_atual(e) == 1) {
+        printf("%02d: %c%d\n", g + 1, conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
+    }
+    else {
+        printf("%02d: %c%d %c%d\n", g + 1,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
     }
 }
 
@@ -198,7 +213,7 @@ ERROS ler (ESTADO* e,char*ficheiro) {
         fscanf(fp, "%c", &cha);
     }
 
-    int num_jog;
+    int num_jog; /*
     fseek (fp, 8, SEEK_SET);
     char linha[BUF_SIZE];
     int indice = 0;
@@ -230,6 +245,37 @@ ERROS ler (ESTADO* e,char*ficheiro) {
         fclose(fp);
         mostrar_tabuleiro(e);
         return OK;
+}
+*/  int num_tokens;
+    fseek(fp, 74, SEEK_SET);
+    int indice = 0;
+    e-> num_jogadas = 0;
+    COORDENADA c1;
+    COORDENADA c2;
+    int num_jogad;
+    char jog1_c, jog1_l, jog2_c, jog2_l;
+    while (( num_tokens = fscanf (fp,"%2d: %c%d %c%d", &num_jogad, &jog1_c, &jog1_l, &jog2_c, &jog2_l) != EOF)) {
+        if (num_tokens == 3) {
+            c1.coluna = jog1_c - 'A';
+            c1.linha = jog1_l - '1';
+            c2.coluna = (-1);
+            c2.linha = (-1);
+            armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
+            e->jogador_atual = 1;
+        } else {
+            c1.coluna = jog1_c - 'A';
+            c1.linha = 8 - jog1_l ;
+            c2.coluna = jog2_c - 'A';
+            c2.linha = 8 - jog2_l;
+            armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
+            e->jogador_atual = 0;
+            indice++;
+        }
+    }
+    e -> num_jogadas = indice - 1;
+    fclose(fp);
+    mostrar_tabuleiro(e);
+    return OK;
 }
 
 
