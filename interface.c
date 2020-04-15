@@ -13,17 +13,10 @@ void copiaEstado (ESTADO *e)
    *novo = *e;
 }
 
-int converteDecimal (char v[]) {
-    int a = (v[0] * 10) + v[1];
-
-    return a;
-
-}
-
 void posJog(ESTADO *e,int jogada)
 {
      int n = 31;
-     if(jogada >= obter_numero_de_jogadas(e) || jogada < 0)
+     if (jogada >= obter_numero_de_jogadas(e) || jogada < 0)
      {
          printf("Número de jogada inválida\n");
      } else{
@@ -34,15 +27,13 @@ void posJog(ESTADO *e,int jogada)
          altera_estado_casa_vazio(e,get_ultima_jogada(e));
          altera_ultimajogada_pos(e, jogada);
 
-         while(n >= jogada)
+         while (n >= jogada)
          {
              COORDENADA x = get_jogadas_jogador1(e, n);
-
              COORDENADA y = get_jogadas_jogador2(e, n);
 
-             altera_estado_casa_vazio(e,x);
-             altera_estado_casa_vazio(e,y);
-
+             altera_estado_casa_vazio(e, x);
+             altera_estado_casa_vazio(e, y);
 
              set_casas_invalidas(e, n);
              n--;
@@ -50,7 +41,7 @@ void posJog(ESTADO *e,int jogada)
 
          n = 0;
 
-             while(n <jogada)
+             while ( n < jogada )
              {
                  COORDENADA x = get_jogadas_jogador1(e, n);
                  COORDENADA y = get_jogadas_jogador2(e, n);
@@ -77,7 +68,7 @@ int movimentos(ESTADO*e) {
     }
 
 
-    COORDENADA coord1 = get_coord_jogador1(e, g);
+    COORDENADA coord1 = get_coord_jogador1 (e, g);
     COORDENADA coord2 = get_coord_jogador2 (e, g);
 
     if (get_jogador_atual(e) == 1) {
@@ -212,41 +203,7 @@ ERROS ler (ESTADO* e,char*ficheiro) {
         }
         fscanf(fp, "%c", &cha);
     }
-
-    int num_jog; /*
-    fseek (fp, 8, SEEK_SET);
-    char linha[BUF_SIZE];
-    int indice = 0;
-    e-> num_jogadas = 0;
-    while (fgets(linha, BUF_SIZE, fp) != NULL) {
-        int nada;
-        int num_jogad;
-        char jog1[BUF_SIZE];
-        char jog2[BUF_SIZE];
-        int num_tokens = sscanf (linha, "%d%d: %s %s", &nada ,&num_jogad, jog1, jog2);
-        if (num_tokens == 4) {
-            COORDENADA c1 = str_to_coord(jog1);
-            COORDENADA c2 = str_to_coord(jog2);
-            armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            e -> jogador_atual = 0;
-            indice++;
-        }else
-            {
-            COORDENADA c1 = str_to_coord(jog1);
-            COORDENADA c2 = {-1, -1};
-            armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            e -> jogador_atual = 1;
-        }
-        e -> num_jogadas = num_jogad;
-
-    }
-    e -> num_jogadas = num_jog;
-
-        fclose(fp);
-        mostrar_tabuleiro(e);
-        return OK;
-}
-*/  int num_tokens;
+ int num_tokens;
     fseek(fp, 74, SEEK_SET);
     int indice = 0;
     e-> num_jogadas = 0;
@@ -261,18 +218,18 @@ ERROS ler (ESTADO* e,char*ficheiro) {
             c2.coluna = (-1);
             c2.linha = (-1);
             armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            e->jogador_atual = 1;
+            set_jogador_atual(e, 1);
         } else {
             c1.coluna = jog1_c - 'A';
             c1.linha = 8 - jog1_l ;
             c2.coluna = jog2_c - 'A';
             c2.linha = 8 - jog2_l;
             armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            e->jogador_atual = 0;
+            set_jogador_atual(e, 0);
             indice++;
         }
     }
-    e -> num_jogadas = indice - 1;
+    set_numero_jogadas(e, (indice));
     fclose(fp);
     mostrar_tabuleiro(e);
     return OK;
@@ -287,7 +244,7 @@ int interpretador (ESTADO *e){
     int jogada;
 
 
-    while(e->vencedor==0 ) {
+    while( e->vencedor ==0 ) {
         if (fgets(linha, BUF_SIZE, stdin) == NULL)
             return 0;
 

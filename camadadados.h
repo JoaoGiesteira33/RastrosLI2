@@ -243,6 +243,9 @@ COORDENADA get_jogadas_jogador2 (ESTADO *e, int n);
  * @param c Inteiro que indica a Jogada a alterar
  */
 void set_casas_invalidas (ESTADO *e, int n);
-
+/**
+\brief Funcao para obter o numero de jogadas
+ * @param e Apontador para o estado
+ */
 int get_num_jogadas (ESTADO *e);
 #endif
