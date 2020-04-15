@@ -6,36 +6,31 @@
 #include "camadadados.h"
 #define BUF_SIZE 1024
 
-void copiaEstado (ESTADO *e)
+void posJog(ESTADO *e,int jogada,ESTADO *aux)
 {
-    ESTADO *novo = (ESTADO *)malloc(sizeof(ESTADO));
+     *aux = *e;
 
-   *novo = *e;
-}
-
-void posJog(ESTADO *e,int jogada)
-{
      int n = 31;
      if (jogada >= obter_numero_de_jogadas(e) || jogada < 0)
      {
          printf("Número de jogada inválida\n");
      } else{
-         //copiaEstado(e);
+
          printf("Copiou\n");
-         set_jogador_atual(e,0);
-         set_numero_jogadas(e, jogada);
-         altera_estado_casa_vazio(e,get_ultima_jogada(e));
-         altera_ultimajogada_pos(e, jogada);
+         set_jogador_atual(aux,0);
+         set_numero_jogadas(aux, jogada);
+         altera_estado_casa_vazio(aux,get_ultima_jogada(aux));
+         altera_ultimajogada_pos(aux, jogada);
 
          while (n >= jogada)
          {
-             COORDENADA x = get_jogadas_jogador1(e, n);
-             COORDENADA y = get_jogadas_jogador2(e, n);
+             COORDENADA x = get_jogadas_jogador1(aux, n);
+             COORDENADA y = get_jogadas_jogador2(aux, n);
 
-             altera_estado_casa_vazio(e, x);
-             altera_estado_casa_vazio(e, y);
+             altera_estado_casa_vazio(aux, x);
+             altera_estado_casa_vazio(aux, y);
 
-             set_casas_invalidas(e, n);
+             set_casas_invalidas(aux, n);
              n--;
          }
 
@@ -43,19 +38,20 @@ void posJog(ESTADO *e,int jogada)
 
              while ( n < jogada )
              {
-                 COORDENADA x = get_jogadas_jogador1(e, n);
-                 COORDENADA y = get_jogadas_jogador2(e, n);
+                 COORDENADA x = get_jogadas_jogador1(aux, n);
+                 COORDENADA y = get_jogadas_jogador2(aux, n);
 
-                 altera_estado_casa_preta(e , x);
-                 altera_estado_casa_preta(e, y);
+                 altera_estado_casa_preta(aux , x);
+                 altera_estado_casa_preta(aux, y);
 
                  n++;
              }
 
-             COORDENADA ult = get_ultima_jogada(e);
-             altera_estado_casa_branca(e, ult);
+             COORDENADA ult = get_ultima_jogada(aux);
+             altera_estado_casa_branca(aux, ult);
          }
-     mostrar_tabuleiro(e);
+     mostrar_tabuleiro(aux);
+
 }
 
 int movimentos(ESTADO*e) {
@@ -236,12 +232,13 @@ ERROS ler (ESTADO* e,char*ficheiro) {
 }
 
 
-int interpretador (ESTADO *e){
+int interpretador (ESTADO *e,ESTADO *aux){
 
     char linha[BUF_SIZE];
     char col[2], lin[2];
     char file[BUF_SIZE];
     int jogada;
+    int ultima_jogada_pos = 0;
 
 
     while( e->vencedor ==0 ) {
@@ -250,8 +247,17 @@ int interpretador (ESTADO *e){
 
         if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
             COORDENADA coord = {*col - 'a', '8' - *lin};
-            jogar(e, coord);
-            mostrar_tabuleiro(e);
+            if(ultima_jogada_pos == 0) {
+                jogar(e, coord);
+                mostrar_tabuleiro(e);
+                ultima_jogada_pos = 0;
+            } else {
+                *e = *aux;
+                free(aux);
+                jogar(e, coord);
+                mostrar_tabuleiro(e);
+                ultima_jogada_pos = 0;
+            }
         }
 
         if (sscanf(linha, "ler %s", file) == 1) {
@@ -259,6 +265,7 @@ int interpretador (ESTADO *e){
                 printf("\nFicheiro lido com sucesso!\n");
             }
             else (printf("\nErro ao ler o ficheiro!\n"));
+            ultima_jogada_pos = 0;
         }
 
         if (sscanf(linha, "gr %s", file) == 1) {
@@ -278,7 +285,8 @@ int interpretador (ESTADO *e){
         }
 
         if (sscanf(linha, "pos %d", &jogada) == 1) {
-            posJog(e,jogada);
+            posJog(e,jogada,aux);
+            ultima_jogada_pos = 1;
         }
     }
     printf("O jogo acabou e o vencedor é o Jogador %d",e->vencedor);

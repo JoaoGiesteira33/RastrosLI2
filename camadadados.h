@@ -248,4 +248,5 @@ void set_casas_invalidas (ESTADO *e, int n);
  * @param e Apontador para o estado
  */
 int get_num_jogadas (ESTADO *e);
+ESTADO *inicializar_estado_aux();
 #endif

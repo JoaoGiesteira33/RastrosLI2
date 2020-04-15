@@ -9,16 +9,11 @@ Interpretador e funcões complementares a este.
 
 #include "camadadados.h"
 /**
-\brief Funcao que cria um novo estado com o valor do estado dado
-@param e Apontador para o estado
-*/
-void copiaEstado(ESTADO *e);
-/**
 \brief Funcao que possiblita retornar a uma jogada anterior
 @param e Apontador para o estado
 @param jogada Indicador da jogada para que queremos retornar
 */
-void posJog(ESTADO *e, int jogada);
+void posJog(ESTADO *e, int jogada, ESTADO *aux);
 /**
 \brief Funcao que imprime as jogadas no ecrã.
 @param e Apontador para o ficheiro
@@ -33,7 +28,7 @@ ERROS lerFicheiro(char *fich);
 \brief Interpretador de comandos
 @param e Apontador para o estado
 */
-int interpretador(ESTADO *e);
+int interpretador(ESTADO *e,ESTADO *aux);
 
 /**
 \brief Grava o estado do tabuleiro

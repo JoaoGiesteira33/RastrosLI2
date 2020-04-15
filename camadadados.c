@@ -226,3 +226,34 @@ int get_num_jogadas (ESTADO *e) {
     int a = e -> num_jogadas;
     return a;
 }
+
+ESTADO *inicializar_estado_aux()
+{
+    ESTADO *aux = (ESTADO *)malloc(sizeof(ESTADO));
+    aux->jogador_atual = 0;
+    aux->num_jogadas = 0;
+    aux->ultima_jogada.linha = 3;
+    aux->ultima_jogada.coluna = 4;
+
+    aux-> vencedor = 0;
+    for (int i =0;i<8;i++){
+        for (int j =0;j<8;j++){
+            if (i == 7 && j == 0)
+                aux->tab[i][j] = DOIS;
+            else if (i == 0 && j == 7)
+                aux->tab[i][j] = UM;
+            else aux->tab[i][j] = VAZIO;
+        }
+
+
+    }
+    aux->tab[4][3] = BRANCA;
+    for(int i = 0; i < 32; i++)
+    {
+        aux->jogadas[i].jogador1.coluna = -1;
+        aux->jogadas[i].jogador1.linha = -1;
+        aux->jogadas[i].jogador2.coluna =-1;
+        aux->jogadas[i].jogador2.linha =-1;
+    }
+    return aux;
+}
