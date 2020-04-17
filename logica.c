@@ -8,26 +8,27 @@
 #define BUF_SIZE 1024
 
 
-void * verificaMelhorJogada (LISTA l,COORDENADA c){
+COORDENADA verificaMelhorJogada (LISTA l,COORDENADA c){
     int x = c.coluna;
     int y =c.linha;
     void *r;
     LISTA  aux;
-    int menorDist=1000;
-    int dist;
-    COORDENADA cord;
+    double menorDist=1000.0;
+    double dist;
+    COORDENADA melhorCord = {-1,-1};
+    COORDENADA cord ;
     for (aux=l;aux;aux=aux->prox) {
-        cord = *(aux->valor);
-        int x1 = c.coluna;
-        int y1 =c.linha;
-        dist = sqrt((x - x1) ^ 2 - (y - y1) ^ 2);
+        cord = *(COORDENADA*) (aux->valor);
+        int x1 = cord.coluna;
+        int y1 =cord.linha;
+        dist = sqrt(((x - x1) *(x-x1)) - ((y - y1)* (y - y1) ));
         if (menorDist>=dist) {
             menorDist= dist;
-            r= &(aux->valor);
+            melhorCord = cord;
 
         }
     }
-    return r;
+    return melhorCord;
 }
 
 int verifica_movimentos (ESTADO *estado, COORDENADA c)

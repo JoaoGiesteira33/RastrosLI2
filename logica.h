@@ -7,7 +7,7 @@ Definição da lógica do programa
 #define RASTROSLI2_LOGICA_H
 
 #include "lista.h"
-void * verificaMelhorJogada (LISTA l,COORDENADA c);
+COORDENADA verificaMelhorJogada (LISTA l,COORDENADA c);
 /**
 \brief Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa.
 @param estado Apontador para o estado

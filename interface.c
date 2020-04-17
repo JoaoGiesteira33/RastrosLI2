@@ -91,8 +91,11 @@ void jog(ESTADO *e){
     if ((obter_estado_casa(e,diagEBaixo)) == VAZIO ) insere_cabeca (principal,&diagEBaixo);
     if ((obter_estado_casa(e,diagECima)) == VAZIO ) insere_cabeca (principal,&diagECima);
 
+printf("chegou");
+  COORDENADA novaCasa= verificaMelhorJogada (principal,c);
 
-   void * novaCasa= verificaMelhorJogada (principal,c);
+ //   altera_estado_casa_preta (e, c);
+  //  set_casa (e, novaCasa, BRANCA);
 
 }
 
@@ -331,7 +334,7 @@ int interpretador (ESTADO *e,ESTADO *aux){
             ultima_jogada_pos = 1;
         }
         if (strcmp(linha, "jog\n") == 0) {
-            ;
+            jog(e);
         }
 
     }
