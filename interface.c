@@ -4,6 +4,7 @@
 #include "interface.h"
 #include "logica.h"
 #include "camadadados.h"
+#include "lista.h"
 #define BUF_SIZE 1024
 
 void posJog(ESTADO *e,int jogada,ESTADO *aux)
@@ -51,6 +52,42 @@ void posJog(ESTADO *e,int jogada,ESTADO *aux)
              altera_estado_casa_branca(aux, ult);
          }
      mostrar_tabuleiro(aux);
+
+}
+
+void jog(ESTADO *e){
+   COORDENADA c = get_ultima_jogada (e);
+
+    LISTA principal= criar_lista();
+
+    COORDENADA cima = (COORDENADA) {.coluna = c.coluna, .linha = c.linha + 1};
+
+    COORDENADA baixo = (COORDENADA) {.coluna = c.coluna, .linha = c.linha - 1};
+
+    COORDENADA direita = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha};
+
+    COORDENADA esquerda = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha};
+
+    COORDENADA diagDBaixo = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha - 1};
+
+    COORDENADA diagEBaixo = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha - 1};
+
+    COORDENADA diagDCima = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha + 1};
+
+    COORDENADA diagECima = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha + 1};
+
+
+    if ((obter_estado_casa(e,cima)) == VAZIO ) insere_cabeca (principal,&cima);
+    if ((obter_estado_casa(e,baixo)) == VAZIO) insere_cabeca (principal,&baixo);
+    if ((obter_estado_casa(e,direita)) == VAZIO) insere_cabeca (principal,&direita);
+    if ((obter_estado_casa(e,esquerda)) == VAZIO ) insere_cabeca (principal,&esquerda);
+    if ((obter_estado_casa(e,diagDBaixo)) == VAZIO ) insere_cabeca (principal,&diagDBaixo);
+    if ((obter_estado_casa(e,diagDCima)) == VAZIO ) insere_cabeca (principal,&diagDCima);
+    if ((obter_estado_casa(e,diagEBaixo)) == VAZIO ) insere_cabeca (principal,&diagEBaixo);
+    if ((obter_estado_casa(e,diagECima)) == VAZIO ) insere_cabeca (principal,&diagECima);
+
+
+   void * novaCasa= verificaMelhorJogada (principal,c);
 
 }
 
@@ -288,7 +325,9 @@ int interpretador (ESTADO *e,ESTADO *aux){
             posJog(e,jogada,aux);
             ultima_jogada_pos = 1;
         }
-        if (strcmp(linha, "jog\n") == 0) ;
+        if (strcmp(linha, "jog\n") == 0) {
+            ;
+        }
 
     }
     printf("O jogo acabou e o vencedor é o Jogador %d",e->vencedor);

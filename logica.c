@@ -4,8 +4,31 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include "lista.h"
 #define BUF_SIZE 1024
 
+
+void * verificaMelhorJogada (LISTA l,COORDENADA c){
+    int x = c.coluna;
+    int y =c.linha;
+    void *r;
+    LISTA  aux;
+    int menorDist=1000;
+    int dist;
+    COORDENADA cord;
+    for (aux=l;aux;aux=aux->prox) {
+        cord = *(aux->valor);
+        int x1 = c.coluna;
+        int y1 =c.linha;
+        dist = sqrt((x - x1) ^ 2 - (y - y1) ^ 2);
+        if (menorDist>=dist) {
+            menorDist= dist;
+            r= &(aux->valor);
+
+        }
+    }
+    return r;
+}
 
 int verifica_movimentos (ESTADO *estado, COORDENADA c)
 {

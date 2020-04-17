@@ -1,6 +1,4 @@
-//
-// Created by daniel on 17/04/20.
-//
+
 
 #ifndef RASTROSLI2_LISTA_H
 #define RASTROSLI2_LISTA_H
