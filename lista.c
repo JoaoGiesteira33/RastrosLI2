@@ -12,7 +12,7 @@ nova ->prox = NULL;
 return nova;
 }
 
-LISTA insere_cabeca(LISTA L, void *valor){
+LISTA insere_cabeca (LISTA L, void *valor){
     LISTA nova = malloc(sizeof(Nodo));
     nova->valor= valor;
     nova->prox= L;
@@ -22,19 +22,19 @@ LISTA insere_cabeca(LISTA L, void *valor){
 void *devolve_cabeca(LISTA L){
     void* ans;
     if (L) ans = L->valor;
-    else ans =NULL;
+    else ans = NULL;
     return ans;
 }
 
 
-LISTA proximo(LISTA L){
+LISTA proximo (LISTA L){
     LISTA cauda;
-    cauda = ((L ) ? L->prox : NULL);
+    cauda = ((L) ? L -> prox : NULL);
 
     return cauda;
 }
 
-LISTA remove_cabeca(LISTA L){
+LISTA remove_cabeca (LISTA L){
     LISTA nova;
     nova = L;
     L = proximo (L);
@@ -44,6 +44,6 @@ LISTA remove_cabeca(LISTA L){
 
 int lista_esta_vazia(LISTA L){
     int r ;
-    if (L) r=0; else r=1;
+    if (L) r = 0; else r = 1;
     return r;
 }

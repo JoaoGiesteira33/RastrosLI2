@@ -14,7 +14,7 @@ void posJog(ESTADO *e,int jogada,ESTADO *aux)
      if (jogada >= obter_numero_de_jogadas(e) || jogada < 0)
      {
          printf("Número de jogada inválida\n");
-     } else{
+     } else {
 
          //printf("Copiou\n");
          set_jogador_atual(aux,0);
@@ -35,14 +35,19 @@ void posJog(ESTADO *e,int jogada,ESTADO *aux)
          }
 
          n = 0;
+         if (jogada == 0) {
+             aux->ultima_jogada.coluna = 4;
+             aux->ultima_jogada.linha = 3;
+             aux->tab[4][3] = BRANCA;
+         }
 
-             while ( n < jogada )
+         while ( n < jogada )
              {
-                 COORDENADA x = get_jogadas_jogador1(aux, n);
-                 COORDENADA y = get_jogadas_jogador2(aux, n);
+                 COORDENADA x = get_jogadas_jogador1 (aux, n);
+                 COORDENADA y = get_jogadas_jogador2 (aux, n);
 
-                 altera_estado_casa_preta(aux , x);
-                 altera_estado_casa_preta(aux, y);
+                 altera_estado_casa_preta (aux , x);
+                 altera_estado_casa_preta (aux, y);
 
                  n++;
              }
