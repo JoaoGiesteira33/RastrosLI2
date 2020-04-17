@@ -16,7 +16,7 @@ void posJog(ESTADO *e,int jogada,ESTADO *aux)
          printf("Número de jogada inválida\n");
      } else{
 
-         printf("Copiou\n");
+         //printf("Copiou\n");
          set_jogador_atual(aux,0);
          set_numero_jogadas(aux, jogada);
          altera_estado_casa_vazio(aux,get_ultima_jogada(aux));
@@ -112,7 +112,7 @@ int movimentos(ESTADO*e) {
 
     printf("\n PL%d Jogada %d\n Coordenada Atual %c%d\n", obter_jogador_atual(estado)+1, obter_numero_de_jogadas(estado),conversorultimajogadacoluna(obter_ultima_jogada(estado)),conversorultimajogadalinha(obter_ultima_jogada(estado)));
 }
-// funcao a dar erro linha 4 nao aparece ao ler
+
 ERROS gravar(ESTADO *e,char *ficheiro){
     FILE *fp;
     fp = fopen(ficheiro, "w");
@@ -288,6 +288,8 @@ int interpretador (ESTADO *e,ESTADO *aux){
             posJog(e,jogada,aux);
             ultima_jogada_pos = 1;
         }
+        if (strcmp(linha, "jog\n") == 0) ;
+
     }
     printf("O jogo acabou e o vencedor é o Jogador %d",e->vencedor);
     return 1;
