@@ -7,6 +7,13 @@ Definição da lógica do programa
 #define RASTROSLI2_LOGICA_H
 
 #include "lista.h"
+
+/**
+\brief Funcão que verifica qual é a melhor Coordenada
+@param l Lista de coordenadas possíveis
+@param c A coordenada
+@param e Apontador para o estado
+*/
 COORDENADA verificaMelhorJogada (LISTA l,COORDENADA c, ESTADO * e);
 /**
 \brief Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa.

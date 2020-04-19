@@ -64,11 +64,21 @@ $(function() {
 <div class="title">Referência ao ficheiro logica.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;<a class="el" href="lista_8h_source.html">lista.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para logica.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="logica_8h__incl.png" border="0" usemap="#logica_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div>
 <p><a href="logica_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funções</h2></td></tr>
+<tr class="memitem:a7af5c5ce67e23cb9af86a347455bd42e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCOORDENADA.html">COORDENADA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8h.html#a7af5c5ce67e23cb9af86a347455bd42e">verificaMelhorJogada</a> (<a class="el" href="structnodo.html">LISTA</a> l, <a class="el" href="structCOORDENADA.html">COORDENADA</a> c, <a class="el" href="structESTADO.html">ESTADO</a> *e)</td></tr>
+<tr class="memdesc:a7af5c5ce67e23cb9af86a347455bd42e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcão que verifica qual é a melhor Coordenada.  <a href="#a7af5c5ce67e23cb9af86a347455bd42e">Mais...</a><br /></td></tr>
+<tr class="separator:a7af5c5ce67e23cb9af86a347455bd42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a715ebbf78a2a761bf9a75972cc0375"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8h.html#a7a715ebbf78a2a761bf9a75972cc0375">verifica_movimentos</a> (<a class="el" href="structESTADO.html">ESTADO</a> *estado, <a class="el" href="structCOORDENADA.html">COORDENADA</a> c)</td></tr>
 <tr class="memdesc:a7a715ebbf78a2a761bf9a75972cc0375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa.  <a href="#a7a715ebbf78a2a761bf9a75972cc0375">Mais...</a><br /></td></tr>
 <tr class="separator:a7a715ebbf78a2a761bf9a75972cc0375"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -256,6 +266,50 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>jogar</b> (<a class="e
   <table class="params">
     <tr><td class="paramname">estado</td><td>Apontador para o estado </td></tr>
     <tr><td class="paramname">c</td><td>A coordenada </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7af5c5ce67e23cb9af86a347455bd42e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7af5c5ce67e23cb9af86a347455bd42e">&#9670;&nbsp;</a></span>verificaMelhorJogada()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCOORDENADA.html">COORDENADA</a> verificaMelhorJogada </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnodo.html">LISTA</a>&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structCOORDENADA.html">COORDENADA</a>&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcão que verifica qual é a melhor Coordenada. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>Lista de coordenadas possíveis </td></tr>
+    <tr><td class="paramname">c</td><td>A coordenada </td></tr>
+    <tr><td class="paramname">e</td><td>Apontador para o estado </td></tr>
   </table>
   </dd>
 </dl>

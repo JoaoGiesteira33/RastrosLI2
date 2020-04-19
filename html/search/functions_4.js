@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['incrementa_5fnumero_5fjogadas',['incrementa_numero_jogadas',['../camadadados_8h.html#af2df0559684091c80715656208c7419f',1,'camadadados.c']]],
-  ['inicializar_5festado',['inicializar_estado',['../camadadados_8h.html#a7e0c7e26fb685d9ab501e19b05e6954f',1,'camadadados.c']]],
-  ['interpretador',['interpretador',['../interface_8h.html#a24da95ebeede4a540e37790ce8be359b',1,'interface.c']]]
+  ['get_5fcoord_5fcoluna',['get_coord_coluna',['../camadadados_8h.html#a5bedf93c8d1ff9b665c40b18e6729379',1,'camadadados.c']]],
+  ['get_5fcoord_5fjogador1',['get_coord_jogador1',['../camadadados_8h.html#a30d458e0db175363ef23d01614148db5',1,'camadadados.c']]],
+  ['get_5fcoord_5fjogador2',['get_coord_jogador2',['../camadadados_8h.html#a9f88ef4d79f7afb4ba23c18bcf969b99',1,'camadadados.c']]],
+  ['get_5fjogadas_5fjogador1',['get_jogadas_jogador1',['../camadadados_8h.html#a65e38a66349ed29267b579412c5cbc53',1,'camadadados.c']]],
+  ['get_5fjogadas_5fjogador2',['get_jogadas_jogador2',['../camadadados_8h.html#a877bb4d00d7f602710314b2fe8fdb2c8',1,'camadadados.c']]],
+  ['get_5fjogador_5fatual',['get_jogador_atual',['../camadadados_8h.html#ab9c95b014d2e217eae7d081088501963',1,'camadadados.c']]],
+  ['get_5fnum_5fjogadas',['get_num_jogadas',['../camadadados_8h.html#adea30d54df73cf866227a6b6bd790827',1,'camadadados.c']]],
+  ['get_5fultima_5fjogada',['get_ultima_jogada',['../camadadados_8h.html#ae89c72e4fa31dcc1eb9ba0fb8ea707e1',1,'camadadados.c']]],
+  ['gravar',['gravar',['../interface_8h.html#a8fc889059d5c36644fbc1665d750984f',1,'interface.c']]]
 ];

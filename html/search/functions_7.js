@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mostrar_5ftabuleiro',['mostrar_tabuleiro',['../interface_8h.html#a4525a57d0cd9ed3c9150e19b67e1dad6',1,'interface.c']]],
-  ['movimentos',['movimentos',['../interface_8h.html#a2560a59cb06ad96aa2cd437a2f034f18',1,'movimentos(ESTADO *e):&#160;interface.c'],['../logica_8h.html#a2560a59cb06ad96aa2cd437a2f034f18',1,'movimentos(ESTADO *e):&#160;interface.c']]]
+  ['lerficheiro',['lerFicheiro',['../interface_8h.html#abb2a30501ce9e336b409cfbf0aa69187',1,'interface.h']]],
+  ['lista_5festa_5fvazia',['lista_esta_vazia',['../lista_8h.html#a4c10928f7acaa4e3de3760cea0dfd9c0',1,'lista.c']]]
 ];

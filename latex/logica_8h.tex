@@ -1,8 +1,13 @@
 \hypertarget{logica_8h}{}\section{Referência ao ficheiro logica.\+h}
 \label{logica_8h}\index{logica.\+h@{logica.\+h}}
+{\ttfamily \#include \char`\"{}lista.\+h\char`\"{}}\newline
+Diagrama de dependências de inclusão para logica.\+h\+:
+% FIG 0
 \subsection*{Funções}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} \hyperlink{logica_8h_a7af5c5ce67e23cb9af86a347455bd42e}{verifica\+Melhor\+Jogada} (\hyperlink{structnodo}{L\+I\+S\+TA} l, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c, \hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$e)
+\begin{DoxyCompactList}\small\item\em Funcão que verifica qual é a melhor Coordenada. \end{DoxyCompactList}\item 
 int \hyperlink{logica_8h_a7a715ebbf78a2a761bf9a75972cc0375}{verifica\+\_\+movimentos} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
 \begin{DoxyCompactList}\small\item\em Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-\/se na distancia de uma casa. \end{DoxyCompactList}\item 
 int \hyperlink{logica_8h_a1c088554e2d968e91d1b9f3a651d8d82}{verifica\+\_\+vazio} (\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$estado, \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} c)
@@ -110,5 +115,24 @@ Funcão que verifica se a casa para onde o jogador pretende jogar é válida, ne
 {\em estado} & Apontador para o estado \\
 \hline
 {\em c} & A coordenada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{logica_8h_a7af5c5ce67e23cb9af86a347455bd42e}\label{logica_8h_a7af5c5ce67e23cb9af86a347455bd42e}} 
+\index{logica.\+h@{logica.\+h}!verifica\+Melhor\+Jogada@{verifica\+Melhor\+Jogada}}
+\index{verifica\+Melhor\+Jogada@{verifica\+Melhor\+Jogada}!logica.\+h@{logica.\+h}}
+\subsubsection{\texorpdfstring{verifica\+Melhor\+Jogada()}{verificaMelhorJogada()}}
+{\footnotesize\ttfamily \hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA} verifica\+Melhor\+Jogada (\begin{DoxyParamCaption}\item[{\hyperlink{structnodo}{L\+I\+S\+TA}}]{l,  }\item[{\hyperlink{structCOORDENADA}{C\+O\+O\+R\+D\+E\+N\+A\+DA}}]{c,  }\item[{\hyperlink{structESTADO}{E\+S\+T\+A\+DO} $\ast$}]{e }\end{DoxyParamCaption})}
+
+
+
+Funcão que verifica qual é a melhor Coordenada. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em l} & Lista de coordenadas possíveis \\
+\hline
+{\em c} & A coordenada \\
+\hline
+{\em e} & Apontador para o estado \\
 \hline
 \end{DoxyParams}

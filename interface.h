@@ -15,6 +15,13 @@ Interpretador e funcões complementares a este.
 */
 void posJog(ESTADO *e, int jogada, ESTADO *aux);
 /**
+\brief Funcao que possiblita jogar automaticamente
+@param e Apontador para o estado
+
+*/
+void jog(ESTADO *e);
+
+/**
 \brief Funcao que imprime as jogadas no ecrã.
 @param e Apontador para o ficheiro
 */

@@ -72,7 +72,6 @@ Este grafo mostra quais são os ficheiros que incluem directamente ou indirectam
 <div class="dyncontent">
 <div class="center"><img src="camadadados_8h__dep__incl.png" border="0" usemap="#camadadados_8hdep" alt=""/></div>
 <map name="camadadados_8hdep" id="camadadados_8hdep">
-<area shape="rect" id="node2" href="interface_8h.html" title="interface.h" alt="" coords="21,80,104,107"/>
 </map>
 </div>
 </div>
@@ -149,7 +148,7 @@ Funções</h2></td></tr>
 <tr class="memitem:a29af49e89d83da20e8127ef019c05f00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCOORDENADA.html">COORDENADA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camadadados_8h.html#a29af49e89d83da20e8127ef019c05f00">str_to_coord</a> (char *coord)</td></tr>
 <tr class="memdesc:a29af49e89d83da20e8127ef019c05f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que traduz de string para <a class="el" href="structCOORDENADA.html" title="Tipo de dados para as coordenadas. ">COORDENADA</a>.  <a href="#a29af49e89d83da20e8127ef019c05f00">Mais...</a><br /></td></tr>
 <tr class="separator:a29af49e89d83da20e8127ef019c05f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fc7443b24fac5ea61afbb41f9a00feb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camadadados_8h.html#a1fc7443b24fac5ea61afbb41f9a00feb">armazenar_jogada</a> (<a class="el" href="structESTADO.html">ESTADO</a> *e, <a class="el" href="structJOGADA.html">JOGADA</a> jog, int n)</td></tr>
+<tr class="memitem:a1fc7443b24fac5ea61afbb41f9a00feb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camadadados_8h.html#a1fc7443b24fac5ea61afbb41f9a00feb">armazenar_jogada</a> (<a class="el" href="structESTADO.html">ESTADO</a> *e, <a class="el" href="structJOGADA.html">JOGADA</a> <a class="el" href="interface_8h.html#a9dfbc982d23a619e36575d8e7ec8e41c">jog</a>, int n)</td></tr>
 <tr class="memdesc:a1fc7443b24fac5ea61afbb41f9a00feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao que armaneza jogadas.  <a href="#a1fc7443b24fac5ea61afbb41f9a00feb">Mais...</a><br /></td></tr>
 <tr class="separator:a1fc7443b24fac5ea61afbb41f9a00feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30d458e0db175363ef23d01614148db5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCOORDENADA.html">COORDENADA</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camadadados_8h.html#a30d458e0db175363ef23d01614148db5">get_coord_jogador1</a> (<a class="el" href="structESTADO.html">ESTADO</a> *e, int c)</td></tr>
@@ -212,6 +211,12 @@ Funções</h2></td></tr>
 <tr class="memitem:a236d410338f232f8434859c40a165205"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camadadados_8h.html#a236d410338f232f8434859c40a165205">set_casas_invalidas</a> (<a class="el" href="structESTADO.html">ESTADO</a> *e, int n)</td></tr>
 <tr class="memdesc:a236d410338f232f8434859c40a165205"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao para alterar as coordenadas de casas nao utilizadas para -1.  <a href="#a236d410338f232f8434859c40a165205">Mais...</a><br /></td></tr>
 <tr class="separator:a236d410338f232f8434859c40a165205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adea30d54df73cf866227a6b6bd790827"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="camadadados_8h.html#adea30d54df73cf866227a6b6bd790827">get_num_jogadas</a> (<a class="el" href="structESTADO.html">ESTADO</a> *e)</td></tr>
+<tr class="memdesc:adea30d54df73cf866227a6b6bd790827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcao para obter o numero de jogadas.  <a href="#adea30d54df73cf866227a6b6bd790827">Mais...</a><br /></td></tr>
+<tr class="separator:adea30d54df73cf866227a6b6bd790827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad95b70ad41d5da4f5549b9c839a8d43c"><td class="memItemLeft" align="right" valign="top"><a id="ad95b70ad41d5da4f5549b9c839a8d43c"></a>
+<a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>inicializar_estado_aux</b> ()</td></tr>
+<tr class="separator:ad95b70ad41d5da4f5549b9c839a8d43c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><p>Definição do estado e das funções que o manipulam </p>
@@ -691,6 +696,32 @@ Funções</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Funcao para devolver o Jogador Atual. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Apontador para o estado </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adea30d54df73cf866227a6b6bd790827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adea30d54df73cf866227a6b6bd790827">&#9670;&nbsp;</a></span>get_num_jogadas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int get_num_jogadas </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcao para obter o numero de jogadas. </p>
 <dl class="params"><dt>Parâmetros</dt><dd>
   <table class="params">
     <tr><td class="paramname">e</td><td>Apontador para o estado </td></tr>
