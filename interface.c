@@ -65,37 +65,52 @@ void jog(ESTADO *e){
 
     LISTA principal= criar_lista();
 
-    COORDENADA cima = (COORDENADA) {.coluna = c.coluna, .linha = c.linha + 1};
+    COORDENADA* cima = malloc (sizeof(COORDENADA));
+    COORDENADA* baixo = malloc (sizeof(COORDENADA));
 
-    COORDENADA baixo = (COORDENADA) {.coluna = c.coluna, .linha = c.linha - 1};
+    COORDENADA *direita = malloc (sizeof(COORDENADA));
 
-    COORDENADA direita = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha};
+    COORDENADA *esquerda =  malloc (sizeof(COORDENADA));
 
-    COORDENADA esquerda = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha};
+    COORDENADA *diagDBaixo =  malloc (sizeof(COORDENADA));
 
-    COORDENADA diagDBaixo = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha - 1};
+    COORDENADA *diagEBaixo =  malloc (sizeof(COORDENADA));
 
-    COORDENADA diagEBaixo = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha - 1};
+    COORDENADA *diagDCima =  malloc (sizeof(COORDENADA));
 
-    COORDENADA diagDCima = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha + 1};
+    COORDENADA *diagECima =  malloc (sizeof(COORDENADA));
 
-    COORDENADA diagECima = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha + 1};
+   *cima = (COORDENADA) {.coluna = c.coluna, .linha = c.linha + 1};
+
+   *baixo = (COORDENADA) {.coluna = c.coluna, .linha = c.linha - 1};
+
+    *direita = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha};
+
+    *esquerda = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha};
+
+    *diagDBaixo = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha - 1};
+
+    *diagEBaixo = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha - 1};
+
+    *diagDCima = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha + 1};
+
+    *diagECima = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha + 1};
 
 
-    if ((obter_estado_casa(e,cima)) == VAZIO ) insere_cabeca (principal,&cima);
-    if ((obter_estado_casa(e,baixo)) == VAZIO) insere_cabeca (principal,&baixo);
-    if ((obter_estado_casa(e,direita)) == VAZIO) insere_cabeca (principal,&direita);
-    if ((obter_estado_casa(e,esquerda)) == VAZIO ) insere_cabeca (principal,&esquerda);
-    if ((obter_estado_casa(e,diagDBaixo)) == VAZIO ) insere_cabeca (principal,&diagDBaixo);
-    if ((obter_estado_casa(e,diagDCima)) == VAZIO ) insere_cabeca (principal,&diagDCima);
-    if ((obter_estado_casa(e,diagEBaixo)) == VAZIO ) insere_cabeca (principal,&diagEBaixo);
-    if ((obter_estado_casa(e,diagECima)) == VAZIO ) insere_cabeca (principal,&diagECima);
+    if ((obter_estado_casa(e,*cima)) == VAZIO ) principal= insere_cabeca (principal,cima);
+    if ((obter_estado_casa(e,*baixo)) == VAZIO) principal=insere_cabeca (principal,baixo);
+    if ((obter_estado_casa(e,*direita)) == VAZIO) principal=insere_cabeca (principal,direita);
+    if ((obter_estado_casa(e,*esquerda)) == VAZIO ) principal=insere_cabeca (principal,esquerda);
+    if ((obter_estado_casa(e,*diagDBaixo)) == VAZIO ) principal=insere_cabeca (principal,diagDBaixo);
+    if ((obter_estado_casa(e,*diagDCima)) == VAZIO ) principal=insere_cabeca (principal,diagDCima);
+    if ((obter_estado_casa(e,*diagEBaixo)) == VAZIO ) principal=insere_cabeca (principal,diagEBaixo);
+    if ((obter_estado_casa(e,*diagECima)) == VAZIO )principal= insere_cabeca (principal,diagECima);
 
-printf("chegou");
-  COORDENADA novaCasa= verificaMelhorJogada (principal,c);
 
- //   altera_estado_casa_preta (e, c);
-  //  set_casa (e, novaCasa, BRANCA);
+ COORDENADA novaCasa= verificaMelhorJogada (principal,c, e);
+
+   jogar(e,novaCasa);
+   mostrar_tabuleiro(e);
 
 }
 

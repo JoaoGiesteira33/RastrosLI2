@@ -9,6 +9,7 @@
 LISTA criar_lista(){
 LISTA nova = malloc(sizeof(Nodo));
 nova ->prox = NULL;
+nova->valor = NULL;
 return nova;
 }
 

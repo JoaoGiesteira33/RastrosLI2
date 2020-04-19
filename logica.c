@@ -8,17 +8,18 @@
 #define BUF_SIZE 1024
 
 
-COORDENADA verificaMelhorJogada (LISTA l,COORDENADA c){
+COORDENADA verificaMelhorJogada (LISTA l,COORDENADA c, ESTADO * e){
     int x = c.coluna;
     int y =c.linha;
-    void *r;
-    LISTA  aux;
+    LISTA  aux = l;
     double menorDist=1000.0;
     double dist;
     COORDENADA melhorCord = {-1,-1};
-    COORDENADA cord ;
-    for (aux=l;aux;aux=aux->prox) {
-        cord = *(COORDENADA*) (aux->valor);
+    COORDENADA  cord ;
+
+    while (l->valor && l->prox ){
+    //for (aux=l;aux;aux=aux->prox) {
+        cord = *((COORDENADA *) (l->valor));
         int x1 = cord.coluna;
         int y1 =cord.linha;
         dist = sqrt(((x - x1) *(x-x1)) - ((y - y1)* (y - y1) ));
@@ -27,7 +28,9 @@ COORDENADA verificaMelhorJogada (LISTA l,COORDENADA c){
             melhorCord = cord;
 
         }
+        l = l->prox;
     }
+
     return melhorCord;
 }
 
@@ -163,6 +166,7 @@ int jogar(ESTADO *estado, COORDENADA c)
         else
             printf("A jogada nao é válida, tente novamente\n");
     }
+
         return 0;
 
 }
