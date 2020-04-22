@@ -15,8 +15,8 @@ return nova;
 
 LISTA insere_cabeca(LISTA L, void *valor){
     LISTA nova = malloc(sizeof(Nodo));
-    nova->valor= valor;
-    nova->prox= L;
+    nova-> valor= valor;
+    nova-> prox= L;
     return nova;
 }
 

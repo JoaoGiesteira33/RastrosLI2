@@ -9,28 +9,36 @@
 
 
 COORDENADA verificaMelhorJogada (LISTA l,COORDENADA c, ESTADO * e){
-    int x = c.coluna;
-    int y =c.linha;
-    LISTA  aux = l;
-    double menorDist=1000.0;
     double dist;
     COORDENADA melhorCord = {-1,-1};
-    COORDENADA  cord ;
+    COORDENADA  cord;
+    COORDENADA um = {0, 7};
+    COORDENADA dois = {7,0 };
+    double menorDist = 1000;
 
-    while (l->valor && l->prox ){
-    //for (aux=l;aux;aux=aux->prox) {
+    if (get_jogador_atual(e) == 0) {
+        while (l -> valor && l -> prox) {
         cord = *((COORDENADA *) (l->valor));
-        int x1 = cord.coluna;
-        int y1 =cord.linha;
-        dist = sqrt(((x - x1) *(x-x1)) - ((y - y1)* (y - y1) ));
-        if (menorDist>=dist) {
-            menorDist= dist;
+        dist = sqrt (((cord.coluna - um.coluna) * (cord.coluna - um.coluna)) + ((cord.linha - um.linha) * (cord.linha - um.linha)));
+        if (menorDist >= dist && obter_estado_casa(e, cord) == VAZIO) {
+            menorDist = dist;
             melhorCord = cord;
-
         }
-        l = l->prox;
+        l = l -> prox;
+        }
     }
 
+    if (get_jogador_atual(e) == 1) {
+        while (l -> valor && l -> prox) {
+            cord = * ((COORDENADA *) (l->valor));
+            dist = sqrt (((dois.coluna - cord.coluna) * (dois.coluna - cord.coluna)) + ((cord.linha -  dois.linha) * (cord.linha -  dois.linha)));
+            if (menorDist >= dist && obter_estado_casa(e, cord) == VAZIO) {
+                menorDist = dist;
+                melhorCord = cord;
+            }
+            l = l -> prox;
+        }
+    }
     return melhorCord;
 }
 
