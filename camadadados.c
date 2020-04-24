@@ -253,9 +253,8 @@ int get_num_jogadas (ESTADO *e) {
     return a;
 }
 int get_jogador_vencedor (ESTADO *e) {
-    if (e -> vencedor == 1) return 1;
-    else if (e -> vencedor == 2) return 2;
-    else return 0;
+    int a = e -> vencedor;
+    return a;
 }
 
 ESTADO *inicializar_estado_aux()

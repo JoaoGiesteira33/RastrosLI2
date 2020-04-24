@@ -8,6 +8,13 @@ Definição da lógica do programa
 
 #include "lista.h"
 
+typedef struct lEstado{
+    ESTADO *e;
+    struct lEstado *prox;
+}Lestado;
+
+int max(int a, int b);
+int minmax(COORDENADA posAtual, int profundidade, int player);
 /**
 \brief Funcão que verifica qual é a melhor Coordenada
 @param l Lista de coordenadas possíveis

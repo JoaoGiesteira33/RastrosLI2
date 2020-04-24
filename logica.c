@@ -7,6 +7,60 @@
 #include "lista.h"
 #define BUF_SIZE 1024
 
+/*
+    0 -1 -2 -3 -4 -5 -6 -7
+    1  0 -1 -2 -3 -4 -5 -6
+    2  1  0 -1 -2 -3 -4 -5
+    3  2  1  0 -1 -2 -3 -4
+    4  3  2  1  0 -1 -2 -3
+    5  4  3  2  1  0 -1 -2
+    6  5  4  3  2  1  0 -1
+    7  6  5  4  3  2  1  0
+*/
+
+int avaliaEstado(ESTADO *e) {
+//FAZER FUNÇAO AUXILIAR PARA IR BUSCAR ESTAS COORDENADAS @CORONA
+    int c = e->ultima_jogada.coluna;
+    int l = e->ultima_jogada.linha;
+
+    if(c == l)
+        return 0;
+    else if(c>l)
+        return l-c;
+    else
+        return l-c;
+
+}
+
+int max(int a, int b)
+{
+    return (a>b ? a : b);
+}
+int min(int a, int b)
+{
+    return (a<b ? a : b);
+}
+
+int minmax(ESTADO *e, int profundidade, int jogadorMax) {
+    if (profundidade == 0 || get_jogador_vencedor(e) != 0)
+        return avaliaEstado(e);
+
+    if (jogadorMax) {
+        maxEval = -100;
+        for (getAllPossiblePlays){
+            int eval = minmax(possibleplay1, profundidade - 1, 0);
+            int maxEval = max(maxEval, eval);
+        }
+        return maxEval;
+    }else{
+        minEval = +100;
+        for(getAllPossiblePlays){
+            eval = minmax(child, profundidade - 1, 1);
+            int minEval = min(minEval, eval);
+        }
+        return minEval;
+    }
+}
 
 COORDENADA verificaMelhorJogada (LISTA l, ESTADO * e){
     double dist;
