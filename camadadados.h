@@ -13,7 +13,8 @@ typedef enum {
     DOIS = '2',
     VAZIO = '.',
     BRANCA = '*',
-    PRETA = '#'
+    PRETA = '#',
+    //INVALIDA
 } CASA;
 
 /**
@@ -248,5 +249,20 @@ void set_casas_invalidas (ESTADO *e, int n);
  * @param e Apontador para o estado
  */
 int get_num_jogadas (ESTADO *e);
+/**
+\brief Função para inicializar um estado auxiliar que nos permite andar jogadas para a frente na funcao pos.
+ * @return
+ */
 ESTADO *inicializar_estado_aux();
+/**
+\brief Função para obter o jogador vencedor.
+ * @param e Apontador para o estado
+ * @return
+ */
+int get_jogador_vencedor (ESTADO *e);
+
+int get_linha_coordenada (COORDENADA c);
+
+int get_coluna_coordenada (COORDENADA c);
+//void set_casas_negativas (ESTADO *e);
 #endif

@@ -14,7 +14,7 @@ Definição da lógica do programa
 @param c A coordenada
 @param e Apontador para o estado
 */
-COORDENADA verificaMelhorJogada (LISTA l,COORDENADA c, ESTADO * e);
+COORDENADA verificaMelhorJogada (LISTA l, ESTADO * e);
 /**
 \brief Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa.
 @param estado Apontador para o estado
@@ -45,4 +45,5 @@ int encurralado (ESTADO *estado);
 @param c A coordenada
 */
 int jogada_final (ESTADO *estado, COORDENADA c);
+
 #endif //RASTROSLI2_LOGICA_H

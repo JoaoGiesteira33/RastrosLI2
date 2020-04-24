@@ -22,7 +22,6 @@ ESTADO *inicializar_estado()
              else e->tab[i][j] = VAZIO;
          }
 
-
     }
      e->tab[4][3] = BRANCA;
      for(int i = 0; i < 32; i++)
@@ -35,7 +34,34 @@ ESTADO *inicializar_estado()
 
     return e;
 }
-
+/*
+void set_casas_negativas (ESTADO *e) {
+int c = -1;
+int l = -1;
+    while (l < 8) {
+        e -> tab[c][l] = INVALIDA;
+        l++;
+    }
+int co = -1;
+int li = -1;
+    while (co < 8) {
+         e -> tab[co][li] = INVALIDA;
+        co++;
+    }
+int col = 8;
+int lin = -1;
+    while (lin < 8) {
+        e -> tab[col][lin] = INVALIDA;
+        lin++;
+    }
+int linh = 8;
+int colu = -1;
+    while (colu < 8) {
+        e -> tab[colu][linh] = INVALIDA;
+        colu++;
+    }
+}
+*/
 
 int obter_jogador_atual(ESTADO *estado)
 {
@@ -226,6 +252,11 @@ int get_num_jogadas (ESTADO *e) {
     int a = e -> num_jogadas;
     return a;
 }
+int get_jogador_vencedor (ESTADO *e) {
+    if (e -> vencedor == 1) return 1;
+    else if (e -> vencedor == 2) return 2;
+    else return 0;
+}
 
 ESTADO *inicializar_estado_aux()
 {
@@ -256,4 +287,14 @@ ESTADO *inicializar_estado_aux()
         aux->jogadas[i].jogador2.linha =-1;
     }
     return aux;
+}
+
+int get_coluna_coordenada (COORDENADA c) {
+
+    int a = c.coluna;
+    return a;
+}
+int get_linha_coordenada (COORDENADA c) {
+    int a = c.linha;
+    return a;
 }

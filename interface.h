@@ -20,7 +20,6 @@ void posJog(ESTADO *e, int jogada, ESTADO *aux);
 
 */
 void jog(ESTADO *e);
-
 /**
 \brief Funcao que imprime as jogadas no ecrã.
 @param e Apontador para o ficheiro
