@@ -12,7 +12,10 @@ typedef struct lEstado{
     ESTADO *e;
     struct lEstado *prox;
 }Lestado;
-
+int dentroTabuleiro(COORDENADA c);
+LISTA vizinhos(ESTADO *e,COORDENADA c);
+void floodfillaux(ESTADO *e,int valores[8][8],COORDENADA  coord, int valor);
+COORDENADA floodfill(ESTADO *e);
 int max(int a, int b);
 int minmax(COORDENADA posAtual, int profundidade, int player);
 /**

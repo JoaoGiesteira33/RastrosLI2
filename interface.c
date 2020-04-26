@@ -101,6 +101,14 @@ void jog (ESTADO *e){
 
 }
 
+void jog2(ESTADO *e)
+{
+    COORDENADA novaCasa = floodfill(e);
+
+    jogar(e,novaCasa);
+    mostrar_tabuleiro(e);
+}
+
 int movimentos(ESTADO*e) {
     int g;
     for (g = 0;  g < (get_num_jogadas(e) - 1); g++) {
@@ -340,7 +348,7 @@ int interpretador (ESTADO *e,ESTADO *aux){
         }
 
         if (strcmp(linha, "jog2\n") == 0) {
-            jog(e);
+            jog2(e);
         }
 
     }
