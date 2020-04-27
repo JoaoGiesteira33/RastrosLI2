@@ -7,107 +7,7 @@
 #include "lista.h"
 #define BUF_SIZE 1024
 
-void posJog(ESTADO *e,int jogada,ESTADO *aux)
-{
-     *aux = *e;
 
-     int n = 31;
-     if (jogada >= obter_numero_de_jogadas(e) || jogada < 0)
-     {
-         printf("Número de jogada inválida\n");
-     } else {
-
-         //printf("Copiou\n");
-         set_jogador_atual(aux,0);
-         set_numero_jogadas(aux, jogada);
-         altera_estado_casa_vazio(aux,get_ultima_jogada(aux));
-         altera_ultimajogada_pos(aux, jogada);
-
-         while (n >= jogada)
-         {
-             COORDENADA x = get_jogadas_jogador1(aux, n);
-             COORDENADA y = get_jogadas_jogador2(aux, n);
-
-             altera_estado_casa_vazio(aux, x);
-             altera_estado_casa_vazio(aux, y);
-
-             set_casas_invalidas(aux, n);
-             n--;
-         }
-
-         n = 0;
-         if (jogada == 0) {
-             aux->ultima_jogada.coluna = 4;
-             aux->ultima_jogada.linha = 3;
-             aux->tab[4][3] = BRANCA;
-         }
-
-         while ( n < jogada )
-             {
-                 COORDENADA x = get_jogadas_jogador1 (aux, n);
-                 COORDENADA y = get_jogadas_jogador2 (aux, n);
-
-                 altera_estado_casa_preta (aux , x);
-                 altera_estado_casa_preta (aux, y);
-
-                 n++;
-             }
-
-             COORDENADA ult = get_ultima_jogada(aux);
-             altera_estado_casa_branca(aux, ult);
-         }
-     mostrar_tabuleiro(aux);
-
-}
-
-void jog (ESTADO *e){
-    COORDENADA c = get_ultima_jogada (e);
-
-    LISTA principal = criar_lista();
-
-
-
-    COORDENADA cima     = (COORDENADA) {.coluna = c.coluna, .linha = c.linha + 1};
-
-    COORDENADA baixo    = (COORDENADA) {.coluna = c.coluna, .linha = c.linha - 1};
-
-    COORDENADA direita  = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha};
-
-    COORDENADA esquerda = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha};
-
-    COORDENADA diagDBaixo = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha - 1};
-
-    COORDENADA diagEBaixo = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha - 1};
-
-    COORDENADA diagDCima  = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha + 1};
-
-    COORDENADA diagECima  = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha + 1};
-
-
-    if ((obter_estado_casa(e,cima))       == VAZIO) principal = insere_cabeca (principal,&cima);
-    if ((obter_estado_casa(e,baixo))      == VAZIO) principal = insere_cabeca (principal,&baixo);
-    if ((obter_estado_casa(e,direita))    == VAZIO) principal = insere_cabeca (principal, &direita);
-    if ((obter_estado_casa(e,esquerda))   == VAZIO) principal = insere_cabeca (principal, &esquerda);
-    if ((obter_estado_casa(e,diagDBaixo)) == VAZIO) principal = insere_cabeca (principal, &diagDBaixo);
-    if ((obter_estado_casa(e,diagDCima))  == VAZIO) principal = insere_cabeca (principal, &diagDCima);
-    if ((obter_estado_casa(e,diagEBaixo)) == VAZIO) principal = insere_cabeca (principal, &diagEBaixo);
-    if ((obter_estado_casa(e,diagECima))  == VAZIO) principal = insere_cabeca (principal, &diagECima);
-
-
-   COORDENADA novaCasa = verificaMelhorJogada (principal, e);
-
-   jogar(e,novaCasa);
-   mostrar_tabuleiro(e);
-
-}
-
-void jog2(ESTADO *e)
-{
-    COORDENADA novaCasa = floodfill(e);
-
-    jogar(e,novaCasa);
-    mostrar_tabuleiro(e);
-}
 
 int movimentos(ESTADO*e) {
     int g;
@@ -128,6 +28,7 @@ int movimentos(ESTADO*e) {
     else {
         printf("%02d: %c%d %c%d\n", g + 1,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
     }
+    return 0;
 }
 
  void mostrar_tabuleiro (ESTADO* estado){
@@ -241,51 +142,89 @@ ERROS ler (ESTADO* e,char*ficheiro) {
         printf("Erro ao abrir o ficheiro");
         return ERRO_ABRIR_FICHEIRO;
     }
-    char cha;
-    COORDENADA coord;
-    for (int c = 0; c < 8; c++) {
-        for (int l = 0; l < 8; l++) {
-            coord = (COORDENADA) {.coluna = l, .linha = c};
+        char cha;
+        COORDENADA coord;
+        for (int c = 0; c < 8; c++) {
+            for (int l = 0; l < 8; l++) {
+                coord = (COORDENADA) {.coluna = l, .linha = c};
+                fscanf(fp, "%c", &cha);
+                set_casa(e, coord, cha);
+                if (cha == BRANCA) {
+                    altera_ultimajogada(e, coord);
+                }
+            }
             fscanf(fp, "%c", &cha);
-            set_casa(e, coord, cha);
-            if (cha == BRANCA) {
-                altera_ultimajogada(e, coord);
+        }
+        int num_tokens;
+        fseek(fp, 74, SEEK_SET);
+        int indice = 0;
+        e->num_jogadas = 0;
+        COORDENADA c1;
+        COORDENADA c2;
+        int num_jogad;
+        char jog1_c, jog1_l, jog2_c, jog2_l;
+        while ((num_tokens = fscanf(fp, "%2d: %c%d %c%d", &num_jogad, &jog1_c, &jog1_l, &jog2_c, &jog2_l) != EOF)) {
+            if (num_tokens == 3) {
+                c1.coluna = jog1_c - 'A';
+                c1.linha = jog1_l - '1';
+                c2.coluna = (-1);
+                c2.linha = (-1);
+                armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
+                set_jogador_atual(e, 1);
+            } else {
+                c1.coluna = jog1_c - 'A';
+                c1.linha = 8 - jog1_l;
+                c2.coluna = jog2_c - 'A';
+                c2.linha = 8 - jog2_l;
+                armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
+                set_jogador_atual(e, 0);
+                indice++;
             }
         }
-        fscanf(fp, "%c", &cha);
+        set_numero_jogadas(e, (indice));
+        fclose(fp);
+        mostrar_tabuleiro(e);
+        return OK;
     }
- int num_tokens;
-    fseek(fp, 74, SEEK_SET);
-    int indice = 0;
-    e-> num_jogadas = 0;
-    COORDENADA c1;
-    COORDENADA c2;
-    int num_jogad;
-    char jog1_c, jog1_l, jog2_c, jog2_l;
-    while (( num_tokens = fscanf (fp,"%2d: %c%d %c%d", &num_jogad, &jog1_c, &jog1_l, &jog2_c, &jog2_l) != EOF)) {
-        if (num_tokens == 3) {
-            c1.coluna = jog1_c - 'A';
-            c1.linha = jog1_l - '1';
-            c2.coluna = (-1);
-            c2.linha = (-1);
-            armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            set_jogador_atual(e, 1);
-        } else {
-            c1.coluna = jog1_c - 'A';
-            c1.linha = 8 - jog1_l ;
-            c2.coluna = jog2_c - 'A';
-            c2.linha = 8 - jog2_l;
-            armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            set_jogador_atual(e, 0);
-            indice++;
-        }
-    }
-    set_numero_jogadas(e, (indice));
-    fclose(fp);
-    mostrar_tabuleiro(e);
-    return OK;
-}
 
+
+    int jogar (ESTADO *estado, COORDENADA c)
+    {
+        //Pode jogar
+        if (verifica_movimentos(estado, c) && verifica_vazio(estado,c) && !(jogada_final(estado, c))) {
+            funcao_jogada (estado,c);
+        }
+        else  // Casos para congratular o jogador
+        {
+            int jogador = obter_jogador_atual(estado);
+
+            if (c.coluna == 0 && c.linha == 7) {
+                set_jogador_vencedor(estado, 1);
+                altera_estado_casa_branca(estado, c);
+                altera_estado_casa_preta(estado, get_ultima_jogada(estado));
+                altera_ultimajogada(estado, c);
+            }       //no caso de chegar a casa final do Jogador 1
+
+            else if (c.coluna == 7 && c.linha == 0) {
+                set_jogador_vencedor(estado, 2);
+                altera_estado_casa_branca(estado, c);
+                altera_estado_casa_preta(estado, get_ultima_jogada(estado));
+                altera_ultimajogada(estado, c);
+            }       //no caso de chegar a casa final do Jogador 2
+
+            else if (encurralado(estado) && (jogador == 0)) {
+                set_jogador_vencedor(estado, 2);
+            }
+                //nos casos de os Jogadores se encontrarem rodeados, ou sejam, sem possiblidades de jogarem
+            else if (encurralado(estado) && (jogador == 1)) {
+                set_jogador_vencedor(estado, 2);
+            }
+            else
+                printf("A jogada nao é válida, tente novamente\n");
+        }
+
+        return 0;
+    }
 
 int interpretador (ESTADO *e,ESTADO *aux){
 

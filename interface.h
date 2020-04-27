@@ -9,34 +9,15 @@ Interpretador e funcões complementares a este.
 
 #include "camadadados.h"
 /**
-\brief Funcao que possiblita retornar a uma jogada anterior
-@param e Apontador para o estado
-@param jogada Indicador da jogada para que queremos retornar
-*/
-void posJog(ESTADO *e, int jogada, ESTADO *aux);
-/**
-\brief Funcao que possiblita jogar automaticamente
-@param e Apontador para o estado
-
-*/
-void jog(ESTADO *e);
-void jog2(ESTADO *e);
-/**
 \brief Funcao que imprime as jogadas no ecrã.
 @param e Apontador para o ficheiro
 */
 int movimentos(ESTADO*e);
 /**
-\brief Funcao que inicializa o tabuleiro.
-@param file Apontador para um ficheiro
+\brief Função que mostra o tabuleiro
+@param estado O estado
 */
-ERROS lerFicheiro(char *fich);
-/**
-\brief Interpretador de comandos
-@param e Apontador para o estado
-*/
-int interpretador(ESTADO *e,ESTADO *aux);
-
+void mostrar_tabuleiro(ESTADO *estado);
 /**
 \brief Grava o estado do tabuleiro
 @param e Apontador para o estado
@@ -44,10 +25,19 @@ int interpretador(ESTADO *e,ESTADO *aux);
 */
 ERROS gravar(ESTADO *e,char *ficheiro);
 /**
-\brief Função que mostra o tabuleiro
-@param estado O estado
+\brief Função principal que efetua a jogada.
+@param estado Apontador para o estado
+@param c A coordenada
 */
-void mostrar_tabuleiro(ESTADO *estado);
+int jogar(ESTADO *estado, COORDENADA c);
+/**
+\brief Interpretador de comandos
+@param e Apontador para o estado
+*/
+int interpretador(ESTADO *e,ESTADO *aux);
+
+
+
 
 int converteDecimal (char v[]);
 #endif //RASTROSLI2_INTERFACE_H

@@ -146,13 +146,6 @@ void armazenar_jogada(ESTADO *e,JOGADA jog, int n)
     e->jogadas[n] = jog;
 }
 
-COORDENADA str_to_coord(char *coord)
-{
-    COORDENADA coordenadasw;
-    coordenadasw.coluna = ((coord[0])  - 'A');
-    coordenadasw.linha = (coord[1]) + 8;
-}
-
 COORDENADA get_coord_jogador1 (ESTADO *e, int c) {
     COORDENADA coord  = e->jogadas[c].jogador1;
 

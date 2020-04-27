@@ -25,48 +25,55 @@ LISTA vizinhos(ESTADO *e,COORDENADA c)
 {
     LISTA principal = criar_lista();
 
-    COORDENADA *cima     = malloc(sizeof(COORDENADA));
-    *cima = (COORDENADA) {c.coluna, c.linha + 1};
-    COORDENADA *baixo     = malloc(sizeof(COORDENADA));
-    *baixo = (COORDENADA) {c.coluna, c.linha - 1};
+    COORDENADA *diagECima     = malloc(sizeof(COORDENADA));
+    *diagECima = (COORDENADA) {c.coluna-1, c.linha - 1};
+    COORDENADA *diagDCima     = malloc(sizeof(COORDENADA));
+    *diagDCima = (COORDENADA) {c.coluna+1, c.linha - 1};
+    COORDENADA *diagEBaixo     = malloc(sizeof(COORDENADA));
+    *diagEBaixo = (COORDENADA) {c.coluna - 1, c.linha + 1};
+    COORDENADA *diagDBaixo     = malloc(sizeof(COORDENADA));
+    *diagDBaixo = (COORDENADA) {c.coluna + 1, c.linha + 1};
+    COORDENADA *direita     = malloc(sizeof(COORDENADA));
+    *direita = (COORDENADA) {c.coluna +1, c.linha};
     COORDENADA *esq     = malloc(sizeof(COORDENADA));
     *esq = (COORDENADA) {c.coluna - 1, c.linha};
-    COORDENADA *diagDBaixo     = malloc(sizeof(COORDENADA));
-    *diagDBaixo = (COORDENADA) {c.coluna + 1, c.linha - 1};
-    COORDENADA *diagEBaixo     = malloc(sizeof(COORDENADA));
-    *diagEBaixo = (COORDENADA) {c.coluna - 1, c.linha - 1};
-    COORDENADA *diagDCima     = malloc(sizeof(COORDENADA));
-    *diagDCima = (COORDENADA) {c.coluna+1, c.linha + 1};
-    COORDENADA *diagECima     = malloc(sizeof(COORDENADA));
-    *diagECima = (COORDENADA) {c.coluna-1, c.linha + 1};
-    COORDENADA *direita     = malloc(sizeof(COORDENADA));
-    *direita = (COORDENADA) {c.coluna+1, c.linha};
+    COORDENADA *baixo     = malloc(sizeof(COORDENADA));
+    *baixo = (COORDENADA) {c.coluna, c.linha + 1};
+    COORDENADA *cima     = malloc(sizeof(COORDENADA));
+    *cima = (COORDENADA) {c.coluna, c.linha - 1};
 
-    if (dentroTabuleiro(c) && (obter_estado_casa(e,*cima)       != PRETA)) principal = insere_cabeca (principal,cima);
-    if (dentroTabuleiro(c) && (obter_estado_casa(e,*baixo)      != PRETA)) principal = insere_cabeca (principal,baixo);
-    if (dentroTabuleiro(c) && (obter_estado_casa(e,*direita)    != PRETA)) principal = insere_cabeca (principal,direita);
-    if (dentroTabuleiro(c) && (obter_estado_casa(e,*esq)        != PRETA)) principal = insere_cabeca (principal,esq);
-    if (dentroTabuleiro(c) && (obter_estado_casa(e,*diagDBaixo) != PRETA)) principal = insere_cabeca (principal,diagDBaixo);
-    if (dentroTabuleiro(c) && (obter_estado_casa(e,*diagDCima)  != PRETA)) principal = insere_cabeca (principal,diagDCima);
-    if (dentroTabuleiro(c) && (obter_estado_casa(e,*diagEBaixo) != PRETA)) principal = insere_cabeca (principal,diagEBaixo);
-    if (dentroTabuleiro(c) && (obter_estado_casa(e,*diagECima)  != PRETA)) principal = insere_cabeca (principal,diagECima);
+    if (dentroTabuleiro(*diagECima)  && (obter_estado_casa(e,*diagECima)  != PRETA)) principal = insere_cabeca (principal,diagECima);
+    if (dentroTabuleiro(*diagEBaixo) && (obter_estado_casa(e,*diagEBaixo) != PRETA)) principal = insere_cabeca (principal,diagEBaixo);
+    if (dentroTabuleiro(*diagDCima)  && (obter_estado_casa(e,*diagDCima)  != PRETA)) principal = insere_cabeca (principal,diagDCima);
+    if (dentroTabuleiro(*diagDBaixo) && (obter_estado_casa(e,*diagDBaixo) != PRETA)) principal = insere_cabeca (principal,diagDBaixo);
+    if (dentroTabuleiro(*esq)        && (obter_estado_casa(e,*esq)        != PRETA)) principal = insere_cabeca (principal,esq);
+    if (dentroTabuleiro(*direita)    && (obter_estado_casa(e,*direita)    != PRETA)) principal = insere_cabeca (principal,direita);
+    if (dentroTabuleiro(*baixo) && (obter_estado_casa(e,*baixo)  != PRETA)) principal = insere_cabeca (principal,baixo);
+    if (dentroTabuleiro(*cima) && (obter_estado_casa(e,*cima)    != PRETA)) principal = insere_cabeca (principal,cima);
 
     return principal;
 }
 
-void floodfillaux(ESTADO *e,int valores[8][8],COORDENADA coord, int valor) {
-    LISTA vizinho = vizinhos(e, coord);
+void floodfillaux (ESTADO *e, int valores[8][8],COORDENADA c, int valor) {
 
-    if (valores[coord.coluna][coord.linha] == -1 || valores[coord.coluna][coord.linha] > valor) {
-        valores[coord.coluna][coord.linha] = valor;
+    LISTA vizinho = vizinhos(e, c);
+    COORDENADA vizinhex = *(COORDENADA *) (vizinho->valor);
+    while (vizinho -> valor != NULL && valor <= 8 && vizinhex.linha != 0 && vizinhex.coluna != 8) {
+        COORDENADA casa = *(COORDENADA *) (vizinho->valor);
+        if (valores[casa.coluna][casa.linha] == -1 || valores[casa.coluna][casa.linha] >= valor) {
+            valores[casa.coluna][casa.linha] = valor;
+        }
+        floodfillaux(e, valores, *(COORDENADA *) (vizinho->valor), valor + 1 );
+        vizinho = proximo(vizinho);
     }
-
-    while (vizinho->valor != NULL && vizinho->prox != NULL) {
-        floodfillaux(e, valores, *((COORDENADA *) (vizinho->prox)), (valor + 1));
-
-
+        for (int j = 0; j <= 7; j++) {
+            printf("%d|", 8 - j);
+            for (int i = 0; i <= 7; i++) {
+                printf("%d ", valores[i][j]);
+            }
+            printf("\n");
+        }
     }
-}
 
 COORDENADA floodfill(ESTADO *e){
 
@@ -74,7 +81,7 @@ COORDENADA floodfill(ESTADO *e){
 
     for (int i = 0; i < 8; i++)
         for (int j = 0; j < 8; j++) {
-            if (e->tab[i][j] == PRETA)
+            if (e->tab[j][i] == PRETA)
                 valores[j][i] = -2;
             else
                 valores[j][i] = -1;
@@ -82,11 +89,13 @@ COORDENADA floodfill(ESTADO *e){
 
     if (get_jogador_atual(e) == 0) {
         COORDENADA c = (COORDENADA) {0,7};
-        floodfillaux(e, valores,c,0);
+        valores[0][7] = 0;
+        floodfillaux(e, valores,c,1);
     } else
     {
         COORDENADA c = (COORDENADA) {7,0};
-        floodfillaux(e,valores,c,0);
+        valores[7][0] = 0;
+        floodfillaux(e,valores,c,1);
     }
 
     COORDENADA melhorJogada = {-1,-1};
@@ -103,18 +112,6 @@ COORDENADA floodfill(ESTADO *e){
         } else
             vizinho = vizinho->prox;
     }
-    for (int j = 0; j <= 7; j++)
-    {
-        printf("%d|",8-j);
-        for (int i = 0; i <= 7; i++)
-        {
-
-            printf("%d ",valores[i][j]);
-
-        }
-        printf("\n");
-    }
-
     return melhorJogada;
 }
 /*
@@ -286,40 +283,105 @@ int jogada_final (ESTADO *estado, COORDENADA c) {
     }
 }
 
-int jogar (ESTADO *estado, COORDENADA c)
-{
-    //Pode jogar
-    if (verifica_movimentos(estado, c) && verifica_vazio(estado,c) && !(jogada_final(estado, c))) {
-        funcao_jogada (estado,c);
-    }
-    else  // Casos para congratular o jogador
-    {
-        int jogador = obter_jogador_atual(estado);
+void jog (ESTADO *e){
+    COORDENADA c = get_ultima_jogada (e);
 
-        if (c.coluna == 0 && c.linha == 7) {
-             set_jogador_vencedor(estado, 1);
-             altera_estado_casa_branca(estado, c);
-             altera_estado_casa_preta(estado, get_ultima_jogada(estado));
-             altera_ultimajogada(estado, c);
-            }       //no caso de chegar a casa final do Jogador 1
+    LISTA principal = criar_lista();
 
-            else if (c.coluna == 7 && c.linha == 0) {
-                     set_jogador_vencedor(estado, 2);
-                     altera_estado_casa_branca(estado, c);
-                     altera_estado_casa_preta(estado, get_ultima_jogada(estado));
-                     altera_ultimajogada(estado, c);
-            }       //no caso de chegar a casa final do Jogador 2
 
-            else if (encurralado(estado) && (jogador == 0)) {
-                     set_jogador_vencedor(estado, 2);
-            }
-           //nos casos de os Jogadores se encontrarem rodeados, ou sejam, sem possiblidades de jogarem
-            else if (encurralado(estado) && (jogador == 1)) {
-                     set_jogador_vencedor(estado, 2);
-            }
-            else
-                     printf("A jogada nao é válida, tente novamente\n");
-    }
 
-        return 0;
+    COORDENADA cima     = (COORDENADA) {.coluna = c.coluna, .linha = c.linha + 1};
+
+    COORDENADA baixo    = (COORDENADA) {.coluna = c.coluna, .linha = c.linha - 1};
+
+    COORDENADA direita  = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha};
+
+    COORDENADA esquerda = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha};
+
+    COORDENADA diagDBaixo = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha - 1};
+
+    COORDENADA diagEBaixo = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha - 1};
+
+    COORDENADA diagDCima  = (COORDENADA) {.coluna = c.coluna + 1, .linha = c.linha + 1};
+
+    COORDENADA diagECima  = (COORDENADA) {.coluna = c.coluna - 1, .linha = c.linha + 1};
+
+
+    if ((obter_estado_casa(e,cima))       == VAZIO) principal = insere_cabeca (principal,&cima);
+    if ((obter_estado_casa(e,baixo))      == VAZIO) principal = insere_cabeca (principal,&baixo);
+    if ((obter_estado_casa(e,direita))    == VAZIO) principal = insere_cabeca (principal, &direita);
+    if ((obter_estado_casa(e,esquerda))   == VAZIO) principal = insere_cabeca (principal, &esquerda);
+    if ((obter_estado_casa(e,diagDBaixo)) == VAZIO) principal = insere_cabeca (principal, &diagDBaixo);
+    if ((obter_estado_casa(e,diagDCima))  == VAZIO) principal = insere_cabeca (principal, &diagDCima);
+    if ((obter_estado_casa(e,diagEBaixo)) == VAZIO) principal = insere_cabeca (principal, &diagEBaixo);
+    if ((obter_estado_casa(e,diagECima))  == VAZIO) principal = insere_cabeca (principal, &diagECima);
+
+
+    COORDENADA novaCasa = verificaMelhorJogada (principal, e);
+
+    jogar(e,novaCasa);
+    mostrar_tabuleiro(e);
+
 }
+void jog2(ESTADO *e)
+{
+    COORDENADA novaCasa = floodfill(e);
+
+    jogar(e,novaCasa);
+    mostrar_tabuleiro(e);
+}
+
+void posJog(ESTADO *e,int jogada,ESTADO *aux)
+{
+    *aux = *e;
+
+    int n = 31;
+    if (jogada >= obter_numero_de_jogadas(e) || jogada < 0)
+    {
+        printf("Número de jogada inválida\n");
+    } else {
+
+        //printf("Copiou\n");
+        set_jogador_atual(aux,0);
+        set_numero_jogadas(aux, jogada);
+        altera_estado_casa_vazio(aux,get_ultima_jogada(aux));
+        altera_ultimajogada_pos(aux, jogada);
+
+        while (n >= jogada)
+        {
+            COORDENADA x = get_jogadas_jogador1(aux, n);
+            COORDENADA y = get_jogadas_jogador2(aux, n);
+
+            altera_estado_casa_vazio(aux, x);
+            altera_estado_casa_vazio(aux, y);
+
+            set_casas_invalidas(aux, n);
+            n--;
+        }
+
+        n = 0;
+        if (jogada == 0) {
+            aux->ultima_jogada.coluna = 4;
+            aux->ultima_jogada.linha = 3;
+            aux->tab[4][3] = BRANCA;
+        }
+
+        while ( n < jogada )
+        {
+            COORDENADA x = get_jogadas_jogador1 (aux, n);
+            COORDENADA y = get_jogadas_jogador2 (aux, n);
+
+            altera_estado_casa_preta (aux , x);
+            altera_estado_casa_preta (aux, y);
+
+            n++;
+        }
+
+        COORDENADA ult = get_ultima_jogada(aux);
+        altera_estado_casa_branca(aux, ult);
+    }
+    mostrar_tabuleiro(aux);
+
+}
+
+

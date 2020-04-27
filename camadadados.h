@@ -108,12 +108,6 @@ char conversorultimajogadacoluna (COORDENADA c);
 @param c A coordenada
 */
 CASA obter_estado_casa(ESTADO *e, COORDENADA c);
-//RASTROSLI2_CAMADADADOS_H
-/**
-\brief Funcao que traduz de string para COORDENADA
-@param coord Apontador para uma coordenada
-*/
-COORDENADA str_to_coord(char *coord);
 /**
 \brief Funcao que armaneza jogadas
 @param e Apontador para o estado
