@@ -20,7 +20,6 @@ int main(){
 return 0;
 }
 
-
 /*
 LISTA L = criar_lista(); // Criar uma lista vazia
 char linha[BUF_SIZE];

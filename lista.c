@@ -45,6 +45,6 @@ LISTA remove_cabeca(LISTA L){
 
 int lista_esta_vazia(LISTA L){
     int r ;
-    if (L == NULL) r=1; else r=0;
+    if (L -> valor == NULL) r=1; else r=0;
     return r;
 }

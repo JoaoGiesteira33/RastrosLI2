@@ -57,23 +57,33 @@ LISTA vizinhos(ESTADO *e,COORDENADA c)
 void floodfillaux (ESTADO *e, int valores[8][8],COORDENADA c, int valor) {
 
     LISTA vizinho = vizinhos(e, c);
-    COORDENADA vizinhex = *(COORDENADA *) (vizinho->valor);
-    while (vizinho -> valor != NULL && valor <= 8 && vizinhex.linha != 0 && vizinhex.coluna != 8) {
-        COORDENADA casa = *(COORDENADA *) (vizinho->valor);
-        if (valores[casa.coluna][casa.linha] == -1 || valores[casa.coluna][casa.linha] >= valor) {
-            valores[casa.coluna][casa.linha] = valor;
-        }
-        floodfillaux(e, valores, *(COORDENADA *) (vizinho->valor), valor + 1 );
-        vizinho = proximo(vizinho);
-    }
-        for (int j = 0; j <= 7; j++) {
-            printf("%d|", 8 - j);
-            for (int i = 0; i <= 7; i++) {
-                printf("%d ", valores[i][j]);
+    COORDENADA fil = *(COORDENADA *) (vizinho->valor);
+    while (vizinho->valor != NULL && vizinho->prox != NULL && valor < 8) {
+            COORDENADA casa = *(COORDENADA *) (vizinho->valor);
+            if (valores[casa.coluna][casa.linha] == -1 || valores[casa.coluna][casa.linha] >= valor) {
+                valores[casa.coluna][casa.linha] = valor;
             }
-            printf("\n");
+            floodfillaux(e, valores, *(COORDENADA *) (vizinho->valor), valor + 1);
+            vizinho = vizinho -> prox;
         }
+  //  int r = lista_esta_vazia(vizinho);
+ //   if (r == 1 ) {
+ //       floodfillaux(e, valores, fil, valor + 1);
+
+
+//    }
+    free(vizinho);
+
+
+    for (int j = 0; j <= 7; j++) {
+        printf("%d|", 8 - j);
+        for (int i = 0; i <= 7; i++) {
+            printf("%d ", valores[i][j]);
+        }
+        printf("\n");
     }
+}
+
 
 COORDENADA floodfill(ESTADO *e){
 

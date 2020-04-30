@@ -10,23 +10,28 @@
 
 
 int movimentos(ESTADO*e) {
-    int g;
-    for (g = 0;  g < (get_num_jogadas(e) - 1); g++) {
+    if (get_num_jogadas(e) == 0) {
+        printf("%02d:     \n",1);
+    } else {
+        int g;
+        for (g = 0; g < (get_num_jogadas(e) - 1); g++) {
+            COORDENADA coord1 = get_coord_jogador1(e, g);
+            COORDENADA coord2 = get_coord_jogador2(e, g);
+
+            printf("%02d: %c%d %c%d\n", g + 1, conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),
+                   conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
+        }
+
+
         COORDENADA coord1 = get_coord_jogador1(e, g);
-        COORDENADA coord2 = get_coord_jogador2 (e, g);
+        COORDENADA coord2 = get_coord_jogador2(e, g);
 
-        printf("%02d: %c%d %c%d\n", g+1 ,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
-    }
-
-
-    COORDENADA coord1 = get_coord_jogador1 (e, g);
-    COORDENADA coord2 = get_coord_jogador2 (e, g);
-
-    if (get_jogador_atual(e) == 1) {
-        printf("%02d: %c%d\n", g + 1, conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
-    }
-    else {
-        printf("%02d: %c%d %c%d\n", g + 1,conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
+        if (get_jogador_atual(e) == 1) {
+            printf("%02d: %c%d\n", g + 1, conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1));
+        } else {
+            printf("%02d: %c%d %c%d\n", g + 1, conversorultimajogadacoluna(coord1), conversorultimajogadalinha(coord1),
+                   conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
+        }
     }
     return 0;
 }
