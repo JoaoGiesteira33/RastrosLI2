@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RastrosLI2: Código-Fonte de logica.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">RastrosLI2
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">logica.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="logica_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef RASTROSLI2_LOGICA_H</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define RASTROSLI2_LOGICA_H</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="lista_8h.html">lista.h</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<a class="code" href="structCOORDENADA.html">COORDENADA</a> <a class="code" href="logica_8h.html#a7af5c5ce67e23cb9af86a347455bd42e">verificaMelhorJogada</a> (<a class="code" href="structnodo.html">LISTA</a> l,<a class="code" href="structCOORDENADA.html">COORDENADA</a> c, <a class="code" href="structESTADO.html">ESTADO</a> * e);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">int</span> <a class="code" href="logica_8h.html#a7a715ebbf78a2a761bf9a75972cc0375">verifica_movimentos</a>(<a class="code" href="structESTADO.html">ESTADO</a> *estado, <a class="code" href="structCOORDENADA.html">COORDENADA</a> c);</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">int</span> <a class="code" href="logica_8h.html#a1c088554e2d968e91d1b9f3a651d8d82">verifica_vazio</a>(<a class="code" href="structESTADO.html">ESTADO</a> *estado, <a class="code" href="structCOORDENADA.html">COORDENADA</a> c);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">int</span> <a class="code" href="logica_8h.html#a2560a59cb06ad96aa2cd437a2f034f18">movimentos</a>(<a class="code" href="structESTADO.html">ESTADO</a>*e);</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">int</span> jogar(<a class="code" href="structESTADO.html">ESTADO</a> *estado, <a class="code" href="structCOORDENADA.html">COORDENADA</a> c);</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">int</span> <a class="code" href="logica_8h.html#a4eec13ff564158fa4077e44263639e95">encurralado</a> (<a class="code" href="structESTADO.html">ESTADO</a> *estado);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">int</span> <a class="code" href="logica_8h.html#a165432d213e6e5b7a384c0b366604364">jogada_final</a> (<a class="code" href="structESTADO.html">ESTADO</a> *estado, <a class="code" href="structCOORDENADA.html">COORDENADA</a> c);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif //RASTROSLI2_LOGICA_H</span></div><div class="ttc" id="logica_8h_html_a4eec13ff564158fa4077e44263639e95"><div class="ttname"><a href="logica_8h.html#a4eec13ff564158fa4077e44263639e95">encurralado</a></div><div class="ttdeci">int encurralado(ESTADO *estado)</div><div class="ttdoc">Função que verifica se o jogador não tem mais nenhuma jogada válida. </div><div class="ttdef"><b>Definition:</b> logica.c:96</div></div>
+<div class="ttc" id="structESTADO_html"><div class="ttname"><a href="structESTADO.html">ESTADO</a></div><div class="ttdoc">Tipo de dados para o estado. </div><div class="ttdef"><b>Definition:</b> camadadados.h:55</div></div>
+<div class="ttc" id="logica_8h_html_a7af5c5ce67e23cb9af86a347455bd42e"><div class="ttname"><a href="logica_8h.html#a7af5c5ce67e23cb9af86a347455bd42e">verificaMelhorJogada</a></div><div class="ttdeci">COORDENADA verificaMelhorJogada(LISTA l, COORDENADA c, ESTADO *e)</div><div class="ttdoc">Funcão que verifica qual é a melhor Coordenada. </div><div class="ttdef"><b>Definition:</b> logica.c:11</div></div>
+<div class="ttc" id="logica_8h_html_a2560a59cb06ad96aa2cd437a2f034f18"><div class="ttname"><a href="logica_8h.html#a2560a59cb06ad96aa2cd437a2f034f18">movimentos</a></div><div class="ttdeci">int movimentos(ESTADO *e)</div><div class="ttdoc">Função principal que efetua a jogada. </div><div class="ttdef"><b>Definition:</b> interface.c:117</div></div>
+<div class="ttc" id="logica_8h_html_a7a715ebbf78a2a761bf9a75972cc0375"><div class="ttname"><a href="logica_8h.html#a7a715ebbf78a2a761bf9a75972cc0375">verifica_movimentos</a></div><div class="ttdeci">int verifica_movimentos(ESTADO *estado, COORDENADA c)</div><div class="ttdoc">Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa. </div><div class="ttdef"><b>Definition:</b> logica.c:37</div></div>
+<div class="ttc" id="logica_8h_html_a165432d213e6e5b7a384c0b366604364"><div class="ttname"><a href="logica_8h.html#a165432d213e6e5b7a384c0b366604364">jogada_final</a></div><div class="ttdeci">int jogada_final(ESTADO *estado, COORDENADA c)</div><div class="ttdoc">Função para determinar o final do Jogo e consequente mensagem de congratulação. </div><div class="ttdef"><b>Definition:</b> logica.c:130</div></div>
+<div class="ttc" id="structCOORDENADA_html"><div class="ttname"><a href="structCOORDENADA.html">COORDENADA</a></div><div class="ttdoc">Tipo de dados para as coordenadas. </div><div class="ttdef"><b>Definition:</b> camadadados.h:34</div></div>
+<div class="ttc" id="structnodo_html"><div class="ttname"><a href="structnodo.html">nodo</a></div><div class="ttdoc">Tipo de dados para as listas ligadas. </div><div class="ttdef"><b>Definition:</b> lista.h:12</div></div>
+<div class="ttc" id="logica_8h_html_a1c088554e2d968e91d1b9f3a651d8d82"><div class="ttname"><a href="logica_8h.html#a1c088554e2d968e91d1b9f3a651d8d82">verifica_vazio</a></div><div class="ttdeci">int verifica_vazio(ESTADO *estado, COORDENADA c)</div><div class="ttdoc">Funcão que verifica se a casa para onde o jogador pretende jogar é válida, neste caso Vazia...</div><div class="ttdef"><b>Definition:</b> logica.c:51</div></div>
+<div class="ttc" id="lista_8h_html"><div class="ttname"><a href="lista_8h.html">lista.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

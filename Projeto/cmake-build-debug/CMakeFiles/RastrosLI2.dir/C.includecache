@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/julio/Desktop/LI2/LI2PL8G6/Projeto/camadadados.h
+
+/home/julio/Desktop/LI2/LI2PL8G6/Projeto/interface.h
+camadadados.h
+/home/julio/Desktop/LI2/LI2PL8G6/Projeto/camadadados.h
+
+/home/julio/Desktop/LI2/LI2PL8G6/Projeto/lista.h
+
+/home/julio/Desktop/LI2/LI2PL8G6/Projeto/logica.c
+camadadados.h
+/home/julio/Desktop/LI2/LI2PL8G6/Projeto/camadadados.h
+logica.h
+/home/julio/Desktop/LI2/LI2PL8G6/Projeto/logica.h
+interface.h
+/home/julio/Desktop/LI2/LI2PL8G6/Projeto/interface.h
+stdio.h
+-
+math.h
+-
+stdlib.h
+-
+lista.h
+/home/julio/Desktop/LI2/LI2PL8G6/Projeto/lista.h
+time.h
+-
+
+/home/julio/Desktop/LI2/LI2PL8G6/Projeto/logica.h
+lista.h
+/home/julio/Desktop/LI2/LI2PL8G6/Projeto/lista.h
+

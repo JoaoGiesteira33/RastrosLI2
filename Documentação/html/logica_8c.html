@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RastrosLI2: Referência ao ficheiro logica.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">RastrosLI2
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro logica.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="camadadados_8h_source.html">camadadados.h</a>&quot;</code><br />
+<code>#include &quot;logica.h&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Diagrama de dependências de inclusão para logica.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="logica_8c__incl.png" border="0" usemap="#logica_8c" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a7a715ebbf78a2a761bf9a75972cc0375"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8c.html#a7a715ebbf78a2a761bf9a75972cc0375">verifica_movimentos</a> (<a class="el" href="structESTADO.html">ESTADO</a> *estado, <a class="el" href="structCOORDENADA.html">COORDENADA</a> c)</td></tr>
+<tr class="memdesc:a7a715ebbf78a2a761bf9a75972cc0375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa.  <a href="#a7a715ebbf78a2a761bf9a75972cc0375">Mais...</a><br /></td></tr>
+<tr class="separator:a7a715ebbf78a2a761bf9a75972cc0375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c088554e2d968e91d1b9f3a651d8d82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8c.html#a1c088554e2d968e91d1b9f3a651d8d82">verifica_vazio</a> (<a class="el" href="structESTADO.html">ESTADO</a> *estado, <a class="el" href="structCOORDENADA.html">COORDENADA</a> c)</td></tr>
+<tr class="memdesc:a1c088554e2d968e91d1b9f3a651d8d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcão que verifica se a casa para onde o jogador pretende jogar é válida, neste caso Vazia.  <a href="#a1c088554e2d968e91d1b9f3a651d8d82">Mais...</a><br /></td></tr>
+<tr class="separator:a1c088554e2d968e91d1b9f3a651d8d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3db0f86a26da574c74f132e2b40af028"><td class="memItemLeft" align="right" valign="top"><a id="a3db0f86a26da574c74f132e2b40af028"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8c.html#a3db0f86a26da574c74f132e2b40af028">funcao_jogada</a> (<a class="el" href="structESTADO.html">ESTADO</a> *estado, <a class="el" href="structCOORDENADA.html">COORDENADA</a> c)</td></tr>
+<tr class="memdesc:a3db0f86a26da574c74f132e2b40af028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que altera o estado da casa e alterna a vez de jogar. <br /></td></tr>
+<tr class="separator:a3db0f86a26da574c74f132e2b40af028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eec13ff564158fa4077e44263639e95"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8c.html#a4eec13ff564158fa4077e44263639e95">encurralado</a> (<a class="el" href="structESTADO.html">ESTADO</a> *estado)</td></tr>
+<tr class="memdesc:a4eec13ff564158fa4077e44263639e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para determinar se as casas em volta da casa atual se encontram todas no estado Preta.  <a href="#a4eec13ff564158fa4077e44263639e95">Mais...</a><br /></td></tr>
+<tr class="separator:a4eec13ff564158fa4077e44263639e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165432d213e6e5b7a384c0b366604364"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8c.html#a165432d213e6e5b7a384c0b366604364">jogada_final</a> (<a class="el" href="structESTADO.html">ESTADO</a> *estado, <a class="el" href="structCOORDENADA.html">COORDENADA</a> c)</td></tr>
+<tr class="memdesc:a165432d213e6e5b7a384c0b366604364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função para determinar o final do Jogo e consequente mensagem de congratulação.  <a href="#a165432d213e6e5b7a384c0b366604364">Mais...</a><br /></td></tr>
+<tr class="separator:a165432d213e6e5b7a384c0b366604364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53472e75f056ceb02b5387193021838a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logica_8c.html#a53472e75f056ceb02b5387193021838a">jogar</a> (<a class="el" href="structESTADO.html">ESTADO</a> *estado, <a class="el" href="structCOORDENADA.html">COORDENADA</a> c)</td></tr>
+<tr class="memdesc:a53472e75f056ceb02b5387193021838a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função principal que efetua a jogada.  <a href="#a53472e75f056ceb02b5387193021838a">Mais...</a><br /></td></tr>
+<tr class="separator:a53472e75f056ceb02b5387193021838a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Funcão Jogar e funcões complementares a esta. </p>
+</div><h2 class="groupheader">Documentação das funções</h2>
+<a id="a4eec13ff564158fa4077e44263639e95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eec13ff564158fa4077e44263639e95">&#9670;&nbsp;</a></span>encurralado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int encurralado </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>estado</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para determinar se as casas em volta da casa atual se encontram todas no estado Preta. </p>
+<p>Função que verifica se o jogador não tem mais nenhuma jogada válida. </p>
+
+</div>
+</div>
+<a id="a165432d213e6e5b7a384c0b366604364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a165432d213e6e5b7a384c0b366604364">&#9670;&nbsp;</a></span>jogada_final()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int jogada_final </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>estado</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structCOORDENADA.html">COORDENADA</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função para determinar o final do Jogo e consequente mensagem de congratulação. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Apontador para o estado </td></tr>
+    <tr><td class="paramname">c</td><td>A coordenada </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a53472e75f056ceb02b5387193021838a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53472e75f056ceb02b5387193021838a">&#9670;&nbsp;</a></span>jogar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int jogar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>estado</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structCOORDENADA.html">COORDENADA</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função principal que efetua a jogada. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Apontador para o estado </td></tr>
+    <tr><td class="paramname">c</td><td>A coordenada </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7a715ebbf78a2a761bf9a75972cc0375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a715ebbf78a2a761bf9a75972cc0375">&#9670;&nbsp;</a></span>verifica_movimentos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int verifica_movimentos </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>estado</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structCOORDENADA.html">COORDENADA</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcão que verifica se a casa para a qual o jogador pretende jogar é valida, ou seja, se encontra-se na distancia de uma casa. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Apontador para o estado </td></tr>
+    <tr><td class="paramname">c</td><td>A coordenada </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1c088554e2d968e91d1b9f3a651d8d82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c088554e2d968e91d1b9f3a651d8d82">&#9670;&nbsp;</a></span>verifica_vazio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int verifica_vazio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structESTADO.html">ESTADO</a> *&#160;</td>
+          <td class="paramname"><em>estado</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structCOORDENADA.html">COORDENADA</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Funcão que verifica se a casa para onde o jogador pretende jogar é válida, neste caso Vazia. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Apontador para o estado </td></tr>
+    <tr><td class="paramname">c</td><td>A coordenada </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

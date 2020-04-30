@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/Bot.dir/main.c.o  -o Bot 
