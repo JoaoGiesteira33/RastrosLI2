@@ -1,7 +1,3 @@
-//
-// Created by daniel on 17/04/20.
-//
-
 #include "lista.h"
 #include <stdlib.h>
 

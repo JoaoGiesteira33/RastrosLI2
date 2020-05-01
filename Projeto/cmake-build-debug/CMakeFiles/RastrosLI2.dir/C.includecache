@@ -6,21 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/camadadados.h
+/home/daniel/Desktop/RastrosLI2/Projeto/camadadados.h
 
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/interface.h
-camadadados.h
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/camadadados.h
-
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/lista.h
-
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/logica.c
-camadadados.h
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/camadadados.h
-logica.h
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/logica.h
+/home/daniel/Desktop/RastrosLI2/Projeto/interface.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
 interface.h
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/interface.h
+/home/daniel/Desktop/RastrosLI2/Projeto/interface.h
+logica.h
+/home/daniel/Desktop/RastrosLI2/Projeto/logica.h
+camadadados.h
+/home/daniel/Desktop/RastrosLI2/Projeto/camadadados.h
+lista.h
+/home/daniel/Desktop/RastrosLI2/Projeto/lista.h
+
+/home/daniel/Desktop/RastrosLI2/Projeto/interface.h
+camadadados.h
+/home/daniel/Desktop/RastrosLI2/Projeto/camadadados.h
+
+/home/daniel/Desktop/RastrosLI2/Projeto/lista.h
+
+/home/daniel/Desktop/RastrosLI2/Projeto/logica.c
+camadadados.h
+/home/daniel/Desktop/RastrosLI2/Projeto/camadadados.h
+logica.h
+/home/daniel/Desktop/RastrosLI2/Projeto/logica.h
+interface.h
+/home/daniel/Desktop/RastrosLI2/Projeto/interface.h
 stdio.h
 -
 math.h
@@ -28,11 +44,11 @@ math.h
 stdlib.h
 -
 lista.h
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/lista.h
+/home/daniel/Desktop/RastrosLI2/Projeto/lista.h
 time.h
 -
 
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/logica.h
+/home/daniel/Desktop/RastrosLI2/Projeto/logica.h
 lista.h
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/lista.h
+/home/daniel/Desktop/RastrosLI2/Projeto/lista.h
 

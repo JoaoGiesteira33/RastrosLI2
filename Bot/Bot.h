@@ -1,6 +1,7 @@
-//
-// Created by julio on 30/04/20.
-//
+/**
+@file Bot.h
+Funções para utilizar listas ligadas
+*/
 #ifndef BOT_BOT_H
 #define BOT_BOT_H
 #include <stdlib.h>

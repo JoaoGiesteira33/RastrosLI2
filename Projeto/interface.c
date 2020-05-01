@@ -7,7 +7,7 @@
 #include "lista.h"
 #define BUF_SIZE 1024
 
-int movimentos(ESTADO*e) {
+void movimentos(ESTADO*e) {
     if (get_num_jogadas(e) == 0) {
         printf("%02d:     \n",1);
     } else {
@@ -30,7 +30,6 @@ int movimentos(ESTADO*e) {
                    conversorultimajogadacoluna(coord2), conversorultimajogadalinha(coord2));
         }
     }
-    return 0;
 }
 
  void mostrar_tabuleiro (ESTADO* estado){
@@ -113,7 +112,7 @@ ERROS gravar(ESTADO *e,char *ficheiro){
 
 
         }
-        //fprintf(fp,"\n PL%d Jogada%d\n Coordenada Anterior %c%d\n", obter_jogador_atual(e), obter_numero_de_jogadas(e),conversorultimajogadacoluna(obter_ultima_jogada(e)),conversorultimajogadalinha(obter_ultima_jogada(e)));
+
         fprintf(fp,"\n");
         int l = 1;
         for (int g = 0; get_coord_coluna(get_coord_jogador1(e,g)) != -1; g++) {
@@ -149,13 +148,19 @@ ERROS ler (ESTADO* e,char*ficheiro) {
         for (int c = 0; c < 8; c++) {
             for (int l = 0; l < 8; l++) {
                 coord = (COORDENADA) {.coluna = l, .linha = c};
-                fscanf(fp, "%c", &cha);
-                set_casa(e, coord, cha);
-                if (cha == BRANCA) {
-                    altera_ultimajogada(e, coord);
+                if (fscanf(fp, "%c", &cha) == 1) {
+
+                    set_casa(e, coord, cha);
+                    if (cha == BRANCA) {
+                        altera_ultimajogada(e, coord);
+                    }
                 }
             }
-            fscanf(fp, "%c", &cha);
+            if (fscanf(fp, "%c",&cha) == 1){
+                ;
+            }
+
+
         }
         int num_tokens;
         fseek(fp, 74, SEEK_SET);
@@ -191,7 +196,7 @@ ERROS ler (ESTADO* e,char*ficheiro) {
     }
 
 
-    int jogar (ESTADO *estado, COORDENADA c)
+    void jogar (ESTADO *estado, COORDENADA c)
     {
         //Pode jogar
         if (verifica_movimentos(estado, c) && verifica_vazio(estado,c) && !(jogada_final(estado, c))) {
@@ -225,8 +230,6 @@ ERROS ler (ESTADO* e,char*ficheiro) {
             else
                 printf("A jogada nao é válida, tente novamente\n");
         }
-
-        return 0;
     }
 
 int interpretador (ESTADO *e,ESTADO *aux){
@@ -247,6 +250,12 @@ int interpretador (ESTADO *e,ESTADO *aux){
             if (ultima_jogada_pos == 0) {
                 jogar(e, coord);
                 mostrar_tabuleiro(e);
+                if (encurralado(e) == 1){
+                    if (get_jogador_atual(e) == 0) set_jogador_vencedor(e, 2);
+
+                    else
+                    set_jogador_vencedor(e, 1);}
+
                 ultima_jogada_pos = 0;
             } else {
                 *e = *aux;
@@ -294,7 +303,7 @@ int interpretador (ESTADO *e,ESTADO *aux){
         }
 
     }
-    printf("Muitos Parabens, o jogo acabou e o vencedor é o Jogador %d", get_jogador_vencedor(e));
+    printf("Muitos Parabéns, o jogo acabou e o vencedor é o Jogador %d", get_jogador_vencedor(e));
     return 1;
 }
 

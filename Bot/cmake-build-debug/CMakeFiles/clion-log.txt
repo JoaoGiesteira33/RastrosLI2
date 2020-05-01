@@ -1,11 +1,6 @@
-/snap/clion/112/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/julio/Desktop/LI2/LI2PL8G6/Bot
--- The C compiler identification is GNU 7.5.0
--- Check for working C compiler: /usr/bin/cc
--- Check for working C compiler: /usr/bin/cc -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Configuring done
--- Generating done
--- Build files have been written to: /home/julio/Desktop/LI2/LI2PL8G6/Bot/cmake-build-debug
+/home/daniel/Desktop/Clion/clion-2019.3.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/daniel/Desktop/RastrosLI2/Bot
+CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+  CMake 3.16 or higher is required.  You are running version 3.15.3
+
+
+-- Configuring incomplete, errors occurred!

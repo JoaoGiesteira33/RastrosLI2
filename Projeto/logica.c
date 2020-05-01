@@ -8,16 +8,7 @@
 #define BUF_SIZE 1024
 #include <time.h>
 
-/*
-    0 -1 -2 -3 -4 -5 -6 -7
-    1  0 -1 -2 -3 -4 -5 -6
-    2  1  0 -1 -2 -3  # -5
-    7  6  #  #  #  #  # -4
-    7  6  #  * -1  #     #
-    #  #  #  #  #  #  6  7
-    1  1  2  3  4  5  6  7
-    0  1  2  3  4  5  6  7
-*/
+
 int dentroTabuleiro(COORDENADA c)
 {
     return (c.linha < 8 && c.linha >= 0 && c.coluna < 8 && c.coluna >= 0);
@@ -58,7 +49,7 @@ LISTA vizinhos(ESTADO *e,COORDENADA c)
 void floodfillaux (ESTADO *e, int valores[8][8],COORDENADA c, int valor) {
 
     LISTA vizinho = vizinhos(e, c);
-    COORDENADA fil = *(COORDENADA *) (vizinho->valor);
+
     while (vizinho->valor != NULL && vizinho->prox != NULL && valor < 8) {
             COORDENADA casa = *(COORDENADA *) (vizinho->valor);
             if (valores[casa.coluna][casa.linha] == -1 || valores[casa.coluna][casa.linha] >= valor) {
@@ -67,12 +58,7 @@ void floodfillaux (ESTADO *e, int valores[8][8],COORDENADA c, int valor) {
             floodfillaux(e, valores, *(COORDENADA *) (vizinho->valor), valor + 1);
             vizinho = vizinho -> prox;
         }
-  //  int r = lista_esta_vazia(vizinho);
- //   if (r == 1 ) {
- //       floodfillaux(e, valores, fil, valor + 1);
 
-
-//    }
     free(vizinho);
 
 /*
@@ -90,13 +76,7 @@ COORDENADA floodfill(ESTADO *e){
 
     int valores[8][8];
 
-    for (int i = 0; i < 8; i++)
-        for (int j = 0; j < 8; j++) {
-            if (e->tab[j][i] == PRETA)
-                valores[j][i] = -2;
-            else
-                valores[j][i] = -1;
-        }
+    set_valores(e,valores);
 
     if (get_jogador_atual(e) == 0) {
         COORDENADA c = (COORDENADA) {0,7};
@@ -242,13 +222,13 @@ int funcao_jogada (ESTADO *estado, COORDENADA c) {
     else
         set_jogador_atual(estado, 1);
 
-    //printf("jogar %d  %d\n", c.linha, c.coluna);
+
     return 1;
 
 }
 
 int encurralado (ESTADO *estado) {
-       //coordenada da peça branca atual
+
 
        COORDENADA centro = get_ultima_jogada(estado);
 
@@ -269,14 +249,15 @@ int encurralado (ESTADO *estado) {
        COORDENADA diagECima = (COORDENADA) {.coluna = centro.coluna - 1, .linha = centro.linha + 1};
 
 
-       if ((obter_estado_casa(estado,cima) == PRETA  ||  get_linha_coordenada (cima) == -1) &&
-           (obter_estado_casa(estado,baixo) == PRETA ||  get_linha_coordenada(baixo) == -1) &&
-           (obter_estado_casa(estado,direita) == PRETA  ||  get_coluna_coordenada (direita) == -1) &&
-           (obter_estado_casa(estado,esquerda) == PRETA ||  get_coluna_coordenada (esquerda) == -1) &&
-           (obter_estado_casa(estado,diagDBaixo) == PRETA || (get_coluna_coordenada (diagDBaixo) == -1 && get_linha_coordenada(diagDBaixo) == -1)) &&
-           (obter_estado_casa(estado,diagEBaixo) == PRETA || (get_coluna_coordenada (diagEBaixo) == -1 && get_linha_coordenada(diagEBaixo) == -1))&&
-           (obter_estado_casa(estado,diagDCima) == PRETA || (get_coluna_coordenada (diagDCima) == -1 && get_linha_coordenada(diagDCima) == -1))&&
-           (obter_estado_casa(estado,diagECima) == PRETA || (get_coluna_coordenada (diagECima) == -1 && get_linha_coordenada(diagECima) == -1)))
+       if ((obter_estado_casa(estado,cima) == PRETA  || !dentroTabuleiro(cima) )&&
+           (obter_estado_casa(estado,baixo) == PRETA || !dentroTabuleiro(baixo) )&&
+           (obter_estado_casa(estado,direita) == PRETA  ||  !dentroTabuleiro(direita) )&&
+           (obter_estado_casa(estado,esquerda) == PRETA ||  !dentroTabuleiro(esquerda) )&&
+           (obter_estado_casa(estado,diagDBaixo) == PRETA ||!dentroTabuleiro(diagDBaixo))&&
+           (obter_estado_casa(estado,diagEBaixo) == PRETA ||!dentroTabuleiro(diagEBaixo))&&
+           (obter_estado_casa(estado,diagDCima) == PRETA || !dentroTabuleiro(diagDCima) )&&
+           (obter_estado_casa(estado,diagECima) == PRETA || !dentroTabuleiro(diagECima)))
+
            return 1;
        else return 0;
 }
@@ -284,7 +265,7 @@ int encurralado (ESTADO *estado) {
 int jogada_final (ESTADO *estado, COORDENADA c) {
      if (c.coluna == 0 && c.linha == 7) {
         return 1;
-    }//Casa final do Jogador 1
+    } //Casa final do Jogador 1
         else if (c.coluna == 7 && c.linha == 0)
         return 1; //Casa final do Jogador 2
         else {
@@ -353,7 +334,7 @@ void posJog(ESTADO *e,int jogada,ESTADO *aux)
         printf("Número de jogada inválida\n");
     } else {
 
-        //printf("Copiou\n");
+
         set_jogador_atual(aux,0);
         set_numero_jogadas(aux, jogada);
         altera_estado_casa_vazio(aux,get_ultima_jogada(aux));

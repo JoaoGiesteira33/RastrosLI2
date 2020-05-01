@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_README" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>README</title>
+    <detaileddescription>
+<para><heading level="1">Rastros- Projeto LI2</heading>
+</para><para>Projeto de implementação, em linguagem C, do jogo &quot;Rastros&quot; no âmbito da UC de Laboratórios de Informática II da Universidade do Minho  Projeto desenvolvido por:  Grupo 6 do PL8  Daniel Silva Xavier A93292  João Luís Lopes Giesteira A93295  Júlio Beites Gonçalves A93243 </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

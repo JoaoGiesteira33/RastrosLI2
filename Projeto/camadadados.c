@@ -10,8 +10,6 @@ ESTADO *inicializar_estado()
     e->num_jogadas = 0;
     e->ultima_jogada.linha = 3;
     e->ultima_jogada.coluna = 4;
-    //int *a;
-    //a = (int*)calloc(32, sizeof(JOGADA));
     e-> vencedor = 0;
      for (int i =0;i<8;i++){
          for (int j =0;j<8;j++){
@@ -34,34 +32,7 @@ ESTADO *inicializar_estado()
 
     return e;
 }
-/*
-void set_casas_negativas (ESTADO *e) {
-int c = -1;
-int l = -1;
-    while (l < 8) {
-        e -> tab[c][l] = INVALIDA;
-        l++;
-    }
-int co = -1;
-int li = -1;
-    while (co < 8) {
-         e -> tab[co][li] = INVALIDA;
-        co++;
-    }
-int col = 8;
-int lin = -1;
-    while (lin < 8) {
-        e -> tab[col][lin] = INVALIDA;
-        lin++;
-    }
-int linh = 8;
-int colu = -1;
-    while (colu < 8) {
-        e -> tab[colu][linh] = INVALIDA;
-        colu++;
-    }
-}
-*/
+
 
 int obter_jogador_atual(ESTADO *estado)
 {
@@ -96,12 +67,10 @@ int conversorultimajogadalinha (COORDENADA c){
 }
 
 char conversorultimajogadacoluna (COORDENADA c) {
-    //char *s1 = (char*) malloc(2*sizeof(char));
+
 
     char s1 = '0';
-   // s1[1]=(char)((c -> linha)+1);
-    //char *coord;
-   // coord = (char) malloc(2sizeof(char));
+
 
     switch (c.coluna) {
         case 0:
@@ -280,13 +249,13 @@ ESTADO *inicializar_estado_aux()
     }
     return aux;
 }
-
-int get_coluna_coordenada (COORDENADA c) {
-
-    int a = c.coluna;
-    return a;
+void set_valores (ESTADO *e, int valores[8][8]) {
+    for (int i = 0; i < 8; i++)
+        for (int j = 0; j < 8; j++) {
+            if (e->tab[j][i] == PRETA)
+                valores[j][i] = -2;
+            else
+                valores[j][i] = -1;
+        }
 }
-int get_linha_coordenada (COORDENADA c) {
-    int a = c.linha;
-    return a;
-}
+

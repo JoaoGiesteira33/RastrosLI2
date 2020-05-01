@@ -17,9 +17,9 @@ typedef struct nodo {
 } Nodo, *LISTA;
 
 // Cria uma lista vazia
-
 /**
 \brief Função que cria uma lista ligada
+@returns A lista criada
 
 */
 LISTA criar_lista();
@@ -28,6 +28,7 @@ LISTA criar_lista();
 \brief Função que insere um nodo no ínicio da lista
 @param l Lista ligada
 @param valor Apontador para o valor do nodo a inserir
+@returns A nova lista
 */
 LISTA insere_cabeca(LISTA L, void *valor);
 // Devolve a cabeça da lista
@@ -40,18 +41,21 @@ void *devolve_cabeca(LISTA L);
 \brief Função que insere um nodo no ínicio da lista
 @param l Lista ligada
 @param valor Apontador para o valor do nodo a inserir
+@returns A nova lista
 */
 // Devolve a cauda da lista
 LISTA proximo(LISTA L);
 /**
 \brief Função que remove a cabeça da lista e devolve a cauda
 @param l Lista ligada
+@returns A nova lista
 */
 // Remove a cabeça da lista (libertando o espaço ocupado) e devolve a cauda
 LISTA remove_cabeca(LISTA L);
 /**
 \brief Função que verifica se a lista está vazia
 @param l Lista ligada
+@returns Devolve 1 se a lista estiver vazia
 */
 // Devolve verdareiro se a lista é vazia
 int lista_esta_vazia(LISTA L);
