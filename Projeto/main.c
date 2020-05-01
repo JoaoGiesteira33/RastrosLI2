@@ -55,7 +55,8 @@ L = remove_cabeca(L);
 printf("%s", str);
 free(str);
 }
-return 0;*/
+return 0;
+*/
 
 
 /*

@@ -48,10 +48,10 @@ RM = /snap/clion/112/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/julio/Desktop/LI2/LI2PL8G6/Bot
+CMAKE_SOURCE_DIR = /home/julio/Desktop/LI2/LI2PL8G6/Bot2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/julio/Desktop/LI2/LI2PL8G6/Bot/cmake-build-debug
+CMAKE_BINARY_DIR = /home/julio/Desktop/LI2/LI2PL8G6/Bot2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/julio/Desktop/LI2/LI2PL8G6/Bot/cmake-build-debug/CMakeFiles /home/julio/Desktop/LI2/LI2PL8G6/Bot/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julio/Desktop/LI2/LI2PL8G6/Bot2/cmake-build-debug/CMakeFiles /home/julio/Desktop/LI2/LI2PL8G6/Bot2/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/julio/Desktop/LI2/LI2PL8G6/Bot/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julio/Desktop/LI2/LI2PL8G6/Bot2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Bot
+# Target rules for targets named Bot2
 
 # Build rule for target.
-Bot: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Bot
-.PHONY : Bot
+Bot2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Bot2
+.PHONY : Bot2
 
 # fast build rule for target.
-Bot/fast:
-	$(MAKE) -f CMakeFiles/Bot.dir/build.make CMakeFiles/Bot.dir/build
-.PHONY : Bot/fast
+Bot2/fast:
+	$(MAKE) -f CMakeFiles/Bot2.dir/build.make CMakeFiles/Bot2.dir/build
+.PHONY : Bot2/fast
 
 main.o: main.c.o
 
@@ -129,7 +129,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) -f CMakeFiles/Bot.dir/build.make CMakeFiles/Bot.dir/main.c.o
+	$(MAKE) -f CMakeFiles/Bot2.dir/build.make CMakeFiles/Bot2.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -138,7 +138,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles/Bot.dir/build.make CMakeFiles/Bot.dir/main.c.i
+	$(MAKE) -f CMakeFiles/Bot2.dir/build.make CMakeFiles/Bot2.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -147,7 +147,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles/Bot.dir/build.make CMakeFiles/Bot.dir/main.c.s
+	$(MAKE) -f CMakeFiles/Bot2.dir/build.make CMakeFiles/Bot2.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -158,7 +158,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... Bot"
+	@echo "... Bot2"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
