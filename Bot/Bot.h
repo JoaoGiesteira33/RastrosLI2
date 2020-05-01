@@ -245,9 +245,26 @@ LISTA vizinhos(ESTADO *e,COORDENADA c);
  * @return
  */
 int dentroTabuleiro(COORDENADA c);
-
+/**
+\brief Grava o estado do tabuleiro
+@param e Apontador para o estado
+@param ficheiro Apontador para o nome do ficheiro
+*/
 ERROS gravar (ESTADO *e,char *ficheiro);
+/**
+\brief Função que faz a leitura do tabuleiro
+@param e Apontador para o estado
+@param ficheiro Apontador para o nome do ficheiro
+*/
 ERROS ler (ESTADO* e, char *ficheiro);
+/**
+\brief Inicializa um estado
+ */
 ESTADO *inicializar_estado();
 
+int get_valores (ESTADO *e, int valores[8][8], COORDENADA c);
+
+LISTA proximo(LISTA L);
+
+void set_valores (ESTADO *e, int valores[8][8]);
 #endif //BOT_BOT_H

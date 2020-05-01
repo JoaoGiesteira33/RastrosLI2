@@ -25,11 +25,6 @@ void set_jogador_atual (ESTADO *e, int x)
     e -> jogador_atual = x;
 }
 
-void set_numero_jogadas (ESTADO *e, int x)
-{
-    e -> num_jogadas = x;
-}
-
 CASA obter_estado_casa (ESTADO *e, COORDENADA c)
 {
     CASA casa;
@@ -116,6 +111,11 @@ int obter_numero_de_jogadas(ESTADO *estado)
 
     return numJogadas;
 }
+
+void set_numero_jogadas (ESTADO *e, int x) {
+    e -> num_jogadas = x;
+}
+
 
 ERROS ler (ESTADO* e, char *ficheiro) {
     FILE *fp;
@@ -278,8 +278,8 @@ ERROS gravar(ESTADO *e,char *ficheiro){
 ESTADO *inicializar_estado()
 {
     ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
-    e->jogador_atual = 0;
-    e->num_jogadas = 0;
+    set_jogador_atual(e, 0);
+    set_numero_jogadas(e, 0);
     e->ultima_jogada.linha = 3;
     e->ultima_jogada.coluna = 4;
     e-> vencedor = 0;
@@ -354,13 +354,7 @@ COORDENADA floodfill(ESTADO *e){
 
     int valores[8][8];
 
-    for (int i = 0; i < 8; i++)
-        for (int j = 0; j < 8; j++) {
-            if (e->tab[j][i] == PRETA)
-                valores[j][i] = -2;
-            else
-                valores[j][i] = -1;
-        }
+    set_valores (e, valores);
 
     if (get_jogador_atual(e) == 0) {
         COORDENADA c = (COORDENADA) {0,7};
@@ -377,19 +371,42 @@ COORDENADA floodfill(ESTADO *e){
     int menor = 50;
 
     LISTA vizinho = vizinhos(e,get_ultima_jogada(e));
-    while(vizinho->valor != NULL && vizinho->prox != NULL)
+
+    while (vizinho->valor != NULL && vizinho->prox != NULL)
     {
         COORDENADA c = * ((COORDENADA *) (vizinho->valor));
-        if(valores[c.coluna][c.linha] < menor) {
-            menor = valores[c.coluna][c.linha];
+        if (get_valores(e, valores, c) < menor) {
+            menor = get_valores(e, valores, c);
             melhorJogada = c;
-            vizinho = vizinho->prox;
+            vizinho = proximo (vizinho);
         } else
-            vizinho = vizinho->prox;
+            vizinho = proximo (vizinho);
     }
     return melhorJogada;
 }
 
+void set_valores (ESTADO *e, int valores[8][8]) {
+    for (int i = 0; i < 8; i++)
+        for (int j = 0; j < 8; j++) {
+            if (e->tab[j][i] == PRETA)
+                valores[j][i] = -2;
+            else
+                valores[j][i] = -1;
+        }
+}
+
+
+LISTA proximo (LISTA L) {
+    LISTA cauda;
+    if (L -> prox != NULL) cauda = L -> prox;
+    else cauda = NULL;
+    return cauda;
+}
+
+int get_valores (ESTADO *e, int valores[8][8], COORDENADA c) {
+    int a = valores[c.coluna][c.linha];
+    return a;
+}
 
 int funcao_jogada (ESTADO *estado) {
     COORDENADA c = floodfill (estado);
@@ -408,15 +425,12 @@ int funcao_jogada (ESTADO *estado) {
     }
 
     COORDENADA preta = get_ultima_jogada(estado);
-
     altera_estado_casa_preta(estado, preta);
     altera_ultimajogada(estado, c);
-    //Atualiza o jogador
+
     if (get_jogador_atual(estado) == 1)
         set_jogador_atual(estado, 0);
     else
         set_jogador_atual(estado, 1);
-
-    //printf("jogar %d  %d\n", c.linha, c.coluna);
     return 1;
 }
