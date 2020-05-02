@@ -67,12 +67,6 @@ typedef struct {
  */
 ESTADO *inicializar_estado();
 /**
-\brief Retorna o jogador atual
-@param estado Apontador para o estado
-@returns O jogador atual
-*/
-int obter_jogador_atual(ESTADO *estado);
-/**
 \brief Retorna o número de jogadas
 @param estado Apontador para o estado
 @returns O número de jogadas

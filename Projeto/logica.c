@@ -142,10 +142,10 @@ int verifica_vazio(ESTADO *estado, COORDENADA c) {  //Função para Verificar se
 int funcao_jogada (ESTADO *estado, COORDENADA c) { //Função que efetua uma jogada
     altera_estado_casa_branca(estado,c); //Muda o estado da Coordenada para onde se jogou para Branca
 
-    if (obter_jogador_atual(estado) == 0) incrementa_numero_jogadas(estado); //Atualiza o Numero de Jogadas
+    if (get_jogador_atual(estado) == 0) incrementa_numero_jogadas(estado); //Atualiza o Numero de Jogadas
     int n = obter_numero_de_jogadas(estado)-1;
 
-    if (obter_jogador_atual(estado) == 0) set_jogadas_jogador1(estado, c, n); //Atualiza a Lista de Jogadas para o Jogador 1
+    if (get_jogador_atual(estado) == 0) set_jogadas_jogador1(estado, c, n); //Atualiza a Lista de Jogadas para o Jogador 1
     else set_jogadas_jogador2(estado, c, n); //Atualiza a Lista de Jogadas para o Jogador 2
 
     COORDENADA preta = get_ultima_jogada(estado);

@@ -58,7 +58,7 @@ void mostrar_tabuleiro (ESTADO* estado) { // Funcao para imprimir um tabuleiro
         printf("\n");
     }
      printf("  a b c d e f g h"); // Imprime uma Funcao das Colunas
-     printf("\n PL%d Jogada %d\n Coordenada Atual %c%d\n", obter_jogador_atual(estado)+1, obter_numero_de_jogadas(estado),
+     printf("\n PL%d Jogada %d\n Coordenada Atual %c%d\n", get_jogador_atual(estado)+1, obter_numero_de_jogadas(estado),
                                                                    conversorultimajogadacoluna(get_ultima_jogada(estado)),
                                                                    conversorultimajogadalinha(get_ultima_jogada(estado)));
 }
@@ -175,7 +175,7 @@ ERROS ler (ESTADO* e,char*ficheiro) { // Funcao para ler um jogo a partir de um 
         // Testa varias condicoes validas para uma Jogada
         if ( verifica_movimentos(estado, c) && verifica_vazio(estado,c) && !(jogada_final(estado, c)) ) funcao_jogada (estado,c);
         else { // Casos de Fim de Jogo
-            int jogador = obter_jogador_atual(estado);
+            int jogador = get_jogador_atual(estado);
 
             if (c.coluna == 0 && c.linha == 7) { //no caso de chegar a casa final do Jogador 1
                 set_jogador_vencedor(estado, 1);

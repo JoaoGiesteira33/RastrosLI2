@@ -34,14 +34,6 @@ int obter_numero_de_jogadas(ESTADO *estado) {
     return numJogadas;
 }
 
-COORDENADA obter_ultima_jogada (ESTADO *estado) {
-
-    COORDENADA ultimajogadafinal;
-    ultimajogadafinal.linha = estado -> ultima_jogada.linha;
-    ultimajogadafinal.coluna = estado -> ultima_jogada.coluna;
-    return ultimajogadafinal;
-
-}
 int conversorultimajogadalinha (COORDENADA c){
     int linha;
     linha =  8 - c.linha ;
