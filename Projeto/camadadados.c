@@ -260,3 +260,12 @@ void set_valores (ESTADO *e, int valores[8][8]) {
         }
 }
 
+int dentroTabuleiro(COORDENADA c)
+{
+    return (c.linha < 8 && c.linha >= 0 && c.coluna < 8 && c.coluna >= 0);
+}
+
+int get_valores (int valores[8][8], COORDENADA c) {
+    int a = valores[c.coluna][c.linha];
+    return a;
+}

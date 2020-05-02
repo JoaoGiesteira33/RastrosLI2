@@ -9,10 +9,6 @@
 #include <time.h>
 
 
-int dentroTabuleiro(COORDENADA c)
-{
-    return (c.linha < 8 && c.linha >= 0 && c.coluna < 8 && c.coluna >= 0);
-}
 LISTA vizinhos(ESTADO *e,COORDENADA c)
 {
     LISTA principal = criar_lista();
@@ -35,13 +31,21 @@ LISTA vizinhos(ESTADO *e,COORDENADA c)
     *cima = (COORDENADA) {c.coluna, c.linha - 1};
 
     if (dentroTabuleiro(*diagECima)  && (obter_estado_casa(e,*diagECima)  != PRETA)) principal = insere_cabeca (principal,diagECima);
+    else free(diagECima);
     if (dentroTabuleiro(*diagEBaixo) && (obter_estado_casa(e,*diagEBaixo) != PRETA)) principal = insere_cabeca (principal,diagEBaixo);
+    else free(diagEBaixo);
     if (dentroTabuleiro(*diagDCima)  && (obter_estado_casa(e,*diagDCima)  != PRETA)) principal = insere_cabeca (principal,diagDCima);
+    else free(diagDCima);
     if (dentroTabuleiro(*diagDBaixo) && (obter_estado_casa(e,*diagDBaixo) != PRETA)) principal = insere_cabeca (principal,diagDBaixo);
+    else free(diagDBaixo);
     if (dentroTabuleiro(*esq)        && (obter_estado_casa(e,*esq)        != PRETA)) principal = insere_cabeca (principal,esq);
+    else free(esq);
     if (dentroTabuleiro(*direita)    && (obter_estado_casa(e,*direita)    != PRETA)) principal = insere_cabeca (principal,direita);
-    if (dentroTabuleiro(*baixo) && (obter_estado_casa(e,*baixo)  != PRETA)) principal = insere_cabeca (principal,baixo);
-    if (dentroTabuleiro(*cima) && (obter_estado_casa(e,*cima)    != PRETA)) principal = insere_cabeca (principal,cima);
+    else free(direita);
+    if (dentroTabuleiro(*baixo)      && (obter_estado_casa(e,*baixo)  != PRETA)) principal = insere_cabeca (principal,baixo);
+    else free(baixo);
+    if (dentroTabuleiro(*cima)       && (obter_estado_casa(e,*cima)    != PRETA)) principal = insere_cabeca (principal,cima);
+    else free(cima);
 
     return principal;
 }
@@ -50,7 +54,7 @@ void floodfillaux (ESTADO *e, int valores[8][8],COORDENADA c, int valor) {
 
     LISTA vizinho = vizinhos(e, c);
 
-    while (vizinho->valor != NULL && vizinho->prox != NULL && valor < 8) {
+    while ( vizinho->valor != NULL && vizinho->prox != NULL && valor < 9) {
             COORDENADA casa = *(COORDENADA *) (vizinho->valor);
             if (valores[casa.coluna][casa.linha] == -1 || valores[casa.coluna][casa.linha] >= valor) {
                 valores[casa.coluna][casa.linha] = valor;
@@ -58,46 +62,32 @@ void floodfillaux (ESTADO *e, int valores[8][8],COORDENADA c, int valor) {
             floodfillaux(e, valores, *(COORDENADA *) (vizinho->valor), valor + 1);
             vizinho = vizinho -> prox;
         }
-
     free(vizinho);
-
-/*
-    for (int j = 0; j <= 7; j++) {
-        printf("%d|", 8 - j);
-        for (int i = 0; i <= 7; i++) {
-            printf("%d ", valores[i][j]);
-        }
-        printf("\n");
-    }*/
 }
-
 
 COORDENADA floodfill(ESTADO *e){
 
     int valores[8][8];
-
     set_valores(e,valores);
 
     if (get_jogador_atual(e) == 0) {
         COORDENADA c = (COORDENADA) {0,7};
         valores[0][7] = 0;
         floodfillaux(e, valores,c,1);
-    } else
-    {
+    } else {
         COORDENADA c = (COORDENADA) {7,0};
         valores[7][0] = 0;
         floodfillaux(e,valores,c,1);
     }
-
-    COORDENADA melhorJogada = {-1,-1};
-    int menor = 50;
+    COORDENADA melhorJogada = {-1,-1}; // Coordenada Iniciada para Guardar a Possivel Coordenada a Jogar
+    int menor = 50; //valor iniciado para ser possivel a partir da primeira atribuição
 
     LISTA vizinho = vizinhos(e,get_ultima_jogada(e));
-    while(vizinho->valor != NULL && vizinho->prox != NULL)
-    {
+    while (vizinho->valor != NULL && vizinho->prox != NULL) {
         COORDENADA c = * ((COORDENADA *) (vizinho->valor));
-        if(valores[c.coluna][c.linha] < menor) {
-            menor = valores[c.coluna][c.linha];
+
+        if (get_valores(valores, c) < menor) {
+            menor = get_valores(valores, c);
             melhorJogada = c;
             vizinho = vizinho->prox;
         } else
@@ -317,11 +307,17 @@ void jog (ESTADO *e){
 }
 
 void jog2(ESTADO *e)
-{
+{   clock_t start, end;
+    double cpu_time_used;
+
+    start = clock();
     COORDENADA novaCasa = floodfill(e);
 
     jogar(e,novaCasa);
+    end = clock();
+    cpu_time_used = ((double) (end - start));
     mostrar_tabuleiro(e);
+    printf("O tempo de CPU é: %f", cpu_time_used);
 }
 
 void posJog(ESTADO *e,int jogada,ESTADO *aux)

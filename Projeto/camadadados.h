@@ -270,6 +270,13 @@ int get_jogador_vencedor (ESTADO *e);
 @param valores Valores do tabuleiro
  */
 void set_valores (ESTADO *e, int valores[8][8]);
+/**
+\brief Função que testa se a Coordenada pertence ao Tabuleiro;
+@param c Coordenada
+@returns Devolve 1 se está dentro do tabuleiro
+ */
+int dentroTabuleiro(COORDENADA c);
 
+int get_valores (int valores[8][8], COORDENADA c);
 
 #endif

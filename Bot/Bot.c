@@ -155,14 +155,14 @@ ERROS ler (ESTADO* e, char *ficheiro) {
             c2.coluna = (-1);
             c2.linha = (-1);
             armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            set_jogador_atual(e, 0);
+            set_jogador_atual(e, 1);
         } else {
             c1.coluna = jog1_c - 'a';
             c1.linha = 8 - jog1_l;
             c2.coluna = jog2_c - 'a';
             c2.linha = 8 - jog2_l;
             armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            set_jogador_atual(e, 1);
+            set_jogador_atual(e, 0);
             indice++;
         }
     }
@@ -339,7 +339,7 @@ LISTA vizinhos(ESTADO *e,COORDENADA c)
 void floodfillaux (ESTADO *e, int valores[8][8],COORDENADA c, int valor) {
 
     LISTA vizinho = vizinhos(e, c);
-    while (vizinho->valor != NULL && vizinho->prox != NULL && valor < 8) {
+    while (vizinho->valor != NULL && vizinho->prox != NULL && valor < 9) {
         COORDENADA casa = *(COORDENADA *) (vizinho->valor);
         if (valores[casa.coluna][casa.linha] == -1 || valores[casa.coluna][casa.linha] >= valor) {
             valores[casa.coluna][casa.linha] = valor;

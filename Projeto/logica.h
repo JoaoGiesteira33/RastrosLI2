@@ -8,13 +8,6 @@ Definição da lógica do programa
 
 #include "lista.h"
 
-
-/**
-\brief Função que testa se a Coordenada pertence ao Tabuleiro;
-@param c Coordenada
-@returns Devolve 1 se está dentro do tabuleiro
- */
-int dentroTabuleiro(COORDENADA c);
 /**
 \brief Função que cria uma lista com as Coordenadas dos Vizinhos de uma Coordenada
 @param e Apontador para o Estado
