@@ -1,5 +1,4 @@
-//
-// Created by julio on 30/04/20.
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -131,13 +130,17 @@ ERROS ler (ESTADO* e, char *ficheiro) {
     for (int c = 0; c < 8; c++) {
         for (int l = 0; l < 8; l++) {
             coord = (COORDENADA) {.coluna = l, .linha = c};
-            fscanf(fp, "%c", &cha);
-            set_casa(e, coord, cha);
-            if (cha == BRANCA) {
-                altera_ultimajogada(e, coord);
+            if (fscanf(fp, "%c", &cha) == 1) {
+
+                set_casa(e, coord, cha);
+                if (cha == BRANCA) {
+                    altera_ultimajogada(e, coord);
+                }
             }
         }
-        fscanf(fp, "%c", &cha);
+        if (fscanf(fp, "%c",&cha) == 1){
+            ;
+        }
     }
     int num_tokens;
     fseek(fp, 74, SEEK_SET);
@@ -375,8 +378,8 @@ COORDENADA floodfill(ESTADO *e){
     while (vizinho->valor != NULL && vizinho->prox != NULL)
     {
         COORDENADA c = * ((COORDENADA *) (vizinho->valor));
-        if (get_valores(e, valores, c) < menor) {
-            menor = get_valores(e, valores, c);
+        if (get_valores(valores, c) < menor) {
+            menor = get_valores(valores, c);
             melhorJogada = c;
             vizinho = proximo (vizinho);
         } else
@@ -403,30 +406,102 @@ LISTA proximo (LISTA L) {
     return cauda;
 }
 
-int get_valores (ESTADO *e, int valores[8][8], COORDENADA c) {
+int get_valores ( int valores[8][8], COORDENADA c) {
     int a = valores[c.coluna][c.linha];
     return a;
 }
+int encurralado (ESTADO *estado, COORDENADA c) {
+
+
+    COORDENADA centro = c;
+
+    COORDENADA cima = (COORDENADA) {.coluna = centro.coluna, .linha = centro.linha + 1};
+
+    COORDENADA baixo = (COORDENADA) {.coluna = centro.coluna, .linha = centro.linha - 1};
+
+    COORDENADA direita = (COORDENADA) {.coluna = centro.coluna + 1, .linha = centro.linha};
+
+    COORDENADA esquerda = (COORDENADA) {.coluna = centro.coluna - 1, .linha = centro.linha};
+
+    COORDENADA diagDBaixo = (COORDENADA) {.coluna = centro.coluna + 1, .linha = centro.linha - 1};
+
+    COORDENADA diagEBaixo = (COORDENADA) {.coluna = centro.coluna - 1, .linha = centro.linha - 1};
+
+    COORDENADA diagDCima = (COORDENADA) {.coluna = centro.coluna + 1, .linha = centro.linha + 1};
+
+    COORDENADA diagECima = (COORDENADA) {.coluna = centro.coluna - 1, .linha = centro.linha + 1};
+
+
+    if ((obter_estado_casa(estado,cima) == PRETA  || (obter_estado_casa(estado,cima) == BRANCA || !dentroTabuleiro(cima) ))&&
+        (obter_estado_casa(estado,baixo) == PRETA || (obter_estado_casa(estado,baixo) == BRANCA|| !dentroTabuleiro(baixo) ))&&
+        (obter_estado_casa(estado,direita) == PRETA || (obter_estado_casa(estado,direita) == BRANCA ||  !dentroTabuleiro(direita) ))&&
+        (obter_estado_casa(estado,esquerda) == PRETA || (obter_estado_casa(estado,esquerda) == BRANCA||  !dentroTabuleiro(esquerda) ))&&
+        (obter_estado_casa(estado,diagDBaixo) == PRETA || (obter_estado_casa(estado,diagDBaixo) == BRANCA ||!dentroTabuleiro(diagDBaixo)))&&
+        (obter_estado_casa(estado,diagEBaixo) == PRETA  || (obter_estado_casa(estado,diagEBaixo) == BRANCA ||!dentroTabuleiro(diagEBaixo)))&&
+        (obter_estado_casa(estado,diagDCima) == PRETA || (obter_estado_casa(estado,diagDCima) == BRANCA || !dentroTabuleiro(diagDCima) ))&&
+        (obter_estado_casa(estado,diagECima) == PRETA || (obter_estado_casa(estado,diagECima) == BRANCA|| !dentroTabuleiro(diagECima))))
+
+        return 1;
+
+    else return 0;
+
+}
+
+int verificaBotFinal(ESTADO *e, COORDENADA c){
+    int r=0;
+    if ((get_jogador_atual(e)==0) && (c.coluna == 0 && c.linha == 7))
+        r=1;
+    else if ((get_jogador_atual(e)==1) && (c.coluna == 7 && c.linha == 0))
+        r=1;
+
+    else if (encurralado(e,c) == 1)
+        r=1;
+
+    return r;
+
+}
+COORDENADA verificaCheckMate(ESTADO *estado){
+    LISTA vizinho = vizinhos(estado,get_ultima_jogada(estado));
+    COORDENADA cm = {-1,-1};
+
+    while(vizinho->valor != NULL && ((cm.coluna ==-1 )&&(cm.linha ==-1))){
+        COORDENADA c = * ((COORDENADA *) (vizinho->valor));
+
+        if ((verificaBotFinal(estado,c))==0)
+            vizinho=vizinho->prox;
+        else{
+            cm= c;
+        }
+    }
+    return cm;
+    }
+
 
 int funcao_jogada (ESTADO *estado) {
+    COORDENADA cm = verificaCheckMate(estado);
     COORDENADA c = floodfill (estado);
-    altera_estado_casa_branca(estado,c);
+    COORDENADA cf = {-1,-1};
+    if (!((cm.coluna ==-1 )&&(cm.linha ==-1)))
+        cf = cm;
+    else cf = c;
+    altera_estado_casa_branca(estado,cf);
+
 
     if (obter_jogador_atual(estado) == 0)
         incrementa_numero_jogadas(estado);
     int n = obter_numero_de_jogadas(estado)-1;
 
-    if (obter_jogador_atual(estado) == 0){
-        set_jogadas_jogador1(estado, c, n);
+    if (obter_jogador_atual(estado) == 0) {
+        set_jogadas_jogador1(estado, cf, n);
     }
 
     else {
-        set_jogadas_jogador2(estado, c, n);
+        set_jogadas_jogador2(estado, cf, n);
     }
 
     COORDENADA preta = get_ultima_jogada(estado);
     altera_estado_casa_preta(estado, preta);
-    altera_ultimajogada(estado, c);
+    altera_ultimajogada(estado, cf);
 
     if (get_jogador_atual(estado) == 1)
         set_jogador_atual(estado, 0);

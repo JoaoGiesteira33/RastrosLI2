@@ -263,7 +263,10 @@ ERROS ler (ESTADO* e, char *ficheiro);
  */
 ESTADO *inicializar_estado();
 
-int get_valores (ESTADO *e, int valores[8][8], COORDENADA c);
+int get_valores (int valores[8][8], COORDENADA c);
+int encurralado (ESTADO *estado, COORDENADA c);
+int verificaBotFinal(ESTADO *e, COORDENADA c);
+COORDENADA verificaCheckMate(ESTADO *estado);
 
 LISTA proximo(LISTA L);
 
