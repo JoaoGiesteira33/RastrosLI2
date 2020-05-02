@@ -50,7 +50,6 @@ LISTA vizinhos (ESTADO *e,COORDENADA c) { //Função para obter uma lista com as
 }
 
 void floodfillaux (ESTADO *e, int valores[8][8],COORDENADA c, int valor) { //Função auxiliar para alterar os valores das casas segundo o algoritmo FloodFill
-
     LISTA vizinho = vizinhos(e, c); //Calcula a lista de vizinhos segundo uma coordenada
     while ( vizinho->valor != NULL && vizinho->prox != NULL && valor < 9) {
             COORDENADA casa = *(COORDENADA *) (vizinho->valor);
@@ -63,8 +62,7 @@ void floodfillaux (ESTADO *e, int valores[8][8],COORDENADA c, int valor) { //Fun
     free(vizinho);
 }
 
-COORDENADA floodfill(ESTADO *e){ //Função que devolve uma Coordenada segundo o Algoritmo FloodFilll
-
+COORDENADA floodfill(ESTADO *e) { //Função que devolve uma Coordenada segundo o Algoritmo FloodFilll
     int valores[8][8];
     set_valores(e,valores); //Inicializa um array de valores a -1
 
@@ -80,27 +78,25 @@ COORDENADA floodfill(ESTADO *e){ //Função que devolve uma Coordenada segundo o
     COORDENADA melhorJogada = {-1,-1}; // Coordenada Iniciada para Guardar a Possivel Coordenada a Jogar
     int menor = 50; //valor iniciado para ser possivel a partir da primeira atribuição
 
-    LISTA vizinho = vizinhos(e,get_ultima_jogada(e));
+    LISTA vizinho = vizinhos(e,get_ultima_jogada(e)); //Calcula a Lista de Vizinhos da ultima jogada
     while (vizinho->valor != NULL && vizinho->prox != NULL) {
         COORDENADA c = * ((COORDENADA *) (vizinho->valor));
-
         if (get_valores(valores, c) < menor) {
             menor = get_valores(valores, c);
             melhorJogada = c;
             vizinho = vizinho->prox;
-        } else
-            vizinho = vizinho->prox;
+        } else vizinho = vizinho->prox;
     }
     return melhorJogada;
 }
 
 COORDENADA verificaMelhorJogada (LISTA l, ESTADO * e){  //Função Para Verificar Qual o Vizinho Com uma Distancia Menor á casa Vencedora
     double dist;
-    COORDENADA melhorCord = {-1,-1};    //Coordenada Iniciada Para Guardar a Melhor Coordenada
+    COORDENADA melhorCord = {-1,-1};  //Coordenada Iniciada Para Guardar a Melhor Coordenada
     COORDENADA cord;
     COORDENADA um = {0, 7};
     COORDENADA dois = {7,0 };
-    double menorDist = 1000; // Variavel Inicializada Com Valor Exagerado para salvaguardar logo o primeiro valor
+    double menorDist = 1000; //Variavel Inicializada Com Valor Exagerado para salvaguardar logo o primeiro valor
     //Caso para o Jogador 1
     if (get_jogador_atual(e) == 0) {
         while (l -> valor && l -> prox) {
@@ -110,7 +106,7 @@ COORDENADA verificaMelhorJogada (LISTA l, ESTADO * e){  //Função Para Verifica
             menorDist = dist;
             melhorCord = cord;
         }
-        l = l -> prox;
+        l = l -> prox; //Atualiza a lista
         }
     }
     //Caso para o Jogador 2
@@ -122,7 +118,7 @@ COORDENADA verificaMelhorJogada (LISTA l, ESTADO * e){  //Função Para Verifica
                 menorDist = dist;
                 melhorCord = cord;
             }
-            l = l -> prox;
+            l = l -> prox; //Atualiza a lista
         }
     }
     return melhorCord;
@@ -134,25 +130,19 @@ int verifica_movimentos (ESTADO *estado, COORDENADA c) { // Função para verifi
     linha1 = (get_ultima_jogada(estado)).linha;
     c2 =  c.coluna;
     linha2 = c.linha;
-    if (((abs(c1-c2)== 1) && (abs(linha1-linha2))== 0) || ((abs(c1-c2)== 0) && (abs(linha1-linha2))== 1) || ((abs(c1-c2)== 1) && (abs(linha1-linha2))== 1)) {
-        return 1;
-    }
+    if (((abs(c1-c2)== 1) && (abs(linha1-linha2))== 0) || ((abs(c1-c2)== 0) && (abs(linha1-linha2))== 1) || ((abs(c1-c2)== 1) && (abs(linha1-linha2))== 1)) return 1;
     else return 0;
 }
 
-
-int verifica_vazio(ESTADO *estado, COORDENADA c) { //Função para Verificar se uma Casa não se encontra no Estado Preta
-    if (obter_estado_casa(estado, c) == VAZIO ||obter_estado_casa(estado, c)  == UM || obter_estado_casa(estado, c) == DOIS)
-        return 1;
-    else 
-        return 0;
+int verifica_vazio(ESTADO *estado, COORDENADA c) {  //Função para Verificar se uma Casa não se encontra no Estado Preta
+    if (obter_estado_casa(estado, c) == VAZIO ||obter_estado_casa(estado, c)  == UM || obter_estado_casa(estado, c) == DOIS) return 1;
+    else return 0;
 }
 
 int funcao_jogada (ESTADO *estado, COORDENADA c) { //Função que efetua uma jogada
     altera_estado_casa_branca(estado,c); //Muda o estado da Coordenada para onde se jogou para Branca
 
     if (obter_jogador_atual(estado) == 0) incrementa_numero_jogadas(estado); //Atualiza o Numero de Jogadas
-
     int n = obter_numero_de_jogadas(estado)-1;
 
     if (obter_jogador_atual(estado) == 0) set_jogadas_jogador1(estado, c, n); //Atualiza a Lista de Jogadas para o Jogador 1
@@ -260,12 +250,12 @@ void posJog(ESTADO *e, int jogada, ESTADO *aux) { //Função auxiliar para permi
         }
 
         n = 0;
-        if (jogada == 0) {  //Caso para a Pos 0
+        if (jogada == 0) {  // Caso para a Pos 0
             COORDENADA inicial = {4, 3};
             altera_ultimajogada(aux, inicial);
             altera_estado_casa_branca(aux, inicial);
         }
-        while ( n < jogada ) { //Atualiza o Estado até a jogada que desejamos
+        while ( n < jogada ) { // Atualiza o Estado até a jogada que desejamos
             COORDENADA x = get_jogadas_jogador1 (aux, n);
             COORDENADA y = get_jogadas_jogador2 (aux, n);
 

@@ -3,7 +3,6 @@
 Funções para utilizar listas ligadas
 */
 
-
 #ifndef RASTROSLI2_LISTA_H
 #define RASTROSLI2_LISTA_H
 /**
@@ -15,12 +14,10 @@ typedef struct nodo {
     /** apontador para o proximo nodo*/
     struct nodo *prox;
 } Nodo, *LISTA;
-
 // Cria uma lista vazia
 /**
 \brief Função que cria uma lista ligada
 @returns A lista criada
-
 */
 LISTA criar_lista();
 // Insere um valor na cabeça da lista

@@ -136,7 +136,7 @@ ERROS ler (ESTADO* e,char*ficheiro) {
                 }
             }
         }
-        if (fscanf(fp, "%c",&cha) == 1){
+        if (fscanf(fp, "%c",&cha) == 1) {
             ;
         }
     }

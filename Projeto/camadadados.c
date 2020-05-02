@@ -3,8 +3,7 @@
 #include <string.h>
 #include "camadadados.h"
 
-ESTADO *inicializar_estado()
-{
+ESTADO *inicializar_estado() {
     ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
     e->jogador_atual = 0;
     e->num_jogadas = 0;
@@ -19,38 +18,21 @@ ESTADO *inicializar_estado()
                  e->tab[i][j] = UM;
              else e->tab[i][j] = VAZIO;
          }
-
     }
      e->tab[4][3] = BRANCA;
-     for(int i = 0; i < 32; i++)
-     {
+     for(int i = 0; i < 32; i++) {
          e->jogadas[i].jogador1.coluna = -1;
          e->jogadas[i].jogador1.linha = -1;
          e->jogadas[i].jogador2.coluna =-1;
          e->jogadas[i].jogador2.linha =-1;
      }
-
     return e;
 }
 
-
-int obter_jogador_atual(ESTADO *estado)
-{
-    int jog;
-    jog = estado -> jogador_atual;
-    return jog;
-}
-
-
-
-int obter_numero_de_jogadas(ESTADO *estado)
-{
-    int numJogadas;
-    numJogadas = estado-> num_jogadas;
-
+int obter_numero_de_jogadas(ESTADO *estado) {
+    int numJogadas = estado-> num_jogadas;
     return numJogadas;
 }
-
 
 COORDENADA obter_ultima_jogada (ESTADO *estado) {
 

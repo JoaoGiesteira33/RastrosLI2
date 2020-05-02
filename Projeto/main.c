@@ -10,13 +10,11 @@
 /**
  * Funcao Principal do Jogo Rastros
  */
-
 int main(){
         ESTADO *e = inicializar_estado();
         ESTADO *aux = inicializar_estado_aux();
         mostrar_tabuleiro(e);
         interpretador(e,aux);
-
 return 0;
 }
 

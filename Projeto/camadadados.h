@@ -2,7 +2,6 @@
 @file camadadados.h
 Definição do estado e das funções que o manipulam
 */
-
 #ifndef RASTROSLI2_CAMADADADOS_H
 #define RASTROSLI2_CAMADADADOS_H
 /**
@@ -16,7 +15,6 @@ typedef enum {
     PRETA = '#',
 
 } CASA;
-
 /**
 \brief Tipo de dados para os erros
 */
@@ -27,8 +25,6 @@ typedef enum {
     ERRO_LER_TAB,
     ERRO_ABRIR_FICHEIRO,
 } ERROS;
-
-
 /**
 \brief Tipo de dados para as coordenadas
 */
@@ -36,7 +32,6 @@ typedef struct {
     int coluna;
     int linha;
 } COORDENADA;
-
 /**
 \brief Tipo de dados para a jogada
 */
@@ -44,12 +39,10 @@ typedef struct {
     COORDENADA jogador1;
     COORDENADA jogador2;
 } JOGADA;
-
 /**
 \brief Tipo de dados para as jogadas
 */
 typedef JOGADA JOGADAS[32];
-
 /**
 \brief Tipo de dados para o estado
 */
@@ -73,28 +66,18 @@ typedef struct {
 \brief Inicializa um estado
  */
 ESTADO *inicializar_estado();
-
 /**
 \brief Retorna o jogador atual
 @param estado Apontador para o estado
 @returns O jogador atual
 */
 int obter_jogador_atual(ESTADO *estado);
-
 /**
 \brief Retorna o número de jogadas
 @param estado Apontador para o estado
 @returns O número de jogadas
 */
 int obter_numero_de_jogadas(ESTADO *estado);
-
-/**
-\brief Obtém a ultima jogada efetuada
-@param estado Apontador para o estado
-@returns A coordenada da última jogada
-*/
-COORDENADA obter_ultima_jogada (ESTADO *estado);
-
 /**
 \brief  Converte a ultima jogada linha
 @param c A Coordenada
@@ -276,7 +259,12 @@ void set_valores (ESTADO *e, int valores[8][8]);
 @returns Devolve 1 se está dentro do tabuleiro
  */
 int dentroTabuleiro(COORDENADA c);
-
+/**
+\brief Função que devolve o valor de uma coordenada segundo o Algoritmo FloodFill
+ * @param valores Matriz de Valores
+ * @param c Coordenada
+ * @return Valor da Coordenada
+ */
 int get_valores (int valores[8][8], COORDENADA c);
 
 #endif

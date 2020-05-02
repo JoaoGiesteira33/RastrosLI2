@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/daniel/rastros-li2/LI2PL8G6/Projeto/camadadados.c" "/home/daniel/rastros-li2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/RastrosLI2.dir/camadadados.c.o"
-  "/home/daniel/rastros-li2/LI2PL8G6/Projeto/interface.c" "/home/daniel/rastros-li2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/RastrosLI2.dir/interface.c.o"
-  "/home/daniel/rastros-li2/LI2PL8G6/Projeto/lista.c" "/home/daniel/rastros-li2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/RastrosLI2.dir/lista.c.o"
-  "/home/daniel/rastros-li2/LI2PL8G6/Projeto/logica.c" "/home/daniel/rastros-li2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/RastrosLI2.dir/logica.c.o"
-  "/home/daniel/rastros-li2/LI2PL8G6/Projeto/main.c" "/home/daniel/rastros-li2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/RastrosLI2.dir/main.c.o"
+  "/home/julio/Desktop/LI2/LI2PL8G6/Projeto/camadadados.c" "/home/julio/Desktop/LI2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/RastrosLI2.dir/camadadados.c.o"
+  "/home/julio/Desktop/LI2/LI2PL8G6/Projeto/interface.c" "/home/julio/Desktop/LI2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/RastrosLI2.dir/interface.c.o"
+  "/home/julio/Desktop/LI2/LI2PL8G6/Projeto/lista.c" "/home/julio/Desktop/LI2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/RastrosLI2.dir/lista.c.o"
+  "/home/julio/Desktop/LI2/LI2PL8G6/Projeto/logica.c" "/home/julio/Desktop/LI2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/RastrosLI2.dir/logica.c.o"
+  "/home/julio/Desktop/LI2/LI2PL8G6/Projeto/main.c" "/home/julio/Desktop/LI2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/RastrosLI2.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

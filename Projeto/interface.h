@@ -6,7 +6,6 @@ Interpretador e funcões complementares a este.
 
 #ifndef RASTROSLI2_INTERFACE_H
 #define RASTROSLI2_INTERFACE_H
-
 #include "camadadados.h"
 /**
 \brief Funcao que imprime as jogadas no ecrã.
@@ -44,7 +43,5 @@ void jogar(ESTADO *estado, COORDENADA c);
 @returns Devolve 1 no final do programa
 */
 int interpretador(ESTADO *e,ESTADO *aux);
-
-
 
 #endif //RASTROSLI2_INTERFACE_H

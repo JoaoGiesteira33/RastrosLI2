@@ -5,7 +5,6 @@ Definição da lógica do programa
 
 #ifndef RASTROSLI2_LOGICA_H
 #define RASTROSLI2_LOGICA_H
-
 #include "lista.h"
 
 /**
@@ -13,7 +12,6 @@ Definição da lógica do programa
 @param e Apontador para o Estado
 @param c Coordenada
 @returns A lista de vizinhos
-
  */
 LISTA vizinhos(ESTADO *e,COORDENADA c);
 /**
@@ -58,16 +56,13 @@ int verifica_vazio(ESTADO *estado, COORDENADA c);
 @param c Coordenada;
 @returns Devolve 1 se nao tiver mais nenhuma jogada válida
  */
-
 int funcao_jogada (ESTADO *estado, COORDENADA c);
 /**
 \brief Função que verifica se o jogador não tem mais nenhuma jogada válida
 @param estado Apontador para o estado
 @returns Devolve 1 se estiver encurralado
-
 */
 int encurralado (ESTADO *estado);
-
 /**
 \brief Função para determinar o final do Jogo e consequente mensagem de congratulação.
 @param estado Apontador para o estado
@@ -90,7 +85,6 @@ void jog2(ESTADO *e);
 @param e Apontador para o estado
 @param jogada Indicador da jogada para que queremos retornar
 @param aux Apontador para um estado auxiliar
-
 */
 void posJog(ESTADO *e, int jogada, ESTADO *aux);
 
