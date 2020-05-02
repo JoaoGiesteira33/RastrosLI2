@@ -476,21 +476,22 @@ COORDENADA verificaCheckMate(ESTADO *estado){
 
 int funcao_jogada (ESTADO *estado) {
     COORDENADA cm = verificaCheckMate(estado);
-    COORDENADA c = floodfill (estado);
+    COORDENADA c = {-1,-1};
+    if((cm.coluna ==-1 )&&(cm.linha ==-1))
+    c = floodfill (estado);
     COORDENADA cf = {-1,-1};
     if (!((cm.coluna ==-1 )&&(cm.linha ==-1)))
         cf = cm;
     else cf = c;
-    altera_estado_casa_branca(estado,c);
+    altera_estado_casa_branca(estado,cf);
 
-    if (obter_jogador_atual(estado) == 0)
+    if (obter_jogador_atual(estado) == 1)
         incrementa_numero_jogadas(estado);
-    int n = obter_numero_de_jogadas(estado)-1;
+    int n = obter_numero_de_jogadas(estado);
 
     if (obter_jogador_atual(estado) == 0){
         set_jogadas_jogador1(estado, cf, n);
     }
-
     else {
         set_jogadas_jogador2(estado, cf, n);
     }

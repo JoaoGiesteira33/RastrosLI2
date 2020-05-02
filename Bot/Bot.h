@@ -262,12 +262,34 @@ ERROS ler (ESTADO* e, char *ficheiro);
 \brief Inicializa um estado
  */
 ESTADO *inicializar_estado();
-
+/**
+\brief Retorna o valor de uma coordenada
+@param valores Valores do Tabuleiro
+@param c Coordenada
+ */
 int get_valores (int valores[8][8], COORDENADA c);
+/**
+\brief Verifica se uma peça está encurralada
+@param estado Apontador para o estado
+@param c Coordenada
+*/
 int encurralado (ESTADO *estado, COORDENADA c);
+/**
+\brief Verifica se jogada leva à vitoria do jogador ou à derrota do jogador adversário
+@param e Apontador para o estado
+@param c Coordenada
+*/
 int verificaBotFinal(ESTADO *e, COORDENADA c);
+/**
+\brief Analisa todas as jogadas possiveis fazendo uso da botFinal
+@param estado Apontador para o estado
+*/
 COORDENADA verificaCheckMate(ESTADO *estado);
-
+/**
+\brief Devolve a
+@param estado Apontador para o estado
+@param c Coordenada
+*/
 LISTA proximo(LISTA L);
 
 void set_valores (ESTADO *e, int valores[8][8]);
