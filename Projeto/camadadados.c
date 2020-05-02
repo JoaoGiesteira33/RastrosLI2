@@ -171,7 +171,6 @@ void set_jogadas_jogador2 (ESTADO *e, COORDENADA c, int n) {
 
 COORDENADA get_jogadas_jogador2 (ESTADO *e, int n) {
     COORDENADA x = e -> jogadas[n].jogador2;
-
     return x;
 }
 
