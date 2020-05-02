@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Bot.c"
 #include "Bot.h"
 #include <time.h>
 
