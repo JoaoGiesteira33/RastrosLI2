@@ -140,6 +140,7 @@ void set_casa (ESTADO *e, COORDENADA c, CASA valor) {
     e-> tab[c.coluna][c.linha] = valor;
 }
 
+
 COORDENADA get_ultima_jogada (ESTADO *e) {
     COORDENADA c = e -> ultima_jogada;
 
