@@ -115,8 +115,7 @@ void set_numero_jogadas (ESTADO *e, int x) {
     e -> num_jogadas = x;
 }
 
-
-ERROS ler (ESTADO* e, char *ficheiro) {
+ERROS ler (ESTADO* e,char*ficheiro) {
     FILE *fp;
     fp = fopen((ficheiro), "r");
 
@@ -124,12 +123,11 @@ ERROS ler (ESTADO* e, char *ficheiro) {
         printf("Erro ao abrir o ficheiro");
         return ERRO_ABRIR_FICHEIRO;
     }
-
     char cha;
     COORDENADA coord;
     for (int c = 0; c < 8; c++) {
         for (int l = 0; l < 8; l++) {
-            coord = (COORDENADA) {.coluna = l, .linha = c};
+            coord = (COORDENADA) {l, c};
             if (fscanf(fp, "%c", &cha) == 1) {
 
                 set_casa(e, coord, cha);
@@ -145,13 +143,13 @@ ERROS ler (ESTADO* e, char *ficheiro) {
     int num_tokens;
     fseek(fp, 74, SEEK_SET);
     int indice = 0;
-    e->num_jogadas = 0;
+    set_jogador_atual(e, 0);
     COORDENADA c1;
     COORDENADA c2;
     int num_jogad;
     char jog1_c, jog2_c;
     int jog1_l, jog2_l;
-    while ((num_tokens = fscanf(fp, "%2d: %c%d %c%d", &num_jogad, &jog1_c, &jog1_l, &jog2_c, &jog2_l) != EOF)) {
+    while ((num_tokens = fscanf (fp, "%2d: %c%d %c%d", &num_jogad, &jog1_c, &jog1_l, &jog2_c, &jog2_l) != EOF)) {
         if (num_tokens == 3) {
             c1.coluna = jog1_c - 'a';
             c1.linha = jog1_l - '1';
@@ -447,15 +445,15 @@ int encurralado (ESTADO *estado, COORDENADA c) {
 
 }
 
-int verificaBotFinal(ESTADO *e, COORDENADA c){
-    int r=0;
+int verificaBotFinal(ESTADO *e, COORDENADA c) {
+    int r = 0;
     if ((get_jogador_atual(e)==0) && (c.coluna == 0 && c.linha == 7))
-        r=1;
+        r = 1;
     else if ((get_jogador_atual(e)==1) && (c.coluna == 7 && c.linha == 0))
-        r=1;
+        r = 1;
 
     else if (encurralado(e,c) == 1)
-        r=1;
+        r = 1;
 
     return r;
 
@@ -476,7 +474,6 @@ COORDENADA verificaCheckMate(ESTADO *estado){
     return cm;
     }
 
-
 int funcao_jogada (ESTADO *estado) {
     COORDENADA cm = verificaCheckMate(estado);
     COORDENADA c = floodfill (estado);
@@ -484,14 +481,13 @@ int funcao_jogada (ESTADO *estado) {
     if (!((cm.coluna ==-1 )&&(cm.linha ==-1)))
         cf = cm;
     else cf = c;
-    altera_estado_casa_branca(estado,cf);
-
+    altera_estado_casa_branca(estado,c);
 
     if (obter_jogador_atual(estado) == 0)
         incrementa_numero_jogadas(estado);
     int n = obter_numero_de_jogadas(estado)-1;
 
-    if (obter_jogador_atual(estado) == 0) {
+    if (obter_jogador_atual(estado) == 0){
         set_jogadas_jogador1(estado, cf, n);
     }
 

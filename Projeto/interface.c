@@ -167,14 +167,14 @@ ERROS ler (ESTADO* e,char*ficheiro) {
                 c2.coluna = (-1);
                 c2.linha = (-1);
                 armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-                set_jogador_atual(e, 1);
+                set_jogador_atual(e, 0);
             } else {
                 c1.coluna = jog1_c - 'A';
                 c1.linha = 8 - jog1_l;
                 c2.coluna = jog2_c - 'A';
                 c2.linha = 8 - jog2_l;
                 armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-                set_jogador_atual(e, 0);
+                set_jogador_atual(e, 1);
                 indice++;
             }
         }
