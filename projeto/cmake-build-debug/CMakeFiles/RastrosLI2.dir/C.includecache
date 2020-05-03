@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/camadadados.c
+/home/daniel/LI2PL8G6/projeto/camadadados.c
 stdio.h
 -
 stdlib.h
@@ -14,11 +14,11 @@ stdlib.h
 string.h
 -
 camadadados.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/camadadados.h
+/home/daniel/LI2PL8G6/projeto/camadadados.h
 
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/camadadados.h
+/home/daniel/LI2PL8G6/projeto/camadadados.h
 
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/interface.c
+/home/daniel/LI2PL8G6/projeto/interface.c
 stdio.h
 -
 stdlib.h
@@ -26,33 +26,33 @@ stdlib.h
 string.h
 -
 interface.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/interface.h
+/home/daniel/LI2PL8G6/projeto/interface.h
 logica.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/logica.h
+/home/daniel/LI2PL8G6/projeto/logica.h
 camadadados.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/camadadados.h
+/home/daniel/LI2PL8G6/projeto/camadadados.h
 lista.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/lista.h
+/home/daniel/LI2PL8G6/projeto/lista.h
 
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/interface.h
+/home/daniel/LI2PL8G6/projeto/interface.h
 camadadados.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/camadadados.h
+/home/daniel/LI2PL8G6/projeto/camadadados.h
 
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/lista.c
+/home/daniel/LI2PL8G6/projeto/lista.c
 lista.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/lista.h
+/home/daniel/LI2PL8G6/projeto/lista.h
 stdlib.h
 -
 
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/lista.h
+/home/daniel/LI2PL8G6/projeto/lista.h
 
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/logica.c
+/home/daniel/LI2PL8G6/projeto/logica.c
 camadadados.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/camadadados.h
+/home/daniel/LI2PL8G6/projeto/camadadados.h
 logica.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/logica.h
+/home/daniel/LI2PL8G6/projeto/logica.h
 interface.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/interface.h
+/home/daniel/LI2PL8G6/projeto/interface.h
 stdio.h
 -
 math.h
@@ -60,23 +60,23 @@ math.h
 stdlib.h
 -
 lista.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/lista.h
+/home/daniel/LI2PL8G6/projeto/lista.h
 
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/logica.h
+/home/daniel/LI2PL8G6/projeto/logica.h
 lista.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/lista.h
+/home/daniel/LI2PL8G6/projeto/lista.h
 
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/main.c
+/home/daniel/LI2PL8G6/projeto/main.c
 stdio.h
 -
 stdlib.h
 -
 camadadados.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/camadadados.h
+/home/daniel/LI2PL8G6/projeto/camadadados.h
 interface.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/interface.h
+/home/daniel/LI2PL8G6/projeto/interface.h
 string.h
 -
 lista.h
-/home/julio/Desktop/LI2/LI2PL8G6/projeto/lista.h
+/home/daniel/LI2PL8G6/projeto/lista.h
 

@@ -46,6 +46,12 @@ int get_jogador_atual (ESTADO *e);
  */
 void floodfillaux(ESTADO *e,int valores[8][8],COORDENADA  coord, int valor);
 /**
+\brief Função auxiliar que verifica se a floodill esta a ser efeciente, caso contrário usa outro algoritmo
+ * @param e Apontador para o Estado
+ * @param valores Valores do Tabuleiro
+ */
+int floodfillaux1 (ESTADO *e, int valores[8][8]);
+/**
 \brief Função para devolver uma Coordenada com base no algoritmo FloodFill
  * @param e Apontador para o Estado
  * @return
@@ -96,6 +102,7 @@ ESTADO *inicializar_estado();
 @param estado Apontador para o estado
 @param c Coordenada
 */
+COORDENADA verificaMelhorJogada (LISTA l, ESTADO * e);
 int encurralado (ESTADO *estado, COORDENADA c);
 /**
 \brief Verifica se jogada leva à vitoria do jogador ou à derrota do jogador adversário

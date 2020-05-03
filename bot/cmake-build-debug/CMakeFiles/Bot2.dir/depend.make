@@ -5,6 +5,8 @@ CMakeFiles/Bot2.dir/Bot.c.o: ../Bot.c
 CMakeFiles/Bot2.dir/Bot.c.o: ../Bot.h
 CMakeFiles/Bot2.dir/Bot.c.o: ../aux.h
 
+CMakeFiles/Bot2.dir/aux.c.o: ../aux.c
+CMakeFiles/Bot2.dir/aux.c.o: ../aux.h
 
 CMakeFiles/Bot2.dir/main.c.o: ../Bot.h
 CMakeFiles/Bot2.dir/main.c.o: ../aux.h

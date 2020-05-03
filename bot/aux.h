@@ -1,6 +1,3 @@
-//
-// Created by julio on 03/05/20.
-//
 
 #ifndef BOT2_AUX_H
 #define BOT2_AUX_H

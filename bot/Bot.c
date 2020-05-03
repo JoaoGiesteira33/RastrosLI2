@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 #include "Bot.h"
 
 void inicializatab (ESTADO *e) {
@@ -207,20 +208,68 @@ LISTA vizinhos(ESTADO *e,COORDENADA c) {
 
     return principal;
 }
-
+COORDENADA verificaMelhorJogada (LISTA l, ESTADO * e){  //Função Para Verificar Qual o Vizinho Com uma Distancia Menor á casa Vencedora
+    double dist;
+    COORDENADA melhorCord = {-1,-1};  //Coordenada Iniciada Para Guardar a Melhor Coordenada
+    COORDENADA cord;
+    COORDENADA um = {0, 7};
+    COORDENADA dois = {7,0 };
+    double menorDist = 1000; //Variavel Inicializada Com Valor Exagerado para salvaguardar logo o primeiro valor
+    //Caso para o Jogador 1
+    if (get_jogador_atual(e) == 0) {
+        while (l -> valor && l -> prox) {
+            cord = *((COORDENADA *) (l->valor));
+            dist = sqrt (((cord.coluna - um.coluna) * (cord.coluna - um.coluna)) + ((cord.linha - um.linha) * (cord.linha - um.linha)));
+            if (menorDist >= dist && obter_estado_casa(e, cord) == VAZIO) {
+                menorDist = dist;
+                melhorCord = cord;
+            }
+            l = l -> prox; //Atualiza a lista
+        }
+    }
+    //Caso para o Jogador 2
+    if (get_jogador_atual(e) == 1) {
+        while (l -> valor && l -> prox) {
+            cord = * ((COORDENADA *) (l->valor));
+            dist = sqrt (((dois.coluna - cord.coluna) * (dois.coluna - cord.coluna)) + ((cord.linha -  dois.linha) * (cord.linha -  dois.linha)));
+            if (menorDist >= dist && obter_estado_casa(e, cord) == VAZIO) {
+                menorDist = dist;
+                melhorCord = cord;
+            }
+            l = l -> prox; //Atualiza a lista
+        }
+    }
+    return melhorCord;
+}
 void floodfillaux (ESTADO *e, int valores[8][8],COORDENADA c, int valor) {
 
     LISTA vizinho = vizinhos(e, c);
     while (vizinho->valor != NULL && vizinho->prox != NULL && valor < 9) {
         COORDENADA casa = *(COORDENADA *) (vizinho->valor);
-        if (valores[casa.coluna][casa.linha] == -1 || valores[casa.coluna][casa.linha] >= valor) valores[casa.coluna][casa.linha] = valor;
+        if (valores[casa.coluna][casa.linha] == -1 || valores[casa.coluna][casa.linha] >= valor)
+            valores[casa.coluna][casa.linha] = valor;
 
         floodfillaux(e, valores, *(COORDENADA *) (vizinho->valor), valor + 1);
-        vizinho = vizinho -> prox;
+        vizinho = vizinho->prox;
     }
     free(vizinho);
 }
+int floodfillaux1 (ESTADO *e, int valores[8][8]) {
+    int r=0;
 
+    LISTA vizinhoaux = vizinhos(e, get_ultima_jogada(e));
+    while (vizinhoaux !=NULL && vizinhoaux->prox != NULL && r==0) {
+        COORDENADA casaaux = *(COORDENADA *) (vizinhoaux->valor);
+        if ((get_valores(valores,casaaux) == -1) || (get_valores(valores,casaaux) == -2)) {
+
+            r = 0;
+            vizinhoaux = vizinhoaux->prox;
+        }
+        else r=1;
+    }
+
+    return r;
+}
 COORDENADA floodfill(ESTADO *e) {
     int valores[8][8];
     set_valores (e, valores);
@@ -234,8 +283,13 @@ COORDENADA floodfill(ESTADO *e) {
         valores[7][0] = 0;
         floodfillaux(e,valores,c,1);
     }
-
     COORDENADA melhorJogada = {-1,-1};
+
+  if (floodfillaux1(e,valores)==0){
+     melhorJogada= verificaMelhorJogada (vizinhos(e,get_ultima_jogada(e)), e);
+
+  }else{
+
     int menor = 50;
 
     LISTA vizinho = vizinhos (e,get_ultima_jogada(e));
@@ -248,7 +302,10 @@ COORDENADA floodfill(ESTADO *e) {
             melhorJogada = c;
             vizinho = proximo (vizinho);
         } else vizinho = proximo (vizinho);
-    }
+    }}
+
+
+
     return melhorJogada;
 }
 
@@ -313,12 +370,20 @@ int funcao_jogada (ESTADO *estado) { //Funcao que permite efetuar uma jogda
 
     COORDENADA cm = verificaCheckMate(estado); //Testa se é possivel deixar o jogador inimigo encurralado
     COORDENADA c = {-1,-1};
+    //COORDENADA de = {-1,-1};
 
-    if ((cm.coluna == -1 ) && (cm.linha == -1)) c = floodfill (estado);
+
+   //if ((cm.coluna == -1 ) && (cm.linha == -1)) c = floodfill (estado);
 
     COORDENADA cf = {-1,-1};
+
     if (!((cm.coluna == -1 )&&(cm.linha == -1))) cf = cm;
-    else cf = c;
+
+
+    else{
+        c = floodfill (estado);
+        cf=c;
+    }
 
     altera_estado_casa_branca(estado, cf);
     int n = obter_numero_de_jogadas(estado);

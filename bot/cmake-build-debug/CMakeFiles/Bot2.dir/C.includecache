@@ -6,17 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/julio/Desktop/LI2/LI2PL8G6/bot/Bot.c
+/home/daniel/LI2PL8G6/bot/Bot.c
 stdlib.h
 -
 stdio.h
 -
 string.h
 -
+math.h
+-
 Bot.h
-/home/julio/Desktop/LI2/LI2PL8G6/bot/Bot.h
+/home/daniel/LI2PL8G6/bot/Bot.h
 
-/home/julio/Desktop/LI2/LI2PL8G6/bot/Bot.h
+/home/daniel/LI2PL8G6/bot/Bot.h
 stdlib.h
 -
 stdio.h
@@ -24,25 +26,13 @@ stdio.h
 string.h
 -
 aux.h
-/home/julio/Desktop/LI2/LI2PL8G6/bot/aux.h
+/home/daniel/LI2PL8G6/bot/aux.h
 
-/home/julio/Desktop/LI2/LI2PL8G6/bot/aux.h
+/home/daniel/LI2PL8G6/bot/aux.h
 stdlib.h
 -
 stdio.h
 -
 string.h
--
-
-/home/julio/Desktop/LI2/LI2PL8G6/bot/main.c
-stdio.h
--
-stdlib.h
--
-Bot.h
-/home/julio/Desktop/LI2/LI2PL8G6/bot/Bot.h
-aux.h
-/home/julio/Desktop/LI2/LI2PL8G6/bot/aux.h
-time.h
 -
 
