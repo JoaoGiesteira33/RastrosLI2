@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/Bot2.dir/main.c.o CMakeFiles/Bot2.dir/Bot.c.o CMakeFiles/Bot2.dir/aux.c.o  -o Bot2  -lm 
