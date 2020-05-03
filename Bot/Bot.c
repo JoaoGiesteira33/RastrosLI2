@@ -115,6 +115,32 @@ void set_numero_jogadas (ESTADO *e, int x) {
     e -> num_jogadas = x;
 }
 
+void inicializatab (ESTADO *e) {
+    set_jogador_atual(e, 0);
+    set_numero_jogadas(e, 0);
+    e->ultima_jogada.linha = 3;
+    e->ultima_jogada.coluna = 4;
+    e-> vencedor = 0;
+    for (int i =0;i<8;i++){
+        for (int j =0;j<8;j++){
+            if (i == 7 && j == 0)
+                e->tab[i][j] = DOIS;
+            else if (i == 0 && j == 7)
+                e->tab[i][j] = UM;
+            else e->tab[i][j] = VAZIO;
+        }
+    }
+    e->tab[4][3] = BRANCA;
+    for(int i = 0; i < 32; i++)
+    {
+        e->jogadas[i].jogador1.coluna = -1;
+        e->jogadas[i].jogador1.linha = -1;
+        e->jogadas[i].jogador2.coluna =-1;
+        e->jogadas[i].jogador2.linha =-1;
+    }
+
+}
+
 ERROS ler (ESTADO* e,char*ficheiro) {
     FILE *fp;
     fp = fopen((ficheiro), "r");
@@ -140,34 +166,39 @@ ERROS ler (ESTADO* e,char*ficheiro) {
             ;
         }
     }
-    int num_tokens;
-    fseek(fp, 74, SEEK_SET);
-    int indice = 0;
-    set_jogador_atual(e, 0);
-    COORDENADA c1;
-    COORDENADA c2;
-    int num_jogad;
-    char jog1_c, jog2_c;
-    int jog1_l, jog2_l;
-    while ((num_tokens = fscanf (fp, "%2d: %c%d %c%d", &num_jogad, &jog1_c, &jog1_l, &jog2_c, &jog2_l) != EOF)) {
-        if (num_tokens == 3) {
-            c1.coluna = jog1_c - 'a';
-            c1.linha = jog1_l - '1';
-            c2.coluna = (-1);
-            c2.linha = (-1);
-            armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            set_jogador_atual(e, 1);
-        } else {
-            c1.coluna = jog1_c - 'a';
-            c1.linha = 8 - jog1_l;
-            c2.coluna = jog2_c - 'a';
-            c2.linha = 8 - jog2_l;
-            armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
-            set_jogador_atual(e, 0);
-            indice++;
+    COORDENADA testa = {4, 3};
+    if (get_ultima_jogada(e).coluna == testa.coluna && get_ultima_jogada(e).linha == testa.linha) {
+        inicializatab(e);
+    }   else {
+        int num_tokens;
+        fseek(fp, 74, SEEK_SET);
+        int indice = 0;
+        set_jogador_atual(e, 0);
+        COORDENADA c1;
+        COORDENADA c2;
+        int num_jogad;
+        char jog1_c, jog2_c;
+        int jog1_l, jog2_l;
+        while ((num_tokens = fscanf(fp, "%2d: %c%d %c%d", &num_jogad, &jog1_c, &jog1_l, &jog2_c, &jog2_l) != EOF)) {
+            if (num_tokens == 3) {
+                c1.coluna = jog1_c - 'a';
+                c1.linha = 8 - jog1_l;
+                c2.coluna = (-1);
+                c2.linha = (-1);
+                armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
+                set_jogador_atual(e, 1);
+            } else {
+                c1.coluna = jog1_c - 'a';
+                c1.linha = 8 - jog1_l;
+                c2.coluna = jog2_c - 'a';
+                c2.linha = 8 - jog2_l;
+                armazenar_jogada(e, (JOGADA) {c1, c2}, indice);
+                set_jogador_atual(e, 0);
+                indice++;
+            }
         }
+        set_numero_jogadas(e, (indice));
     }
-    set_numero_jogadas(e, (indice));
     fclose(fp);
     return OK;
 }
@@ -458,7 +489,7 @@ int verificaBotFinal(ESTADO *e, COORDENADA c) {
     return r;
 
 }
-COORDENADA verificaCheckMate(ESTADO *estado){
+COORDENADA verificaCheckMate(ESTADO *estado) {
     LISTA vizinho = vizinhos(estado,get_ultima_jogada(estado));
     COORDENADA cm = {-1,-1};
 
@@ -485,11 +516,11 @@ int funcao_jogada (ESTADO *estado) {
     else cf = c;
     altera_estado_casa_branca(estado,cf);
 
+    int n = obter_numero_de_jogadas(estado) - 1;
     if (obter_jogador_atual(estado) == 1)
         incrementa_numero_jogadas(estado);
-    int n = obter_numero_de_jogadas(estado);
 
-    if (obter_jogador_atual(estado) == 0){
+    if (obter_jogador_atual(estado) == 1){
         set_jogadas_jogador1(estado, cf, n);
     }
     else {

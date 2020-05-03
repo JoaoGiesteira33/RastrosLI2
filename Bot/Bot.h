@@ -293,4 +293,5 @@ COORDENADA verificaCheckMate(ESTADO *estado);
 LISTA proximo(LISTA L);
 
 void set_valores (ESTADO *e, int valores[8][8]);
+void inicializatab (ESTADO *e);
 #endif //BOT_BOT_H
