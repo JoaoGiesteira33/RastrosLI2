@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/RastrosLI2.dir/main.c.o CMakeFiles/RastrosLI2.dir/logica.c.o CMakeFiles/RastrosLI2.dir/camadadados.c.o CMakeFiles/RastrosLI2.dir/interface.c.o CMakeFiles/RastrosLI2.dir/lista.c.o  -o RastrosLI2  -lm 

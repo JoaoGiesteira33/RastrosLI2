@@ -1,3 +1,0 @@
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/julio/Desktop/LI2/LI2PL8G6/Projeto/cmake-build-debug/CMakeFiles/RastrosLI2.dir
