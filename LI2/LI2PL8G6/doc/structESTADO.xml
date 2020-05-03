@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structESTADO" kind="struct" language="C++" prot="public">
+    <compoundname>ESTADO</compoundname>
+    <includes refid="camadadados_8h" local="no">camadadados.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structESTADO_1ab56f0f1be16954d3768b4174d14c087d" prot="public" static="no" mutable="no">
+        <type><ref refid="camadadados_8h_1aeadc91f5353418b4634ff6e37858e39a" kindref="member">CASA</ref></type>
+        <definition>CASA ESTADO::tab[8][8]</definition>
+        <argsstring>[8][8]</argsstring>
+        <name>tab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>O tabuleiro </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="camadadados.h" line="76" column="1" bodyfile="camadadados.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structESTADO_1afae43b87a488fad0f2b56a18bad31d18" prot="public" static="no" mutable="no">
+        <type><ref refid="camadadados_8h_1a1a0f65dbc973e31a19f3ef783ff4b2c7" kindref="member">JOGADAS</ref></type>
+        <definition>JOGADAS ESTADO::jogadas</definition>
+        <argsstring></argsstring>
+        <name>jogadas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>As jogadas </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="camadadados.h" line="78" column="1" bodyfile="camadadados.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structESTADO_1a2c12e80093249fca3ee1f598ee41474a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>ESTADO::num_jogadas</definition>
+        <argsstring></argsstring>
+        <name>num_jogadas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>O número das jogadas, usado no prompt</para><para>num_jogadas representa o numero de jogadas </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="camadadados.h" line="80" column="1" bodyfile="camadadados.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structESTADO_1a7b7bfae97a75221f999d8b697f458cb0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>ESTADO::jogador_atual</definition>
+        <argsstring></argsstring>
+        <name>jogador_atual</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>O jogador atual</para><para>jogador_atual representa o jogador a jogar </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="camadadados.h" line="82" column="1" bodyfile="camadadados.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structESTADO_1aedc0c8e9ca5502bd643b350c31231369" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>ESTADO::num_comando</definition>
+        <argsstring></argsstring>
+        <name>num_comando</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>O nº de comando, usado no prompt</para><para>num_comando usado no prompt </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="camadadados.h" line="84" column="1" bodyfile="camadadados.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structESTADO_1a75adaf0d470225879490601dfc655c4e" prot="public" static="no" mutable="no">
+        <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+        <definition>ESTADO::ultima_jogada</definition>
+        <argsstring></argsstring>
+        <name>ultima_jogada</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A coordenada da última jogada</para><para>ultima_jogada representa a ultima jogada </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="camadadados.h" line="86" column="1" bodyfile="camadadados.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structESTADO_1afa5918b4f2221416965663d44b14e179" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ESTADO::vencedor</definition>
+        <argsstring></argsstring>
+        <name>vencedor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vencedor atual(0 enquanto nenhum é) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="camadadados.h" line="88" column="1" bodyfile="camadadados.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Tipo de dados que envolve toda a informação decorrente do jogo. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>JOGADA</label>
+        <link refid="structJOGADA"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>jogador1</edgelabel>
+          <edgelabel>jogador2</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>COORDENADA</label>
+        <link refid="structCOORDENADA"/>
+      </node>
+      <node id="3">
+        <label>ESTADO</label>
+        <link refid="structESTADO"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>ultima_jogada</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>jogadas</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="camadadados.h" line="74" column="1" bodyfile="camadadados.h" bodystart="74" bodyend="89"/>
+    <listofallmembers>
+      <member refid="structESTADO_1afae43b87a488fad0f2b56a18bad31d18" prot="public" virt="non-virtual"><scope>ESTADO</scope><name>jogadas</name></member>
+      <member refid="structESTADO_1a7b7bfae97a75221f999d8b697f458cb0" prot="public" virt="non-virtual"><scope>ESTADO</scope><name>jogador_atual</name></member>
+      <member refid="structESTADO_1aedc0c8e9ca5502bd643b350c31231369" prot="public" virt="non-virtual"><scope>ESTADO</scope><name>num_comando</name></member>
+      <member refid="structESTADO_1a2c12e80093249fca3ee1f598ee41474a" prot="public" virt="non-virtual"><scope>ESTADO</scope><name>num_jogadas</name></member>
+      <member refid="structESTADO_1ab56f0f1be16954d3768b4174d14c087d" prot="public" virt="non-virtual"><scope>ESTADO</scope><name>tab</name></member>
+      <member refid="structESTADO_1a75adaf0d470225879490601dfc655c4e" prot="public" virt="non-virtual"><scope>ESTADO</scope><name>ultima_jogada</name></member>
+      <member refid="structESTADO_1afa5918b4f2221416965663d44b14e179" prot="public" virt="non-virtual"><scope>ESTADO</scope><name>vencedor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

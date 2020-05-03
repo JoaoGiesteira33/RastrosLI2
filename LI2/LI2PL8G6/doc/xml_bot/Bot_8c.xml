@@ -1,0 +1,899 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="Bot_8c" kind="file" language="C++">
+    <compoundname>Bot.c</compoundname>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">math.h</includes>
+    <includes refid="Bot_8h" local="yes">Bot.h</includes>
+    <incdepgraph>
+      <node id="13">
+        <label>stdlib.h</label>
+      </node>
+      <node id="15">
+        <label>string.h</label>
+      </node>
+      <node id="18">
+        <label>aux.h</label>
+        <link refid="aux_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>math.h</label>
+      </node>
+      <node id="12">
+        <label>Bot.c</label>
+        <link refid="Bot_8c"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>Bot.h</label>
+        <link refid="Bot_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="Bot_8c_1a6d1e4e9073c0dee1e5457adea4acb3e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void inicializatab</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>inicializatab</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Funcao para inicializar um tabuleiro. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="8" column="1" bodyfile="Bot.c" bodystart="8" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1ab752e7aff17a25212d714bd5f8c7fb12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ERROS</type>
+        <definition>ERROS ler</definition>
+        <argsstring>(ESTADO *e, char *ficheiro)</argsstring>
+        <name>ler</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>ficheiro</declname>
+        </param>
+        <briefdescription>
+<para>Função que faz a leitura do tabuleiro. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ficheiro</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o nome do ficheiro </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="34" column="1" bodyfile="Bot.c" bodystart="34" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1a8fc889059d5c36644fbc1665d750984f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ERROS</type>
+        <definition>ERROS gravar</definition>
+        <argsstring>(ESTADO *e, char *ficheiro)</argsstring>
+        <name>gravar</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>ficheiro</declname>
+        </param>
+        <briefdescription>
+<para>Grava o estado do tabuleiro. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ficheiro</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o nome do ficheiro </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="97" column="1" bodyfile="Bot.c" bodystart="97" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1a064f3fd9029a2c74fc38d7e8d6c553ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+        <definition>ESTADO * inicializar_estado</definition>
+        <argsstring>()</argsstring>
+        <name>inicializar_estado</name>
+        <briefdescription>
+<para>Inicializa um estado. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="153" column="1" bodyfile="Bot.c" bodystart="153" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1a4dbaee936d3b7304064647b65fced6eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+        <definition>LISTA vizinhos</definition>
+        <argsstring>(ESTADO *e, COORDENADA c)</argsstring>
+        <name>vizinhos</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Função que cria uma lista com as Coordenadas dos Vizinhos de uma Coordenada. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o Estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Uma Lista de Coordenadas </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="180" column="1" bodyfile="Bot.c" bodystart="180" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1a0d2ffc08c9b2bc76871beb8407396a3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+        <definition>COORDENADA verificaMelhorJogada</definition>
+        <argsstring>(LISTA l, ESTADO *e)</argsstring>
+        <name>verificaMelhorJogada</name>
+        <param>
+          <type><ref refid="structnodo" kindref="compound">LISTA</ref></type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Verifica a melhor jogada segundo o algoritmo FloodFill. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lista de Vizinhos </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="212" column="1" bodyfile="Bot.c" bodystart="212" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1a444d3f0d82f59c5d03ed6f6a80f839bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void floodfillaux</definition>
+        <argsstring>(ESTADO *e, int valores[8][8], COORDENADA c, int valor)</argsstring>
+        <name>floodfillaux</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>valores</declname>
+          <array>[8][8]</array>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>coord</declname>
+          <defname>c</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>valor</declname>
+        </param>
+        <briefdescription>
+<para>Função auxiliar para a Funcao FloodFill para alterar valores do tabuleiro. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o Estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valores</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Valores do Tabuleiro </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>coord</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Valor a implementar </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="246" column="1" bodyfile="Bot.c" bodystart="246" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1a7b2847d2d71b07a8200fbd32fd68890d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int floodfillaux1</definition>
+        <argsstring>(ESTADO *e, int valores[8][8])</argsstring>
+        <name>floodfillaux1</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>valores</declname>
+          <array>[8][8]</array>
+        </param>
+        <briefdescription>
+<para>Função auxiliar que verifica se a floodill esta a ser efeciente, caso contrário usa outro algoritmo. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o Estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>valores</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Valores do Tabuleiro </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="260" column="1" bodyfile="Bot.c" bodystart="260" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1acd6481a6f312adb939a55fb7e23a14b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+        <definition>COORDENADA floodfill</definition>
+        <argsstring>(ESTADO *e)</argsstring>
+        <name>floodfill</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Função para devolver uma Coordenada com base no algoritmo FloodFill. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o Estado </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="276" column="1" bodyfile="Bot.c" bodystart="276" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1a7be46caf70ea549ceff7055b619e03d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int encurralado</definition>
+        <argsstring>(ESTADO *estado, COORDENADA c)</argsstring>
+        <name>encurralado</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>estado</declname>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Verifica se uma peça está encurralada. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>estado</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="313" column="1" bodyfile="Bot.c" bodystart="313" bodyend="345"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1a12aba8023e2e7c4dbe26cc99c85c44fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int verificaBotFinal</definition>
+        <argsstring>(ESTADO *e, COORDENADA c)</argsstring>
+        <name>verificaBotFinal</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Verifica se jogada leva à vitoria do jogador ou à derrota do jogador adversário. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="347" column="1" bodyfile="Bot.c" bodystart="347" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1a5805cbe64b0343d64d0b3548d869b176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref></type>
+        <definition>COORDENADA verificaCheckMate</definition>
+        <argsstring>(ESTADO *estado)</argsstring>
+        <name>verificaCheckMate</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>estado</declname>
+        </param>
+        <briefdescription>
+<para>Analisa todas as jogadas possiveis fazendo uso da botFinal. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>estado</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para o estado </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="356" column="1" bodyfile="Bot.c" bodystart="356" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="Bot_8c_1a4ed846a76c34e4a7b2ca7fc8a0176f5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int funcao_jogada</definition>
+        <argsstring>(ESTADO *estado)</argsstring>
+        <name>funcao_jogada</name>
+        <param>
+          <type><ref refid="structESTADO" kindref="compound">ESTADO</ref> *</type>
+          <declname>estado</declname>
+        </param>
+        <briefdescription>
+<para>Função para efetuar uma jogada. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>estado</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Apontador para estado; </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordenada; </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Bot.c" line="369" column="1" bodyfile="Bot.c" bodystart="369" bodyend="393"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Bot_8h" kindref="compound">Bot.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Bot_8h_1a6d1e4e9073c0dee1e5457adea4acb3e7" kindref="member">inicializatab</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e)<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>set_jogador_atual(e,<sp/>0);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>set_numero_jogadas(e,<sp/>0);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1a75adaf0d470225879490601dfc655c4e" kindref="member">ultima_jogada</ref>.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1a75adaf0d470225879490601dfc655c4e" kindref="member">ultima_jogada</ref>.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;<sp/>vencedor<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=0;i&lt;8;i++){</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=0;j&lt;8;j++){</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>7<sp/>&amp;&amp;<sp/>j<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1ab56f0f1be16954d3768b4174d14c087d" kindref="member">tab</ref>[i][j]<sp/>=<sp/>DOIS;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>j<sp/>==<sp/>7)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1ab56f0f1be16954d3768b4174d14c087d" kindref="member">tab</ref>[i][j]<sp/>=<sp/>UM;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>e-&gt;<ref refid="structESTADO_1ab56f0f1be16954d3768b4174d14c087d" kindref="member">tab</ref>[i][j]<sp/>=<sp/>VAZIO;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1ab56f0f1be16954d3768b4174d14c087d" kindref="member">tab</ref>[4][3]<sp/>=<sp/>BRANCA;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>32;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1afae43b87a488fad0f2b56a18bad31d18" kindref="member">jogadas</ref>[i].jogador1.coluna<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1afae43b87a488fad0f2b56a18bad31d18" kindref="member">jogadas</ref>[i].jogador1.linha<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1afae43b87a488fad0f2b56a18bad31d18" kindref="member">jogadas</ref>[i].jogador2.coluna<sp/>=-1;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1afae43b87a488fad0f2b56a18bad31d18" kindref="member">jogadas</ref>[i].jogador2.linha<sp/>=-1;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">ERROS<sp/><ref refid="Bot_8h_1ab752e7aff17a25212d714bd5f8c7fb12" kindref="member">ler</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref>*<sp/>e,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*ficheiro)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>FILE<sp/>*fp;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>fp<sp/>=<sp/>fopen((ficheiro),<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fp<sp/>==<sp/>NULL)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ERRO_ABRIR_FICHEIRO;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>cha;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>coord;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c<sp/>=<sp/>0;<sp/>c<sp/>&lt;<sp/>8;<sp/>c++)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>0;<sp/>l<sp/>&lt;<sp/>8;<sp/>l++)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>coord<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{l,<sp/>c};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fscanf(fp,<sp/></highlight><highlight class="stringliteral">&quot;%c&quot;</highlight><highlight class="normal">,<sp/>&amp;cha)<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set_casa(e,<sp/>coord,<sp/>cha);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cha<sp/>==<sp/>BRANCA)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>altera_ultimajogada(e,<sp/>coord);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fscanf(fp,<sp/></highlight><highlight class="stringliteral">&quot;%c&quot;</highlight><highlight class="normal">,&amp;cha)<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>testa<sp/>=<sp/>{4,<sp/>3};<sp/><sp/></highlight><highlight class="comment">//<sp/>Caso<sp/>o<sp/>tabuleiro<sp/>ainda<sp/>nao<sp/>tenha<sp/>sido<sp/>inicializado</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ae89c72e4fa31dcc1eb9ba0fb8ea707e1" kindref="member">get_ultima_jogada</ref>(e).coluna<sp/>==<sp/>testa.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>&amp;&amp;<sp/><ref refid="Bot_8h_1ae89c72e4fa31dcc1eb9ba0fb8ea707e1" kindref="member">get_ultima_jogada</ref>(e).linha<sp/>==<sp/>testa.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Bot_8h_1a6d1e4e9073c0dee1e5457adea4acb3e7" kindref="member">inicializatab</ref>(e);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_tokens;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fseek(fp,<sp/>74,<sp/>SEEK_SET);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>indice<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set_numero_jogadas(e,<sp/>0);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c1;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c2;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_jogad;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>jog1_c,<sp/>jog2_c;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jog1_l,<sp/>jog2_l;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer[1024];</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(fgets(buffer,<sp/>1024,<sp/>fp)<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_tokens<sp/>=<sp/>sscanf(buffer,<sp/></highlight><highlight class="stringliteral">&quot;%d:<sp/>%c%d<sp/>%c%d&quot;</highlight><highlight class="normal">,<sp/>&amp;num_jogad,<sp/>&amp;jog1_c,<sp/>&amp;jog1_l,<sp/>&amp;jog2_c,<sp/>&amp;jog2_l);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(num_tokens<sp/>==<sp/>3)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>No<sp/>caso<sp/>de<sp/>a<sp/>Jogada<sp/>Estar<sp/>Incompleta</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c1.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>jog1_c<sp/>-<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c1.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>=<sp/>8<sp/>-<sp/>jog1_l;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c2.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>(-1);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c2.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>=<sp/>(-1);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>armazenar_jogada(e,<sp/>(<ref refid="structJOGADA" kindref="compound">JOGADA</ref>)<sp/>{c1,<sp/>c2},<sp/>indice);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set_jogador_atual(e,<sp/>1);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c1.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>jog1_c<sp/>-<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c1.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>=<sp/>8<sp/>-<sp/>jog1_l;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c2.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>jog2_c<sp/>-<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c2.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>=<sp/>8<sp/>-<sp/>jog2_l;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>armazenar_jogada(e,<sp/>(<ref refid="structJOGADA" kindref="compound">JOGADA</ref>)<sp/>{c1,<sp/>c2},<sp/>indice);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set_jogador_atual(e,<sp/>0);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indice++;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set_numero_jogadas(e,<sp/><sp/>(indice));</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>fclose(fp);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>OK;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal">ERROS<sp/><ref refid="Bot_8h_1a8fc889059d5c36644fbc1665d750984f" kindref="member">gravar</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*ficheiro)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>Funcao<sp/>para<sp/>gravar<sp/>um<sp/>jogo<sp/>num<sp/>ficheiro</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>FILE<sp/>*fp;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>fp<sp/>=<sp/>fopen(ficheiro,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>Abre<sp/>o<sp/>ficheiro</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>coord1;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>coord2;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fp<sp/>==<sp/>NULL)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ERRO_ABRIR_FICHEIRO;<sp/></highlight><highlight class="comment">//<sp/>Caso<sp/>nao<sp/>consigamos<sp/>abrir<sp/>um<sp/>ficheiro</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c<sp/>=</highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/>j;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(j<sp/>=<sp/>0;<sp/>j<sp/>&lt;=<sp/>7;<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>i<sp/>&lt;=<sp/>7;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>cord<sp/>=<sp/>{i,<sp/>j};</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(obter_estado_casa(e,<sp/>cord))<sp/>{<sp/></highlight><highlight class="comment">//Grava<sp/>o<sp/>Caracter<sp/>conforme<sp/>o<sp/>Estado<sp/>da<sp/>Casa</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>PRETA:</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>=<sp/></highlight><highlight class="charliteral">&apos;#&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>VAZIO:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>=<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>BRANCA:</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>=<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>DOIS:</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>=<sp/></highlight><highlight class="charliteral">&apos;2&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>UM:</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>=<sp/></highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;%c&quot;</highlight><highlight class="normal">,<sp/>c);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>g<sp/>=<sp/>0;<sp/>get_coord_coluna(get_coord_jogador1(e,g))<sp/>!=<sp/>-1;<sp/>g++)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>Grava<sp/>a<sp/>lista<sp/>de<sp/>jogadas</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>coord1<sp/>=<sp/>get_coord_jogador1(e,g);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>coord2<sp/>=<sp/>get_coord_jogador2(e,g);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(coord2.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>!=<sp/>-1)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>Grava<sp/>uma<sp/>lista<sp/>de<sp/>Jogadas<sp/>Completa</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;%02d:<sp/>%c%d<sp/>%c%d\n&quot;</highlight><highlight class="normal">,<sp/>l,<sp/>conversorultimajogadacoluna(coord1),conversorultimajogadalinha(coord1),</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conversorultimajogadacoluna(coord2),conversorultimajogadalinha(coord2));</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l++;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">//<sp/>Caso<sp/>uma<sp/>Jogada<sp/>esteja<sp/>incompleta</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(fp,<sp/></highlight><highlight class="stringliteral">&quot;%02d:<sp/>%c%d\n&quot;</highlight><highlight class="normal">,<sp/>l,<sp/>conversorultimajogadacoluna(coord1),<sp/>conversorultimajogadalinha(coord1));</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l++;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fclose(fp);<sp/></highlight><highlight class="comment">//<sp/>Fecha<sp/>o<sp/>Ficheiro</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>OK;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*<ref refid="Bot_8h_1a7e0c7e26fb685d9ab501e19b05e6954f" kindref="member">inicializar_estado</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e<sp/>=<sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*)<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structESTADO" kindref="compound">ESTADO</ref>));</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>set_jogador_atual(e,<sp/>0);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>set_numero_jogadas(e,<sp/>0);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1a75adaf0d470225879490601dfc655c4e" kindref="member">ultima_jogada</ref>.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1a75adaf0d470225879490601dfc655c4e" kindref="member">ultima_jogada</ref>.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;<sp/>vencedor<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=0;i&lt;8;i++){</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=0;j&lt;8;j++){</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>7<sp/>&amp;&amp;<sp/>j<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1ab56f0f1be16954d3768b4174d14c087d" kindref="member">tab</ref>[i][j]<sp/>=<sp/>DOIS;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>j<sp/>==<sp/>7)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1ab56f0f1be16954d3768b4174d14c087d" kindref="member">tab</ref>[i][j]<sp/>=<sp/>UM;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>e-&gt;<ref refid="structESTADO_1ab56f0f1be16954d3768b4174d14c087d" kindref="member">tab</ref>[i][j]<sp/>=<sp/>VAZIO;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1ab56f0f1be16954d3768b4174d14c087d" kindref="member">tab</ref>[4][3]<sp/>=<sp/>BRANCA;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>32;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1afae43b87a488fad0f2b56a18bad31d18" kindref="member">jogadas</ref>[i].jogador1.coluna<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1afae43b87a488fad0f2b56a18bad31d18" kindref="member">jogadas</ref>[i].jogador1.linha<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1afae43b87a488fad0f2b56a18bad31d18" kindref="member">jogadas</ref>[i].jogador2.coluna<sp/>=-1;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e-&gt;<ref refid="structESTADO_1afae43b87a488fad0f2b56a18bad31d18" kindref="member">jogadas</ref>[i].jogador2.linha<sp/>=-1;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>e;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><ref refid="structnodo" kindref="compound">LISTA</ref><sp/><ref refid="Bot_8h_1a4dbaee936d3b7304064647b65fced6eb" kindref="member">vizinhos</ref>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structnodo" kindref="compound">LISTA</ref><sp/>principal<sp/>=<sp/><ref refid="Bot_8h_1ae3b99323b6f8f35d80bb69ff1a27985e" kindref="member">criar_lista</ref>();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*diagECima<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>));</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>*diagECima<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{c.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>-1,<sp/>c.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>-<sp/>1};</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*diagDCima<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>));</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>*diagDCima<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{c.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>+1,<sp/>c.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>-<sp/>1};</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*diagEBaixo<sp/><sp/><sp/><sp/><sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>));</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>*diagEBaixo<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{c.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>-<sp/>1,<sp/>c.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>+<sp/>1};</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*diagDBaixo<sp/><sp/><sp/><sp/><sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>));</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>*diagDBaixo<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{c.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>+<sp/>1,<sp/>c.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>+<sp/>1};</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*direita<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>));</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>*direita<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{c.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>+1,<sp/>c.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>};</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*esquerda<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>));</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>*esquerda<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{c.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>-<sp/>1,<sp/>c.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>};</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*baixo<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>));</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>*baixo<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{c.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>,<sp/>c.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>+<sp/>1};</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*cima<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>));</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>*cima<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{c.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>,<sp/>c.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>-<sp/>1};</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(*diagECima)<sp/><sp/>&amp;&amp;<sp/>(obter_estado_casa(e,*diagECima)<sp/><sp/>!=<sp/>PRETA))<sp/>principal<sp/>=<sp/><ref refid="Bot_8h_1a37ba5fc3cfddb6bc94d4b54b00bc696e" kindref="member">insere_cabeca</ref><sp/>(principal,diagECima);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(*diagEBaixo)<sp/>&amp;&amp;<sp/>(obter_estado_casa(e,*diagEBaixo)<sp/>!=<sp/>PRETA))<sp/>principal<sp/>=<sp/><ref refid="Bot_8h_1a37ba5fc3cfddb6bc94d4b54b00bc696e" kindref="member">insere_cabeca</ref><sp/>(principal,diagEBaixo);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(*diagDCima)<sp/><sp/>&amp;&amp;<sp/>(obter_estado_casa(e,*diagDCima)<sp/><sp/>!=<sp/>PRETA))<sp/>principal<sp/>=<sp/><ref refid="Bot_8h_1a37ba5fc3cfddb6bc94d4b54b00bc696e" kindref="member">insere_cabeca</ref><sp/>(principal,diagDCima);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(*diagDBaixo)<sp/>&amp;&amp;<sp/>(obter_estado_casa(e,*diagDBaixo)<sp/>!=<sp/>PRETA))<sp/>principal<sp/>=<sp/><ref refid="Bot_8h_1a37ba5fc3cfddb6bc94d4b54b00bc696e" kindref="member">insere_cabeca</ref><sp/>(principal,diagDBaixo);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(*esquerda)<sp/><sp/><sp/>&amp;&amp;<sp/>(obter_estado_casa(e,*esquerda)<sp/><sp/><sp/>!=<sp/>PRETA))<sp/>principal<sp/>=<sp/><ref refid="Bot_8h_1a37ba5fc3cfddb6bc94d4b54b00bc696e" kindref="member">insere_cabeca</ref><sp/>(principal,esquerda);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(*direita)<sp/><sp/><sp/><sp/>&amp;&amp;<sp/>(obter_estado_casa(e,*direita)<sp/><sp/><sp/><sp/>!=<sp/>PRETA))<sp/>principal<sp/>=<sp/><ref refid="Bot_8h_1a37ba5fc3cfddb6bc94d4b54b00bc696e" kindref="member">insere_cabeca</ref><sp/>(principal,direita);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(*baixo)<sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>(obter_estado_casa(e,*baixo)<sp/><sp/><sp/><sp/><sp/><sp/>!=<sp/>PRETA))<sp/>principal<sp/>=<sp/><ref refid="Bot_8h_1a37ba5fc3cfddb6bc94d4b54b00bc696e" kindref="member">insere_cabeca</ref><sp/>(principal,baixo);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(*cima)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>(obter_estado_casa(e,*cima)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>!=<sp/>PRETA))<sp/>principal<sp/>=<sp/><ref refid="Bot_8h_1a37ba5fc3cfddb6bc94d4b54b00bc696e" kindref="member">insere_cabeca</ref><sp/>(principal,cima);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>principal;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/><ref refid="Bot_8h_1a0d2ffc08c9b2bc76871beb8407396a3b" kindref="member">verificaMelhorJogada</ref><sp/>(<ref refid="structnodo" kindref="compound">LISTA</ref><sp/>l,<sp/><ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*<sp/>e){<sp/><sp/></highlight><highlight class="comment">//Função<sp/>Para<sp/>Verificar<sp/>Qual<sp/>o<sp/>Vizinho<sp/>Com<sp/>uma<sp/>Distancia<sp/>Menor<sp/>á<sp/>casa<sp/>Vencedora</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>dist;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>melhorCord<sp/>=<sp/>{-1,-1};<sp/><sp/></highlight><highlight class="comment">//Coordenada<sp/>Iniciada<sp/>Para<sp/>Guardar<sp/>a<sp/>Melhor<sp/>Coordenada</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>cord;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>um<sp/>=<sp/>{0,<sp/>7};</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>dois<sp/>=<sp/>{7,0<sp/>};</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>menorDist<sp/>=<sp/>1000;<sp/></highlight><highlight class="comment">//Variavel<sp/>Inicializada<sp/>Com<sp/>Valor<sp/>Exagerado<sp/>para<sp/>salvaguardar<sp/>logo<sp/>o<sp/>primeiro<sp/>valor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Caso<sp/>para<sp/>o<sp/>Jogador<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ab9c95b014d2e217eae7d081088501963" kindref="member">get_jogador_atual</ref>(e)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(l<sp/>-&gt;<sp/>valor<sp/>&amp;&amp;<sp/>l<sp/>-&gt;<sp/>prox)<sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cord<sp/>=<sp/>*((<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*)<sp/>(l-&gt;<ref refid="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" kindref="member">valor</ref>));</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dist<sp/>=<sp/>sqrt<sp/>(((cord.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>-<sp/>um.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>)<sp/>*<sp/>(cord.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>-<sp/>um.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>))<sp/>+<sp/>((cord.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>-<sp/>um.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>)<sp/>*<sp/>(cord.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>-<sp/>um.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>)));</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(menorDist<sp/>&gt;=<sp/>dist<sp/>&amp;&amp;<sp/>obter_estado_casa(e,<sp/>cord)<sp/>==<sp/>VAZIO)<sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>menorDist<sp/>=<sp/>dist;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>melhorCord<sp/>=<sp/>cord;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l<sp/>=<sp/>l<sp/>-&gt;<sp/>prox;<sp/></highlight><highlight class="comment">//Atualiza<sp/>a<sp/>lista</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Caso<sp/>para<sp/>o<sp/>Jogador<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ab9c95b014d2e217eae7d081088501963" kindref="member">get_jogador_atual</ref>(e)<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(l<sp/>-&gt;<sp/>valor<sp/>&amp;&amp;<sp/>l<sp/>-&gt;<sp/>prox)<sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cord<sp/>=<sp/>*<sp/>((<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*)<sp/>(l-&gt;<ref refid="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" kindref="member">valor</ref>));</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dist<sp/>=<sp/>sqrt<sp/>(((dois.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>-<sp/>cord.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>)<sp/>*<sp/>(dois.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>-<sp/>cord.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>))<sp/>+<sp/>((cord.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>-<sp/><sp/>dois.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>)<sp/>*<sp/>(cord.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>-<sp/><sp/>dois.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>)));</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(menorDist<sp/>&gt;=<sp/>dist<sp/>&amp;&amp;<sp/>obter_estado_casa(e,<sp/>cord)<sp/>==<sp/>VAZIO)<sp/>{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>menorDist<sp/>=<sp/>dist;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>melhorCord<sp/>=<sp/>cord;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l<sp/>=<sp/>l<sp/>-&gt;<sp/>prox;<sp/></highlight><highlight class="comment">//Atualiza<sp/>a<sp/>lista</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>melhorCord;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="Bot_8h_1ad6e53286380cb45e6949748fe0ecf544" kindref="member">floodfillaux</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>valores[8][8],<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>valor)<sp/>{</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structnodo" kindref="compound">LISTA</ref><sp/>vizinho<sp/>=<sp/><ref refid="Bot_8h_1a4dbaee936d3b7304064647b65fced6eb" kindref="member">vizinhos</ref>(e,<sp/>c);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(vizinho-&gt;<ref refid="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" kindref="member">valor</ref><sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>vizinho-&gt;<ref refid="structnodo_1a086547621a7da23b916bbe26e0855308" kindref="member">prox</ref><sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>valor<sp/>&lt;<sp/>9)<sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>casa<sp/>=<sp/>*(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*)<sp/>(vizinho-&gt;<ref refid="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" kindref="member">valor</ref>);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(valores[casa.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>][casa.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>]<sp/>==<sp/>-1<sp/>||<sp/>valores[casa.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>][casa.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>]<sp/>&gt;=<sp/>valor)</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valores[casa.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>][casa.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>]<sp/>=<sp/>valor;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Bot_8h_1ad6e53286380cb45e6949748fe0ecf544" kindref="member">floodfillaux</ref>(e,<sp/>valores,<sp/>*(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*)<sp/>(vizinho-&gt;<ref refid="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" kindref="member">valor</ref>),<sp/>valor<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vizinho<sp/>=<sp/>vizinho-&gt;<ref refid="structnodo_1a086547621a7da23b916bbe26e0855308" kindref="member">prox</ref>;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>free(vizinho);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Bot_8h_1a7b2847d2d71b07a8200fbd32fd68890d" kindref="member">floodfillaux1</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>valores[8][8])<sp/>{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r=0;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structnodo" kindref="compound">LISTA</ref><sp/>vizinhoaux<sp/>=<sp/><ref refid="Bot_8h_1a4dbaee936d3b7304064647b65fced6eb" kindref="member">vizinhos</ref>(e,<sp/><ref refid="Bot_8h_1ae89c72e4fa31dcc1eb9ba0fb8ea707e1" kindref="member">get_ultima_jogada</ref>(e));</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(vizinhoaux<sp/>!=NULL<sp/>&amp;&amp;<sp/>vizinhoaux-&gt;<ref refid="structnodo_1a086547621a7da23b916bbe26e0855308" kindref="member">prox</ref><sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>r==0)<sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>casaaux<sp/>=<sp/>*(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*)<sp/>(vizinhoaux-&gt;<ref refid="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" kindref="member">valor</ref>);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((get_valores(valores,casaaux)<sp/>==<sp/>-1)<sp/>||<sp/>(get_valores(valores,casaaux)<sp/>==<sp/>-2))<sp/>{</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vizinhoaux<sp/>=<sp/>vizinhoaux-&gt;<ref refid="structnodo_1a086547621a7da23b916bbe26e0855308" kindref="member">prox</ref>;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/><ref refid="Bot_8h_1acd6481a6f312adb939a55fb7e23a14b9" kindref="member">floodfill</ref>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e)<sp/>{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>valores[8][8];</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>set_valores<sp/>(e,<sp/>valores);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1ab9c95b014d2e217eae7d081088501963" kindref="member">get_jogador_atual</ref>(e)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{0,7};</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valores[0][7]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Bot_8h_1ad6e53286380cb45e6949748fe0ecf544" kindref="member">floodfillaux</ref>(e,<sp/>valores,c,1);</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{7,0};</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valores[7][0]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="Bot_8h_1ad6e53286380cb45e6949748fe0ecf544" kindref="member">floodfillaux</ref>(e,valores,c,1);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>melhorJogada<sp/>=<sp/>{-1,-1};</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1a7b2847d2d71b07a8200fbd32fd68890d" kindref="member">floodfillaux1</ref>(e,valores)==0)<sp/>melhorJogada=<sp/><ref refid="Bot_8h_1a0d2ffc08c9b2bc76871beb8407396a3b" kindref="member">verificaMelhorJogada</ref><sp/>(<ref refid="Bot_8h_1a4dbaee936d3b7304064647b65fced6eb" kindref="member">vizinhos</ref>(e,<ref refid="Bot_8h_1ae89c72e4fa31dcc1eb9ba0fb8ea707e1" kindref="member">get_ultima_jogada</ref>(e)),<sp/>e);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>menor<sp/>=<sp/>50;</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structnodo" kindref="compound">LISTA</ref><sp/>vizinho<sp/>=<sp/><ref refid="Bot_8h_1a4dbaee936d3b7304064647b65fced6eb" kindref="member">vizinhos</ref><sp/>(e,<ref refid="Bot_8h_1ae89c72e4fa31dcc1eb9ba0fb8ea707e1" kindref="member">get_ultima_jogada</ref>(e));</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(vizinho-&gt;<ref refid="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" kindref="member">valor</ref><sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>vizinho-&gt;<ref refid="structnodo_1a086547621a7da23b916bbe26e0855308" kindref="member">prox</ref><sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c<sp/>=<sp/>*<sp/>((<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*)<sp/>(vizinho-&gt;<ref refid="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" kindref="member">valor</ref>));</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(get_valores(valores,<sp/>c)<sp/>&lt;<sp/>menor)<sp/>{</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>menor<sp/>=<sp/>get_valores(valores,<sp/>c);</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>melhorJogada<sp/>=<sp/>c;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vizinho<sp/>=<sp/>proximo<sp/>(vizinho);</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>vizinho<sp/>=<sp/>proximo<sp/>(vizinho);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>melhorJogada;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Bot_8h_1a7be46caf70ea549ceff7055b619e03d3" kindref="member">encurralado</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*estado,<sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>centro<sp/>=<sp/>c;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>cima<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>centro.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>,<sp/>.linha<sp/>=<sp/>centro.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>+<sp/>1};</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>baixo<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>centro.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref>,<sp/>.linha<sp/>=<sp/>centro.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>-<sp/>1};</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>direita<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>centro.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>+<sp/>1,<sp/>.linha<sp/>=<sp/>centro.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>};</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>esquerda<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>centro.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>-<sp/>1,<sp/>.linha<sp/>=<sp/>centro.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref>};</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>diagDBaixo<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>centro.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>+<sp/>1,<sp/>.linha<sp/>=<sp/>centro.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>-<sp/>1};</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>diagEBaixo<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>centro.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>-<sp/>1,<sp/>.linha<sp/>=<sp/>centro.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>-<sp/>1};</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>diagDCima<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>centro.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>+<sp/>1,<sp/>.linha<sp/>=<sp/>centro.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>+<sp/>1};</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>diagECima<sp/>=<sp/>(<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref>)<sp/>{.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>=<sp/>centro.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>-<sp/>1,<sp/>.linha<sp/>=<sp/>centro.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>+<sp/>1};</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((obter_estado_casa(estado,cima)<sp/>==<sp/>PRETA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>(obter_estado_casa(estado,cima)<sp/>==<sp/>BRANCA<sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>!<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(cima)))<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(obter_estado_casa(estado,baixo)<sp/>==<sp/>PRETA<sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>(obter_estado_casa(estado,baixo)<sp/>==<sp/>BRANCA<sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>!<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(baixo)))<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(obter_estado_casa(estado,direita)<sp/>==<sp/>PRETA<sp/><sp/><sp/><sp/><sp/>||<sp/>(obter_estado_casa(estado,direita)<sp/>==<sp/>BRANCA<sp/><sp/><sp/><sp/>||<sp/><sp/>!<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(direita)))<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(obter_estado_casa(estado,esquerda)<sp/>==<sp/>PRETA<sp/><sp/><sp/><sp/>||<sp/>(obter_estado_casa(estado,esquerda)<sp/>==<sp/>BRANCA<sp/><sp/><sp/>||<sp/><sp/>!<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(esquerda)))<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(obter_estado_casa(estado,diagDBaixo)<sp/>==<sp/>PRETA<sp/><sp/>||<sp/>(obter_estado_casa(estado,diagDBaixo)<sp/>==<sp/>BRANCA<sp/>||!<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(diagDBaixo)))<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(obter_estado_casa(estado,diagEBaixo)<sp/>==<sp/>PRETA<sp/><sp/>||<sp/>(obter_estado_casa(estado,diagEBaixo)<sp/>==<sp/>BRANCA<sp/>||!<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(diagEBaixo)))<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(obter_estado_casa(estado,diagDCima)<sp/>==<sp/>PRETA<sp/><sp/><sp/>||<sp/>(obter_estado_casa(estado,diagDCima)<sp/>==<sp/>BRANCA<sp/><sp/>||<sp/>!<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(diagDCima)))<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(obter_estado_casa(estado,diagECima)<sp/>==<sp/>PRETA<sp/><sp/><sp/>||<sp/>(obter_estado_casa(estado,diagECima)<sp/>==<sp/>BRANCA<sp/><sp/>||<sp/>!<ref refid="Bot_8h_1ab30857ddb076ebe58da129e3e7ea7b39" kindref="member">dentroTabuleiro</ref>(diagECima)))<sp/>)</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Bot_8h_1a12aba8023e2e7c4dbe26cc99c85c44fe" kindref="member">verificaBotFinal</ref>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*e,<sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="Bot_8h_1ab9c95b014d2e217eae7d081088501963" kindref="member">get_jogador_atual</ref>(e)==0)<sp/>&amp;&amp;<sp/>(c.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>==<sp/>0<sp/>&amp;&amp;<sp/>c.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>==<sp/>7))<sp/>r<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="Bot_8h_1ab9c95b014d2e217eae7d081088501963" kindref="member">get_jogador_atual</ref>(e)==1)<sp/>&amp;&amp;<sp/>(c.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>==<sp/>7<sp/>&amp;&amp;<sp/>c.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>==<sp/>0))<sp/>r<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="Bot_8h_1a7be46caf70ea549ceff7055b619e03d3" kindref="member">encurralado</ref>(e,c)<sp/>==<sp/>1)<sp/>r<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="354"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/><ref refid="Bot_8h_1a5805cbe64b0343d64d0b3548d869b176" kindref="member">verificaCheckMate</ref>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*estado)<sp/>{</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structnodo" kindref="compound">LISTA</ref><sp/>vizinho<sp/>=<sp/><ref refid="Bot_8h_1a4dbaee936d3b7304064647b65fced6eb" kindref="member">vizinhos</ref>(estado,<ref refid="Bot_8h_1ae89c72e4fa31dcc1eb9ba0fb8ea707e1" kindref="member">get_ultima_jogada</ref>(estado));</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>cm<sp/>=<sp/>{-1,-1};</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(vizinho-&gt;<ref refid="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" kindref="member">valor</ref><sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/>((cm.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>==-1<sp/>)&amp;&amp;(cm.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>==-1)))<sp/>{</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c<sp/>=<sp/>*<sp/>((<ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>*)<sp/>(vizinho-&gt;<ref refid="structnodo_1ab63adcdb83ea1fdcf4fa10f3cafc4a6a" kindref="member">valor</ref>));</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="Bot_8h_1a12aba8023e2e7c4dbe26cc99c85c44fe" kindref="member">verificaBotFinal</ref>(estado,c))==0)<sp/>vizinho=vizinho-&gt;<ref refid="structnodo_1a086547621a7da23b916bbe26e0855308" kindref="member">prox</ref>;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>cm=<sp/>c;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cm;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="Bot_8h_1a4ed846a76c34e4a7b2ca7fc8a0176f5e" kindref="member">funcao_jogada</ref><sp/>(<ref refid="structESTADO" kindref="compound">ESTADO</ref><sp/>*estado)<sp/>{<sp/></highlight><highlight class="comment">//Funcao<sp/>que<sp/>permite<sp/>efetuar<sp/>uma<sp/>jogda</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>cm<sp/>=<sp/><ref refid="Bot_8h_1a5805cbe64b0343d64d0b3548d869b176" kindref="member">verificaCheckMate</ref>(estado);<sp/></highlight><highlight class="comment">//Testa<sp/>se<sp/>é<sp/>possivel<sp/>deixar<sp/>o<sp/>jogador<sp/>inimigo<sp/>encurralado</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>c<sp/>=<sp/>{-1,-1};</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//COORDENADA<sp/>de<sp/>=<sp/>{-1,-1};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>((cm.coluna<sp/>==<sp/>-1<sp/>)<sp/>&amp;&amp;<sp/>(cm.linha<sp/>==<sp/>-1))<sp/>c<sp/>=<sp/>floodfill<sp/>(estado);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>cf<sp/>=<sp/>{-1,-1};</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!((cm.<ref refid="structCOORDENADA_1ac241af99d2fb991831964fb94b86c7de" kindref="member">coluna</ref><sp/>==<sp/>-1<sp/>)&amp;&amp;(cm.<ref refid="structCOORDENADA_1a369e9a4d96b7450bbc640fe737db2977" kindref="member">linha</ref><sp/>==<sp/>-1)))<sp/>cf<sp/>=<sp/>cm;</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>=<sp/><ref refid="Bot_8h_1acd6481a6f312adb939a55fb7e23a14b9" kindref="member">floodfill</ref><sp/>(estado);</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cf=c;</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/>altera_estado_casa_branca(estado,<sp/>cf);</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>=<sp/>obter_numero_de_jogadas(estado);</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(obter_jogador_atual(estado)<sp/>==<sp/>1)<sp/>set_jogadas_jogador2(estado,<sp/>cf,<sp/>n);</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>set_jogadas_jogador1(estado,<sp/>cf,<sp/>n);</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structCOORDENADA" kindref="compound">COORDENADA</ref><sp/>preta<sp/>=<sp/><ref refid="Bot_8h_1ae89c72e4fa31dcc1eb9ba0fb8ea707e1" kindref="member">get_ultima_jogada</ref>(estado);</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="Bot_8h_1a2787d03a0237b39a69235b2a1717a34d" kindref="member">altera_estado_casa_preta</ref>(estado,<sp/>preta);</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/>altera_ultimajogada(estado,<sp/>cf);</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="Bot.c"/>
+  </compounddef>
+</doxygen>
